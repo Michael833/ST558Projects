@@ -5,3 +5,60 @@ format: html
 editor: source
 ---
 
+541a25ef175ec8d1abf1a4b9bb864ac88cf70e54
+https://data.census.gov/app/mdat/ACSPUMS1Y2024/table?rv=JWAP,ucgid&vv=AGEP,GASP,GRPIP&wt=PWGTP&g=AwJm-BVBlEBoCMcDMcAsB9YyJWqgNjngA5E4BOOAVnTgHYs1dgZglQ5g0vbgjgZYFQTBESBPASoEtBEQT1EZBFTDEkIeCFQgeIWiCIglIMiCo4USZPGSpkPZLWRFkS5GWRVm6JGng0HjRaNCI0JTQyNCpqMWokalRqHmpaagIgA
+
+# Part  1 - Data Processing
+
+I'm going to use R's api functions to pull PUMS data down from the US Census website.
+
+```{r}
+library(tidyverse)
+library(httr)
+library(jsonlite)
+```
+## Parsing Variable Values (i.e. labels)
+```{r}
+variable_json <- httr::GET("https://api.census.gov/data/2024/acs/acs1/pums/variables.json")
+#str(variable_json, max.level = 1)
+parsed <- fromJSON(rawToChar(variable_json$content))
+
+variable_descriptions <- as_tibble(parsed$variables)
+variable_descriptions
+saveRDS(variable_descriptions, file = "data/variable_descriptions.rds")
+```
+
+
+## Parsing API Data
+
+```{r}
+variable_json <- httr::GET("https://api.census.gov/data/2024/acs/acs1/pumspr?get=SEX,PWGTP,MAR&SCHL=24&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54")
+
+helper <- function(year = 2024, vars = "AGEP") {
+  #Generate all the input parameters:
+  address <- ""
+  variables <- paste0("PWGTP,AGEP" + vars, sep = ",")
+  
+  #Check validity of year
+  
+  #Options for users should be AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP
+
+
+  #Call API and parse result
+  final_api <- paste0("https://api.census.gov/data/",year, "/acs/acs1/pumspr?get=",variables, "&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54")
+  variable_json <- httr::GET(final_api)
+  parsed <- fromJSON(rawToChar(variable_json$content))
+
+  #Make API result into tibble and save
+  api_result <- as_tibble(parsed)
+  api_result
+  saveRDS(api_result, file = "data/variable_descriptions.rds")
+}
+helper(vars = "GASP")
+
+```
+
+
+
+
+

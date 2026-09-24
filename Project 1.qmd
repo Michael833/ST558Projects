@@ -13,9 +13,13 @@ https://data.census.gov/app/mdat/ACSPUMS1Y2024/table?rv=JWAP,ucgid&vv=AGEP,GASP,
 I'm going to use R's api functions to pull PUMS data down from the US Census website.
 
 ```{r}
+#| message: false
+#| warning: false
+
 library(tidyverse)
 library(httr)
 library(jsonlite)
+library(janitor)
 ```
 ## Parsing Variable Values (i.e. labels)
 ```{r}
@@ -32,33 +36,44 @@ saveRDS(variable_descriptions, file = "data/variable_descriptions.rds")
 ## Parsing API Data
 
 ```{r}
-variable_json <- httr::GET("https://api.census.gov/data/2024/acs/acs1/pumspr?get=SEX,PWGTP,MAR&SCHL=24&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54")
-
 helper <- function(year = 2024, vars = "AGEP") {
+  #vars = c("AGEP","GASP", "GRPIP", "JWAP", "JWDP", "JWMNP")
+  
+  #Test input parameters:
+  #vars = "AGEP"
+  #year <- 2024
+  
   #Generate all the input parameters:
-  address <- ""
-  variables <- paste0("PWGTP,AGEP" + vars, sep = ",")
+  address <- "https://api.census.gov/data/"
+  variables <- paste("PWGTP,AGEP", vars, sep = ",")
   
   #Check validity of year
-  
+  if (length(year) != 1) {
+    stop("Argument 'year' must be a single value, not a vector or list.")
+  }
   #Options for users should be AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP
-
+  #if (match.arg(vars) != 1) {
+    #stop("Dudeski, you chose variables that are not in our list. Please restrict to AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP, and I'll toss in PWGTP for free. ;-)")
+  #}
 
   #Call API and parse result
-  final_api <- paste0("https://api.census.gov/data/",year, "/acs/acs1/pumspr?get=",variables, "&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54")
+  final_api <- paste0(address,year,"/acs/acs1/pumspr?get=",variables, "&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54")
+  
   variable_json <- httr::GET(final_api)
   parsed <- fromJSON(rawToChar(variable_json$content))
 
-  #Make API result into tibble and save
-  api_result <- as_tibble(parsed)
-  api_result
-  saveRDS(api_result, file = "data/variable_descriptions.rds")
+  #Make API result into tibble, save it, and display it in the log
+  api_result <- parsed |>
+    janitor::row_to_names(row_number = 1) |>
+    as_tibble()
+  return(api_result)
 }
-helper(vars = "GASP")
+yr2024 <- helper(vars = "GASP")
+yr2024b<- helper()
+yr2022 <- helper(year = 2022, vars = c("GASP","GRPIP")) 
+yr2022b<- helper(year = 2022)
 
 ```
-
-
 
 
 

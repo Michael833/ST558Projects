@@ -5,8 +5,16 @@ format: html
 editor: source
 ---
 
-541a25ef175ec8d1abf1a4b9bb864ac88cf70e54
-https://data.census.gov/app/mdat/ACSPUMS1Y2024/table?rv=JWAP,ucgid&vv=AGEP,GASP,GRPIP&wt=PWGTP&g=AwJm-BVBlEBoCMcDMcAsB9YyJWqgNjngA5E4BOOAVnTgHYs1dgZglQ5g0vbgjgZYFQTBESBPASoEtBEQT1EZBFTDEkIeCFQgeIWiCIglIMiCo4USZPGSpkPZLWRFkS5GWRVm6JGng0HjRaNCI0JTQyNCpqMWokalRqHmpaagIgA
+#541a25ef175ec8d1abf1a4b9bb864ac88cf70e54
+```{r}
+trial_run <- httr::GET("https://api.census.gov/data/2021/acs/acs1/pums?get=AGEP,GASP,GRPIP,JWAP,JWDP,JWMNP,PWGTP,FER,HHL,SCH,SCHL,SEX,ST,REGION,DIVISION&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54")
+
+parsed_data <- fromJSON(rawToChar(trial_run$content))
+api_result <- parsed_data |>
+    janitor::row_to_names(row_number = 1) |>
+    as_tibble() |>
+    type_convert()
+```
 
 # Part  1 - Data Processing
 
@@ -23,11 +31,13 @@ library(janitor)
 ```
 ## Parsing Variable Values (i.e. labels)
 ```{r}
-variable_json <- httr::GET("https://api.census.gov/data/2024/acs/acs1/pums/variables.json")
+variable_json <- httr::GET("https://api.census.gov/data/2021/acs/acs1/pums/variables.json")
+
 #str(variable_json, max.level = 1)
 parsed <- fromJSON(rawToChar(variable_json$content))
+#parsed
 
-variable_descriptions <- as_tibble(parsed$variables)
+variable_descriptions <- as_tibble(parsed)
 variable_descriptions
 saveRDS(variable_descriptions, file = "data/variable_descriptions.rds")
 ```
@@ -36,40 +46,71 @@ saveRDS(variable_descriptions, file = "data/variable_descriptions.rds")
 ## Parsing API Data
 
 ```{r}
-helper <- function(year = 2024, vars = "AGEP") {
-  #vars = c("AGEP","GASP", "GRPIP", "JWAP", "JWDP", "JWMNP")
-  
-  #Test input parameters:
-  #vars = "AGEP"
-  #year <- 2024
-  
+helper <- function(year = 2024, vars = c(), restrictions = c()) {
+
   #Generate all the input parameters:
   address <- "https://api.census.gov/data/"
-  variables <- paste("PWGTP,AGEP", vars, sep = ",")
   
-  #Check validity of year
+  #Check singularity and validity of the year
   if (length(year) != 1) {
     stop("Argument 'year' must be a single value, not a vector or list.")
   }
-  #Options for users should be AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP
-  #if (match.arg(vars) != 1) {
-    #stop("Dudeski, you chose variables that are not in our list. Please restrict to AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP, and I'll toss in PWGTP for free. ;-)")
-  #}
+  if (!year %in% c(2021, 2022, 2023, 2024)) {
+    stop("Argument 'year' must be ONE of the following: 2021, 2022, 2023, 2024.")
+  }
+browser()
+  #Check the requested variables
+  if (length(vars) == 0) {
+    final_request_vars <- "AGEP,PWGTP,SEX"
+  } else if (length(vars) != 0) {
+    vars_allowed = c("AGEP", "GASP", "GRPIP", "JWAP", "JWDP", "JWMNP", "JWMNP", "PWGTP","FER","HHL","SCH","SCHL","SEX","ST","STATE","REGION","DIVISION")
+    rlang::arg_match(vars_allowed, multiple = TRUE)
+    stop("Dudeski, you chose variables that are not in our list. Please restrict to numeric variables: AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP, and to categorical varailes: FER, HHL, SCH, SCHL, SEX.")
+  }
+  else {
+    #Create separate lists of geographical, string, and numeric variables for further checking
+    numeric_vars <- c("AGEP", "GASP", "GRPIP", "JWAP", "JWDP", "JWMNP", "JWMNP")
+    string_vars  <- c("FER","HHL","SCH","SCHL","SEX")
+    geography_vars<- c("ST","STATE","REGION","DIVISION")
+    
+    #Rename variable "ST" to "STATE" for years 2021 & 2022
 
-  #Call API and parse result
-  final_api <- paste0(address,year,"/acs/acs1/pumspr?get=",variables, "&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54")
+    
+    #Create separate lists of the requested variables for each type
+     req_num_vars <- vars[vars %in% numeric_vars]
+     req_str_vars <- vars[vars %in% string_vars]
+     req_geo_vars <- vars[vars %in% geography_vars]
+     
+     #Push out defaults, in case nothing is listed
+     if (length(req_num_vars) == 0) req_num_vars <- "AGEP"
+     if (length(req_str_vars) == 0) req_str_vars <- "SEX"
+     if (length(req_geo_vars) == 0) req_geo_vars <- "STATE"
+     
+     #Glue the strings all together
+     final_request_vars <- paste0(req_num_vars,req_str_vars,req_geo_vars,"PWGTP")
+  }
   
+  #Call API and parse result
+  final_api <- paste0(address,year,"/acs/acs1/pums?get=",final_request_vars, "&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54")
+
   variable_json <- httr::GET(final_api)
   parsed <- fromJSON(rawToChar(variable_json$content))
 
   #Make API result into tibble, save it, and display it in the log
   api_result <- parsed |>
     janitor::row_to_names(row_number = 1) |>
-    as_tibble()
+    as_tibble()|>
+    type_convert()
+  View(api_result)
   return(api_result)
 }
-yr2024 <- helper(vars = "GASP")
+
+yr2020x<- helper(year = 2020)  #Should fail, year out of range.
 yr2024b<- helper()
+yr2021 <- helper(vars=c("AGEP", "SEX"))  #Should still work
+yr2021x<- helper(vars=c("AGEP", "BAS"))  #shouldn't work.
+
+yr2024 <- helper(vars = "GASP")
 yr2022 <- helper(year = 2022, vars = c("GASP","GRPIP")) 
 yr2022b<- helper(year = 2022)
 

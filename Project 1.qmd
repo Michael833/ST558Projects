@@ -65,25 +65,26 @@ helper <- function(year = 2024, vars = c(), restrictions = c()) {
     final_request_vars <- "AGEP,PWGTP,SEX"
   } else {
       vars_allowed <- c("AGEP", "GASP", "GRPIP", "JWAP", "JWDP", "JWMNP", "JWMNP", "PWGTP","FER","HHL","SCH","SCHL","SEX","ST","STATE","REGION","DIVISION")
-      
+browser()   
       #Check to make sure all requested vars are allowed.
+      if (!all(vars %in% vars_allowed)) {
       #rlang::arg_match(vars, vars_allowed, multiple = TRUE)
-      #stop("Dudeski, you chose variables that are not in our list. Please restrict to numeric variables: AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP, and to categorical varailes: FER, HHL, SCH, SCHL, SEX.")
-  
+        stop("Dudeski, you chose variables that are not in our list. Please restrict to numeric variables: AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP, and to categorical varailes: FER, HHL, SCH, SCHL, SEX.")
+      }
       #Create separate lists of geo, str, and num vars for further checking
       numeric_vars <- c("AGEP", "GASP", "GRPIP", "JWAP", "JWDP", "JWMNP", "JWMNP")
       string_vars  <- c("FER","HHL","SCH","SCHL","SEX")
       geography_vars<- c("ST","STATE","REGION","DIVISION")
       
       #Rename variable "ST" to "STATE" for years 2021 & 2022
-  
+
       
       #Create separate lists of the requested variables for each type
-       req_num_vars <- vars[vars %in% numeric_vars]
-       req_str_vars <- vars[vars %in% string_vars]
-       req_geo_vars <- vars[vars %in% geography_vars]
+       req_num_vars <- paste(vars[vars %in% numeric_vars], collapse = ",")
+       req_str_vars <- paste(vars[vars %in% string_vars], collapse = ",")
+       req_geo_vars <- paste(vars[vars %in% geography_vars], collapse = ",")
        
-       #Push out defaults, in case nothing is listed
+       #Push out defaults, in case nothing is listed (in a sub category)
        if (length(req_num_vars) == 0) req_num_vars <- "AGEP"
        if (length(req_str_vars) == 0) req_str_vars <- "SEX"
        if (length(req_geo_vars) == 0) req_geo_vars <- "STATE"
@@ -91,45 +92,69 @@ helper <- function(year = 2024, vars = c(), restrictions = c()) {
        #Glue the requested variable strings all together
        final_request_vars <- paste(req_num_vars,req_str_vars,req_geo_vars,"PWGTP", sep = ",")
   }
-browser()
+
   #Subset the API Request, so as not to get too much data.
   if (length(restrictions) == 0) {
     message("Broski, that's too much data. Census will cut you off. We are going to trim that down to just STATE:44 (because Rhode Island is awesome) and go from there. You can cange this by adding a geographic variable (STATE/ST, REGION, etc.) or some other restriction to the `restrictions` parameter.")
     final_restrict <- "&for=STATE:44"
   } else {
-      if(restrict_var %in% geography_vars) {
-        restrictions <- sub("[=].*", ":.*", restrictions)
-        final_restrict <- paste0("&for=",restrictions)
-      }
-      else final_restrict <- paste0("&",restrictions)
+    #Make sure there are no spaces in the restrictions request
+    restrictions <- gsub("\\s+", "", restrictions)
+    #If the restrictions variable isn't empty, stip off the first bit.
+    restrict_var <- sub("[=:].*", "", restrictions)
+    
+    #Quick detour:Remove the restriction var if it's in the called vars list.
+    final_request_vars <- gsub(paste0(restrict_var,","), "", final_request_vars)
+    
+    #Now check if that first bit is geographical or not.
+    if(restrict_var %in% geography_vars) {
+      
+      #If it is geographical, make sure it has a colon and not an equal sign
+      restrictions <- sub("[=].*", ":.*", restrictions)
+      
+      #Then paste in the prefix for searching
+      final_restrict <- paste0("&for=",restrictions)
+    } else final_restrict <- paste0("&",restrictions)
   }
 
+  #Create the final API , while making sure there are no spaces in it.
+  final_api <- gsub("\\s+", "", paste0(address,year,"/acs/acs1/pums?get=",final_request_vars,final_restrict,"&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54"))
 
-
-
-  #Call API and parse result
-  final_api <- paste0(address,year,"/acs/acs1/pums?get=",final_request_vars,final_restrict,"&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54")
-
+  #Call the API, parse the data
   variable_json <- httr::GET(final_api)
   parsed <- fromJSON(rawToChar(variable_json$content))
 
   #Make API result into tibble, save it, and display it in the log
   api_result <- parsed |>
     janitor::row_to_names(row_number = 1) |>
-    as_tibble()|>
+    as_tibble()
+  
+  #Manipulate the data in the tibble, adding labels to categorical, dates to date variables, converting numeric-seen-as-strings to true numeric
+  final_data <- api_result |>
     type_convert()
-  View(api_result)
-  return(api_result)
+    
+  
+  
+  View(final_data)
+  return(final_data)
 }
-
-yr2020x<- helper(year = 2020)  #Should fail, year out of range.
+TODO:
+  Date time variables
+  Baywatch the error messages
+yr2020x <- helper(year = 2020)  #Should fail, year out of range.
 yr2024a <- helper()             #Default vars, year.
-yr2024b <- helper(year = 2024, vars=c("AGEP", "SEX"))  #Should still work
-yr2024c <- helper(year = 2024, vars=c("AGEP", "SEX"), restrict = "SEX = 1")  #Should still work
+yr2024b <- helper(year = 2024, vars=c("AGEP", "JWMNP"))  #Should still work
+yr2024c <- helper(year = 2024, vars=c("AGEP", "SEX"), restrict = "SEX=1")  #Adding restriction
+yr2024x <- helper(vars=c("AGEP", "BAS"))  #shouldn't work.
+yr2024d <- helper(year = 2024, vars=c("AGEP", "SEX"), restrict = "SEX = 1") #Spaces
+yr2024t <- helper(year = 2024, vars=c("AGEP", "JWAP"), restrict = "REGION:1")
+  
+
+
 yr2021x <- helper(year = 2021)  #Should fail, because of ST vs STATE.
 yr2021a <- helper(vars=c("AGEP", "BAS"))  #shouldn't work.
 
-yr2024 <- helper(vars = "GASP")
+yr2024d <- helper(vars = "GASP")
 yr2022 <- helper(year = 2022, vars = c("GASP","GRPIP")) 
 yr2022b<- helper(year = 2022, vars = c("AGEP", "SEX")) #Won't work because ST in 2022
 

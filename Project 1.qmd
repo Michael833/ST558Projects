@@ -248,6 +248,7 @@ multi_year <- function(years, vars, restrictions = "") {
   for (yrs in years) {
     paste0("multiple_yrs_",yrs) <- helper(year = yrs, vars, restrictions)
   }
+  #Create a new column with the year.
   return(paste0("multiple_yrs_",yrs))
 }
 
@@ -264,7 +265,7 @@ bite_me <- function(tibble_name, numeric_vars = c("AGEP","GASP","GRPIP"), catego
   #Parse the inputs:
   
   #Run calculations on numeric
-  
+  results <- sapply(numeric_vars, )
   
 } 
 

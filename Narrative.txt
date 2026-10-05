@@ -1,0 +1,499 @@
+---
+title: "Project 1"
+author: "Michael Costello"
+format: html
+editor: source
+---
+
+In this project, we are creating a series of functions to request data from a Census Bureau API, build robust controls for that function, and then apply the function in several ways, including to append multiple outputs together and also to summarize the data received.
+
+```{r}
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(httr)
+library(jsonlite)
+library(janitor)
+#install.packages("cli")
+library(cli)
+```
+# Part  1 - Data Processing
+
+I wanted to start off by ensuring I understood the basics of how the API functioned, so I explicitly created a API URL to practice pulling the data down.
+```{r}
+trial_run <- httr::GET("https://api.census.gov/data/2021/acs/acs1/pums?get=AGEP,GASP,GRPIP,JWAP,JWDP,JWMNP,PWGTP,FER,HHL,SCH,SCHL,SEX,ST,REGION&for=DIVISION:5&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54")
+  parsed_data <- fromJSON(rawToChar(trial_run$content))
+  api_result <- parsed_data |>
+      janitor::row_to_names(row_number = 1) |>
+      as_tibble() |>
+      type_convert()
+```
+Once I was successful at that task, I turned to finding and downloading the dataset labels. Again, I decided to make sure I could get the data for one year, and then generalized my function.
+
+## Parsing Variable Values (i.e. labels)
+Getting one year first.
+```{r}
+variable_json <- httr::GET("https://api.census.gov/data/2021/acs/acs1/pums/variables.json")
+
+parsed_labels <- fromJSON(rawToChar(variable_json$content))
+subset_labels <- parsed_labels$variables[c("AGEP","GASP","GRPIP","JWAP","JWDP", "JWMNP","PWGTP","FER","HHL","SCH","SCHL","SEX","ST","REGION","DIVISION")]
+saveRDS(subset_labels, file = "data/variable_descriptions.rds")
+```
+Here I create a loop, carefully trying to control mis-aligned variables, such as STATE, which was called ST before 2023. I then had the loop save one dataset for year year.
+
+```{r}
+years <- 2021:2024
+for (yr in years) {
+  #Create some strings that I'll need to make the loops run correctly
+  api_str <- paste0("https://api.census.gov/data/",yr,"/acs/acs1/pums/variables.json")
+  save_str <- paste0("data/variable_descriptions_",yr,".rds")
+  
+  #Actually collect the data from Census
+  variable_json <- httr::GET(api_str)
+
+  #Parse and subset the lists
+  parsed_labels <- fromJSON(rawToChar(variable_json$content))
+  if(yr <= 2022) {
+    subset_labels <- parsed_labels$variables[c("AGEP","GASP","GRPIP","JWAP","JWDP", "JWMNP","PWGTP","FER","HHL","SCH","SCHL","SEX","ST","REGION","DIVISION")]
+    #rename ST to STATE to make all more comparable later.
+    names(subset_labels)[13] <- "STATE" 
+  }
+  else subset_labels <- parsed_labels$variables[c("AGEP","GASP","GRPIP","JWAP","JWDP", "JWMNP","PWGTP","FER","HHL","SCH","SCHL","SEX","STATE","REGION","DIVISION")]
+  
+  #Save the output
+  saveRDS(subset_labels, file = save_str)
+}
+```
+
+At this point I was ready to start writing parts of my actual function. I read through the project parameters, but did not do a sufficient job of planning out how I would break the function into several smaller functions. That would probably have made debugging easier, as well as some aspects of testing and enhancing the code. Instead, I tried to tackle the project in a linear fasion, modeled off the order of the bullet points in the task outline. I built my header and parsed several of the input parameters, including some hard codes (like the beginning of the api's web address). 
+
+```{r}
+#| eval: false
+helper <- function(year = 2024, vars = c(), restrictions = c()) {
+
+  #Generate all the input parameters:
+    address <- "https://api.census.gov/data/"
+    vars_allowed <- c("AGEP", "GASP", "GRPIP", "JWAP", "JWDP", "JWMNP", "JWMNP", "PWGTP","FER","HHL","SCH","SCHL","SEX","ST","STATE","REGION","DIVISION")
+    
+	#Create separate lists of geo, str, and num vars for further checking
+      numeric_vars <- c("AGEP","GASP","GRPIP","JWAP","JWDP","JWMNP")
+      string_vars  <- c("FER","HHL","SCH","SCHL","SEX")
+      geography_vars<- c("ST","STATE","REGION","DIVISION")
+```
+
+I then started handling some of the basic errors I know I'd be addressing. First I dealt with the problem of someone trying to reqest multiple years, a year outside of our range (2021-2024), or not supplying variables (ie creating defaults). I decided not to simply apply the defaults in the function header because of several interactions they may have with restriction parameters and other potential problems later on.
+
+```{r}
+#| eval: false
+  #Check singularity and validity of the year
+  if (length(year) != 1) {
+    stop("Slow down One Direction, the argument 'year' must be a single value, not a vector or list.")
+  }
+  if (!year %in% c(2021, 2022, 2023, 2024)) {
+    stop("Hey *NSync, the argument 'year' must be ONE of the following: 2021, 2022, 2023, 2024.")
+  }
+
+  #Check the requested variables, supply defaults if none requested.
+  if (length(vars) == 0) {
+    final_request_vars <- "AGEP,PWGTP,SEX"
+  } 
+```
+I then went to work on the myrid permutations and ramification of if the user did request variables, including if those requested variables were not on the list of requestable variables. Included in this step was where I forced the weighting variable `PWGTP` into my string of requesed variables. (This chunk begins with an `else` block continued from the `if` block above.)
+
+```{r}
+#| eval: false
+
+    else {
+      #Check to make sure all requested vars are allowed.
+      if (!all(vars %in% vars_allowed)) {
+        stop("Yo, New Kids on the Block, you chose variables that are not in our list. Please restrict to numeric variables: AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP, and to categorical varailes: FER, HHL, SCH, SCHL, SEX.")
+      }
+
+      #Create separate lists of the requested variables for each type
+       req_num_vars <- paste(vars[vars %in% numeric_vars], collapse = ",")
+       req_str_vars <- paste(vars[vars %in% string_vars], collapse = ",")
+       req_geo_vars <- paste(vars[vars %in% geography_vars], collapse = ",")
+       
+       #Push out defaults, in case nothing is listed (in a sub category)
+       if (nchar(req_num_vars) == 0) req_num_vars <- "AGEP"
+       if (nchar(req_str_vars) == 0) req_str_vars <- "SEX"
+       if (nchar(req_geo_vars) == 0) {
+         if (year <= 2022) req_geo_vars <- "ST"
+         else req_geo_vars <- "STATE"
+       } else {
+         #########################################
+         ###### Strip State out of req_geo_vars  #
+         #########################################
+       }
+       #Glue the requested variable strings all together
+       final_request_vars <- paste(req_num_vars,req_str_vars,req_geo_vars,"PWGTP", sep = ",")
+  }
+```
+I wanted to, during this last step, remove STATE from a list of reqested variables because it would be used later, but that code was conflicting with other bits and I just put in a placeholder to return to later.
+
+My data pulls at this point were taking forever when I did not have some kid of restriction built in, so forced one in to slow down users who were not paying attention to their requests. Having moved here from Rhode Island, and it being the "smallest state", I chose that as the default.
+
+```{r}
+#| eval: false
+
+#Subset the API Request, so as not to get too much data.
+  if (length(restrictions) == 0) {
+    message("Whoa, High School Musical, that's too much data. Census will cut you off. We are going to trim that down to just STATE:44 (because Rhode Island is awesome) and go from there. You can cange this by adding a geographic variable (STATE/ST, REGION, etc.) or some other restriction to the `restrictions` parameter. IF you really want it all, try `STATE:all`.")
+    if(year <= 2022) final_restrict <- "&for=ST:44"
+    else final_restrict <- "&for=STATE:44"
+  }
+```
+Knowing that later in the project we were going to allow a back door for truly masochistic individuals (or maybe those who like to run code over night), I set up the "STATE:all" option. (This chunk begins with an `else if` block continued from the `if` block above.)
+
+```{r}
+#| eval: false
+
+  else if (restrictions == "STATE:all" || restrictions == "ST:all") {
+    message("Wow Vomit Comet, that's going to be a ton of data (from all 51 states), but I'm with you, I'm your ride-or-die!")
+    final_restrict <- ""
+    if (year <= 2022) {
+      final_request_vars <- paste(final_request_vars,"ST", sep = ",")
+    } else {
+      final_request_vars <- paste(final_request_vars,"STATE", sep = ",")
+    }
+  }
+```
+Now I'm in the meat of the function, where I'm trying to do several things. Some of these probably weren't needed, but I thinking about how I would design this function if a non-careful user were going to use it, trying to make it more robust.
+  - Restrictions are supposed to be written as "STATE:44" or "SEX=1":
+      * Allow a user write "SEX = 1"
+  - Users probably shouldn't request a variable AND make it one of the restrictions.
+      * Remove the variable from the requested variables parameter if it is also a restriction.
+	  * Fix any double commas that ensue from having pulled a variable out.
+  - Users should know that a specific geography does not exist
+      * If they request it anyway, tell them exactly why they are getting an error (and with STATE, what values are allowed, with hyperlink)
+  - Users should know that geographic restrictions, like state should be written with a colon, but other variables (SEX) the API wants with an equal sign.
+	  * If the user writes "STATE=44", adjust it to "STATE:44" for them.
+
+(This chunk begins with an `else` block continued from the `if` block above.)
+
+```{r}
+#| eval: false
+
+else {
+    #Make sure there are no spaces in the restrictions request
+    restrictions <- gsub("\\s+", "", restrictions)
+    #If the restrictions variable isn't empty, strip off the first bit to use later
+    restrict_var <- sub("[=:].*", "", restrictions)
+    
+    ############################################################
+    #Make sure that if STATE is used in 2021-2, it's changed to ST, and if ST is used in 2023-4, it's changed to STATE.
+    ############################################################
+    
+    #Quick detour:Remove the restriction var if it's in the called vars list.
+    final_request_vars <- gsub(restrict_var, "", final_request_vars)
+    #remove double commas from call, if they exist
+    final_request_vars <- gsub(",,", ",", final_request_vars)  
+    
+    #Now check if that first bit is geographical or not.
+    if(restrict_var %in% geography_vars) {
+      
+      #Check to ensure values requested are in our list of allowed values
+      requested_region <- str_split_i(restrictions, ":", 2) #extract the number
+      requested_region <- as.integer(requested_region) #Convert # for analysis
+      if (restrict_var == "STATE"){
+        if (requested_region < 1 || requested_region == 3 || requested_region == 7 || requested_region == 14 || requested_region == 43 || requested_region == 52 || requested_region > 56) {
+          cli::cli_abort("No no NO, Jonas Brother, you are asking for some STATE FIPS code we don't have. Stick to the 50 + DC. {.url https://www2.census.gov/geo/docs/reference/codes2020/national_state2020.txt}")
+        }
+      } else if (restrict_var == "REGION"){
+        if (requested_region > 4|| requested_region > 4) {
+          stop("Ahoy, Troubled Youth, ACS uses the standard 4 census regions, numbered 1 to 4.")
+        }
+      } else if (restrict_var == "DIVISION") {
+        if (requested_region < 1 || requested_region > 9) {
+          stop("Just stop Malibu Ken, ACS uses the standard 9 census divisions, numbered 1 to 9.")
+        }
+      }
+      
+      #If it is geographical, make sure it has a colon and not an equal sign
+      restrictions <- sub("[=].*", ":.*", restrictions)
+      
+      #Then paste in the prefix for searching
+      final_restrict <- paste0("&for=",restrictions)
+    } else final_restrict <- paste0("&",restrictions)
+  }
+
+```
+Great. At this point I'm ready to call the API and get to downloading some data! All I need to do is paste together the final URL, manipulate the returned data into a tibble, and convert the data to a more efficient storage (numeric instead of strings).
+
+```{r}
+#| eval: false
+
+  #Create the final API , while making sure there are no spaces in it.
+  final_api <- gsub("\\s+", "", paste0(address,year,"/acs/acs1/pums?get=",final_request_vars,final_restrict,"&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54"))
+
+  #Call the API, parse the data
+  variable_json <- httr::GET(final_api)
+  parsed <- fromJSON(rawToChar(variable_json$content))
+
+  #Make API result into tibble, save it, and display it in the log
+  api_result <- parsed |>
+    janitor::row_to_names(row_number = 1) |>
+    as_tibble() |>
+    type_convert()
+```
+Now it's just a matter of applying the labels from above and letting it run!
+
+```{r}
+#| eval: false
+
+  #Manipulate the data in the tibble, adding labels to categorical, dates to date variables, converting numeric-seen-as-strings to true numeric
+  final_data <- api_result
+  
+  #Time (ha ha, get it, time!) to label some variables, including the time vars.
+    #Create the path for the labels file:
+    label_path <- paste0("data/variable_descriptions_",year,".rds")
+    my_labels <- readRDS(label_path)
+    for (vrbls in c(string_vars, numeric_vars, geography_vars)) {
+      label_address <- paste0("!!!my_labels$",vrbls,"$values$item")
+      
+      current_labels <- my_labels[[vrbls]][["values"]][["item"]]
+      
+      if (!is.null(current_labels) && has_name(final_data, vrbls)) {
+        final_data <- final_data %>%
+          mutate(!!vrbls := recode(.data[[vrbls]], !!!current_labels))
+      }
+    }
+  
+  class(final_data) <- c("census", class(final_data))
+  return(final_data)
+}
+```
+Now let's test it a bunch:
+```{r}
+#| include: false
+
+helper <- function(year = 2024, vars = c(), restrictions = c()) {
+
+  #Generate all the input parameters:
+    address <- "https://api.census.gov/data/"
+    vars_allowed <- c("AGEP", "GASP", "GRPIP", "JWAP", "JWDP", "JWMNP", "JWMNP", "PWGTP","FER","HHL","SCH","SCHL","SEX","ST","STATE","REGION","DIVISION")
+    
+	#Create separate lists of geo, str, and num vars for further checking
+      numeric_vars <- c("AGEP","GASP","GRPIP","JWAP","JWDP","JWMNP")
+      string_vars  <- c("FER","HHL","SCH","SCHL","SEX")
+      geography_vars<- c("ST","STATE","REGION","DIVISION")
+  
+  #Check singularity and validity of the year
+  if (length(year) != 1) {
+    stop("Slow down One Direction, the argument 'year' must be a single value, not a vector or list.")
+  }
+  if (!year %in% c(2021, 2022, 2023, 2024)) {
+    stop("Hey *NSync, the argument 'year' must be ONE of the following: 2021, 2022, 2023, 2024.")
+  }
+
+  #Check the requested variables, supply defaults if none requested.
+  if (length(vars) == 0) {
+    final_request_vars <- "AGEP,PWGTP,SEX"
+  } else {
+      #Check to make sure all requested vars are allowed.
+      if (!all(vars %in% vars_allowed)) {
+        stop("Yo, New Kids on the Block, you chose variables that are not in our list. Please restrict to numeric variables: AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP, and to categorical varailes: FER, HHL, SCH, SCHL, SEX.")
+      }
+
+      #Create separate lists of the requested variables for each type
+       req_num_vars <- paste(vars[vars %in% numeric_vars], collapse = ",")
+       req_str_vars <- paste(vars[vars %in% string_vars], collapse = ",")
+       req_geo_vars <- paste(vars[vars %in% geography_vars], collapse = ",")
+       
+       #Push out defaults, in case nothing is listed (in a sub category)
+       if (nchar(req_num_vars) == 0) req_num_vars <- "AGEP"
+       if (nchar(req_str_vars) == 0) req_str_vars <- "SEX"
+       if (nchar(req_geo_vars) == 0) {
+         if (year <= 2022) req_geo_vars <- "ST"
+         else req_geo_vars <- "STATE"
+       } else {
+         #########################################
+         ###### Strip State out of req_geo_vars  #
+         #########################################
+       }
+       #Glue the requested variable strings all together
+       final_request_vars <- paste(req_num_vars,req_str_vars,req_geo_vars,"PWGTP", sep = ",")
+  }
+
+  #Subset the API Request, so as not to get too much data.
+  if (length(restrictions) == 0) {
+    message("Whoa, High School Musical, that's too much data. Census will cut you off. We are going to trim that down to just STATE:44 (because Rhode Island is awesome) and go from there. You can cange this by adding a geographic variable (STATE/ST, REGION, etc.) or some other restriction to the `restrictions` parameter. IF you really want it all, try `STATE:all`.")
+    if(year <= 2022) final_restrict <- "&for=ST:44"
+    else final_restrict <- "&for=STATE:44"
+  } else if (restrictions == "STATE:all" || restrictions == "ST:all") {
+    message("Wow Vomit Comet, that's going to be a ton of data (from all 51 states), but I'm with you, I'm your ride-or-die!")
+    final_restrict <- ""
+    if (year <= 2022) {
+      final_request_vars <- paste(final_request_vars,"ST", sep = ",")
+    } else {
+      final_request_vars <- paste(final_request_vars,"STATE", sep = ",")
+    }
+  } else {
+    #Make sure there are no spaces in the restrictions request
+    restrictions <- gsub("\\s+", "", restrictions)
+    #If the restrictions variable isn't empty, strip off the first bit to use later
+    restrict_var <- sub("[=:].*", "", restrictions)
+    
+    ############################################################
+    #Make sure that if STATE is used in 2021-2, it's changed to ST, and if ST is used in 2023-4, it's changed to STATE.
+    ############################################################
+    
+    #Quick detour:Remove the restriction var if it's in the called vars list.
+    final_request_vars <- gsub(restrict_var, "", final_request_vars)
+    #remove double commas from call, if they exist
+    final_request_vars <- gsub(",,", ",", final_request_vars)  
+    
+    #Now check if that first bit is geographical or not.
+    if(restrict_var %in% geography_vars) {
+      
+      #Check to ensure values requested are in our list of allowed values
+      requested_region <- str_split_i(restrictions, ":", 2) #extract the number
+      requested_region <- as.integer(requested_region) #Convert # for analysis
+      if (restrict_var == "STATE"){
+        if (requested_region < 1 || requested_region == 3 || requested_region == 7 || requested_region == 14 || requested_region == 43 || requested_region == 52 || requested_region > 56) {
+          cli::cli_abort("No no NO, Jonas Brother, you are asking for some STATE FIPS code we don't have. Stick to the 50 + DC. {.url https://www2.census.gov/geo/docs/reference/codes2020/national_state2020.txt}")
+        }
+      } else if (restrict_var == "REGION"){
+        if (requested_region > 4|| requested_region > 4) {
+          stop("Ahoy, Troubled Youth, ACS uses the standard 4 census regions, numbered 1 to 4.")
+        }
+      } else if (restrict_var == "DIVISION") {
+        if (requested_region < 1 || requested_region > 9) {
+          stop("Just stop Malibu Ken, ACS uses the standard 9 census divisions, numbered 1 to 9.")
+        }
+      }
+      
+      #If it is geographical, make sure it has a colon and not an equal sign
+      restrictions <- sub("[=].*", ":.*", restrictions)
+      
+      #Then paste in the prefix for searching
+      final_restrict <- paste0("&for=",restrictions)
+    } else final_restrict <- paste0("&",restrictions)
+  }
+
+  #Create the final API , while making sure there are no spaces in it.
+  final_api <- gsub("\\s+", "", paste0(address,year,"/acs/acs1/pums?get=",final_request_vars,final_restrict,"&key=541a25ef175ec8d1abf1a4b9bb864ac88cf70e54"))
+
+  #Call the API, parse the data
+  variable_json <- httr::GET(final_api)
+  parsed <- fromJSON(rawToChar(variable_json$content))
+
+  #Make API result into tibble, save it, and display it in the log
+  api_result <- parsed |>
+    janitor::row_to_names(row_number = 1) |>
+    as_tibble() |>
+    type_convert()
+  
+  #Manipulate the data in the tibble, adding labels to categorical, dates to date variables, converting numeric-seen-as-strings to true numeric
+  final_data <- api_result
+  
+  #Time (ha ha, get it, time!) to label some variables, including the time vars.
+    #Create the path for the labels file:
+    label_path <- paste0("data/variable_descriptions_",year,".rds")
+    my_labels <- readRDS(label_path)
+    for (vrbls in c(string_vars, numeric_vars, geography_vars)) {
+      label_address <- paste0("!!!my_labels$",vrbls,"$values$item")
+      
+      current_labels <- my_labels[[vrbls]][["values"]][["item"]]
+      
+      if (!is.null(current_labels) && has_name(final_data, vrbls)) {
+        final_data <- final_data %>%
+          mutate(!!vrbls := recode(.data[[vrbls]], !!!current_labels))
+      }
+    }
+  
+  class(final_data) <- c("census", class(final_data))
+  return(final_data)
+}
+```
+
+First with a bunch of different types of variables, years, and restrictions:
+```{r}
+yr2024c <- helper(vars = c("FER", "SEX"))             #Default vars, year.
+```
+```{r}
+yr2024d <- helper(year = 2024, vars=c("AGEP", "JWMNP"))  #non-default vars
+```
+```{r}
+yr2024e <- helper(vars = c("AGEP", "SEX"), restrict = "SEX = 1") #Adding restriction (and spaces)
+```
+```{r}
+yr2022f <- helper(year = 2022, vars = c("AGEP", "SEX", "GASP", "GRPIP", "JWAP", "JWDP", "JWMNP", "FER","HHL","SCH","SCHL"), restrict = "REGION:1")
+```
+
+And a bunch where the function should fail:
+```{r}
+yr2020x <- helper(year = 2020)  #Should fail, year out of range.
+```
+```{r}
+yr20212 <- helper(year = c(2020,2021))  #Should fail, too many years.
+```
+```{r}
+yr2024x <- helper(vars=c("AGEP", "BAS"))  #Bad input variable.
+```
+```{r}
+yr2021x <- helper(year = 2021, restrict = "STATE:3")
+```
+```{r}
+yr2022x <- helper(year = 2022, restrict = "REGION:5")
+```
+
+
+## Combining Multiple Years
+
+I began trying to loop the function, but it kept giving me an error in the geography, even when I tested it on functions I'd already done.
+```{r}
+multi_year <- function(years, vars, restrictions = "") {
+  for (yrs in years) {
+    paste0("multiple_yrs_",yrs) <- helper(year = yrs, vars, restrictions)
+  }
+  #Create a new column with the year.
+  return(paste0("multiple_yrs_",yrs))
+}
+
+yr2024_Test1 <- helper(vars = c("FER", "SEX")) 
+
+```
+
+
+# Part  2 - Writing a Generic Function for Summarizing
+
+This is the point in the project where I gave up. I wasn't going to make sufficient progress in the time I have remaining, and felt like I had learned what I was going to learn from doing this activity.
+
+```{r}
+summary_stats <- function(tibble_name, numeric_vars = c("AGEP","GASP","GRPIP"), categorical_vars = c("FER","HHL","SCH","SCHL","SEX")) {
+  #Parse the inputs:
+  
+  #Run calculations on numeric
+  results <- sapply(numeric_vars, )
+  
+} 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

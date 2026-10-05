@@ -79,7 +79,7 @@ helper <- function(year = 2024, vars = c(), restrictions = c()) {
       numeric_vars <- c("AGEP","GASP","GRPIP","JWAP","JWDP","JWMNP")
       string_vars  <- c("FER","HHL","SCH","SCHL","SEX")
       geography_vars<- c("ST","STATE","REGION","DIVISION")
-  
+browser  
   #Check singularity and validity of the year
   if (length(year) != 1) {
     stop("Slow down One Direction, the argument 'year' must be a single value, not a vector or list.")
@@ -110,7 +110,9 @@ helper <- function(year = 2024, vars = c(), restrictions = c()) {
          if (year <= 2022) req_geo_vars <- "ST"
          else req_geo_vars <- "STATE"
        } else {
-         ###### Strip State out of req_geo_vars
+         #########################################
+         ###### Strip State out of req_geo_vars  #
+         #########################################
        }
        #Glue the requested variable strings all together
        final_request_vars <- paste(req_num_vars,req_str_vars,req_geo_vars,"PWGTP", sep = ",")

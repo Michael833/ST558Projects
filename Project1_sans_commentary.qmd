@@ -27,7 +27,7 @@ library(tidyverse)
 library(httr)
 library(jsonlite)
 library(janitor)
-install.packages("cli")
+#install.packages("cli")
 library(cli)
 ```
 ## Parsing Variable Values (i.e. labels)
@@ -79,7 +79,7 @@ helper <- function(year = 2024, vars = c(), restrictions = c()) {
       numeric_vars <- c("AGEP","GASP","GRPIP","JWAP","JWDP","JWMNP")
       string_vars  <- c("FER","HHL","SCH","SCHL","SEX")
       geography_vars<- c("ST","STATE","REGION","DIVISION")
-browser  
+ 
   #Check singularity and validity of the year
   if (length(year) != 1) {
     stop("Slow down One Direction, the argument 'year' must be a single value, not a vector or list.")

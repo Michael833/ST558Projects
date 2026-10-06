@@ -320,8 +320,7 @@ cols(
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Make API result into tibble, save it, and display it in the log</span></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  api_result <span class="ot">&lt;-</span> parsed <span class="sc">|&gt;</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">row_to_names</span>(<span class="at">row_number =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">type_convert</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_tibble</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now it’s just a matter of applying the labels from above and letting it run!</p>
 <div class="cell">
@@ -355,154 +354,56 @@ cols(
 <div class="cell-output cell-output-stderr">
 <pre><code>Whoa, High School Musical, that's too much data. Census will cut you off. We are going to trim that down to just STATE:44 (because Rhode Island is awesome) and go from there. You can cange this by adding a geographic variable (STATE/ST, REGION, etc.) or some other restriction to the `restrictions` parameter. IF you really want it all, try `STATE:all`.</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-── Column specification ────────────────────────────────────────────────────────
-cols(
-  AGEP = col_double(),
-  FER = col_double(),
-  SEX = col_double(),
-  STATE = col_double(),
-  PWGTP = col_double(),
-  state = col_double()
-)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `AGEP = recode(.data[["AGEP"]], `0` = "Under 1 year")`.
-Caused by warning:
-! Unreplaced values treated as NA as `.x` is not compatible.
-Please specify replacements exhaustively or supply `.default`.</code></pre>
-</div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>yr2024d <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2024</span>, <span class="at">vars=</span><span class="fu">c</span>(<span class="st">"AGEP"</span>, <span class="st">"JWMNP"</span>))  <span class="co">#non-default vars</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>yr2024d <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2024</span>, <span class="at">vars=</span><span class="fu">c</span>(<span class="st">"AGEP"</span>, <span class="st">"JWMNP"</span>))  <span class="co">#non-default vars</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Whoa, High School Musical, that's too much data. Census will cut you off. We are going to trim that down to just STATE:44 (because Rhode Island is awesome) and go from there. You can cange this by adding a geographic variable (STATE/ST, REGION, etc.) or some other restriction to the `restrictions` parameter. IF you really want it all, try `STATE:all`.</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-── Column specification ────────────────────────────────────────────────────────
-cols(
-  AGEP = col_double(),
-  JWMNP = col_double(),
-  SEX = col_double(),
-  STATE = col_double(),
-  PWGTP = col_double(),
-  state = col_double()
-)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `AGEP = recode(.data[["AGEP"]], `0` = "Under 1 year")`.
-Caused by warning:
-! Unreplaced values treated as NA as `.x` is not compatible.
-Please specify replacements exhaustively or supply `.default`.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `JWMNP = recode(.data[["JWMNP"]], `0` = "N/A (not a worker or
-  worker who worked from home)")`.
-Caused by warning:
-! Unreplaced values treated as NA as `.x` is not compatible.
-Please specify replacements exhaustively or supply `.default`.</code></pre>
-</div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>yr2024e <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"AGEP"</span>, <span class="st">"SEX"</span>), <span class="at">restrict =</span> <span class="st">"SEX = 1"</span>) <span class="co">#Adding restriction (and spaces)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-── Column specification ────────────────────────────────────────────────────────
-cols(
-  AGEP = col_double(),
-  STATE = col_character(),
-  PWGTP = col_double(),
-  SEX = col_double()
-)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `AGEP = recode(.data[["AGEP"]], `0` = "Under 1 year")`.
-Caused by warning:
-! Unreplaced values treated as NA as `.x` is not compatible.
-Please specify replacements exhaustively or supply `.default`.</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>yr2024e <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"AGEP"</span>, <span class="st">"SEX"</span>), <span class="at">restrict =</span> <span class="st">"SEX = 1"</span>) <span class="co">#Adding restriction (and spaces)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>yr2022f <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2022</span>, <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"AGEP"</span>, <span class="st">"SEX"</span>, <span class="st">"GASP"</span>, <span class="st">"GRPIP"</span>, <span class="st">"JWAP"</span>, <span class="st">"JWDP"</span>, <span class="st">"JWMNP"</span>, <span class="st">"FER"</span>,<span class="st">"HHL"</span>,<span class="st">"SCH"</span>,<span class="st">"SCHL"</span>), <span class="at">restrict =</span> <span class="st">"REGION:1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>yr2022f <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2022</span>, <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"AGEP"</span>, <span class="st">"SEX"</span>, <span class="st">"GASP"</span>, <span class="st">"GRPIP"</span>, <span class="st">"JWAP"</span>, <span class="st">"JWDP"</span>, <span class="st">"JWMNP"</span>, <span class="st">"FER"</span>,<span class="st">"HHL"</span>,<span class="st">"SCH"</span>,<span class="st">"SCHL"</span>), <span class="at">restrict =</span> <span class="st">"REGION:1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>And one last one where I ask for all the states:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>yr2022g <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2024</span>, <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"AGEP"</span>, <span class="st">"SEX"</span>, <span class="st">"GASP"</span>, <span class="st">"GRPIP"</span>, <span class="st">"JWAP"</span>, <span class="st">"JWDP"</span>, <span class="st">"JWMNP"</span>, <span class="st">"FER"</span>,<span class="st">"HHL"</span>,<span class="st">"SCH"</span>,<span class="st">"SCHL"</span>), <span class="at">restrict =</span> <span class="st">"STATE:all"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>
-── Column specification ────────────────────────────────────────────────────────
-cols(
-  AGEP = col_double(),
-  GASP = col_double(),
-  GRPIP = col_double(),
-  JWAP = col_double(),
-  JWDP = col_double(),
-  JWMNP = col_double(),
-  SEX = col_double(),
-  FER = col_double(),
-  HHL = col_double(),
-  SCH = col_double(),
-  SCHL = col_double(),
-  ST = col_character(),
-  PWGTP = col_double(),
-  region = col_double()
-)</code></pre>
+<pre><code>Wow Vomit Comet, that's going to be a ton of data (from all 51 states), but I'm with you, I'm your ride-or-die!</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `AGEP = recode(.data[["AGEP"]], `00` = "Under 1 year")`.
-Caused by warning:
-! Unreplaced values treated as NA as `.x` is not compatible.
-Please specify replacements exhaustively or supply `.default`.</code></pre>
+<pre><code>Warning: Row 1 does not provide unique names. Consider running clean_names()
+after row_to_names().</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `GASP = recode(.data[["GASP"]], `3` = "N/A (GQ/vacant/included
-  in rent or in condo fee/included in electricity payment/no charge or gas not
-  used)")`.
-Caused by warning:
-! Unreplaced values treated as NA as `.x` is not compatible.
-Please specify replacements exhaustively or supply `.default`.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `GRPIP = recode(...)`.
-Caused by warning:
-! Unreplaced values treated as NA as `.x` is not compatible.
-Please specify replacements exhaustively or supply `.default`.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `JWMNP = recode(.data[["JWMNP"]], `0` = "N/A (not a worker or
-  worker who worked at home)")`.
-Caused by warning:
-! Unreplaced values treated as NA as `.x` is not compatible.
-Please specify replacements exhaustively or supply `.default`.</code></pre>
+<pre><code>Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if
+`.name_repair` is omitted as of tibble 2.0.0.
+ℹ Using compatibility `.name_repair`.</code></pre>
 </div>
 </div>
 <p>And a bunch where the function should fail:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>yr2020x <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2020</span>)  <span class="co">#Should fail, year out of range.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>yr2020x <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2020</span>)  <span class="co">#Should fail, year out of range.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in helper(year = 2020): Hey *NSync, the argument 'year' must be ONE of the following: 2021, 2022, 2023, 2024.</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>yr20212 <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="fu">c</span>(<span class="dv">2020</span>,<span class="dv">2021</span>))  <span class="co">#Should fail, too many years.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>yr20212 <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="fu">c</span>(<span class="dv">2020</span>,<span class="dv">2021</span>))  <span class="co">#Should fail, too many years.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in helper(year = c(2020, 2021)): Slow down One Direction, the argument 'year' must be a single value, not a vector or list.</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>yr2024x <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">vars=</span><span class="fu">c</span>(<span class="st">"AGEP"</span>, <span class="st">"BAS"</span>))  <span class="co">#Bad input variable.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>yr2024x <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">vars=</span><span class="fu">c</span>(<span class="st">"AGEP"</span>, <span class="st">"BAS"</span>))  <span class="co">#Bad input variable.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in helper(vars = c("AGEP", "BAS")): Yo, New Kids on the Block, you chose variables that are not in our list. Please restrict to numeric variables: AGEP, GASP, GRPIP, JWAP, JWDP, JWMNP, and to categorical varailes: FER, HHL, SCH, SCHL, SEX.</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>yr2021x <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2021</span>, <span class="at">restrict =</span> <span class="st">"STATE:3"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>yr2021x <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2021</span>, <span class="at">restrict =</span> <span class="st">"STATE:3"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `helper()`:
 ! No no NO, Jonas Brother, you are asking for some STATE FIPS code we
@@ -511,7 +412,7 @@ Please specify replacements exhaustively or supply `.default`.</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>yr2022x <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2022</span>, <span class="at">restrict =</span> <span class="st">"REGION:5"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>yr2022x <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2022</span>, <span class="at">restrict =</span> <span class="st">"REGION:5"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in helper(year = 2022, restrict = "REGION:5"): Ahoy, Troubled Youth, ACS uses the standard 4 census regions, numbered 1 to 4.</code></pre>
 </div>
@@ -521,30 +422,64 @@ Please specify replacements exhaustively or supply `.default`.</code></pre>
 <h2 class="anchored" data-anchor-id="combining-multiple-years">Combining Multiple Years</h2>
 <p>I began trying to loop the function, but it kept giving me an error in the geography, even when I tested it on functions I’d already done.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>multi_year <span class="ot">&lt;-</span> <span class="cf">function</span>(years, vars, <span class="at">restrictions =</span> <span class="st">""</span>) {</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (yrs <span class="cf">in</span> years) {</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(<span class="st">"multiple_yrs_"</span>,yrs) <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> yrs, vars, restrictions)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Create a new column with the year.</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">paste0</span>(<span class="st">"multiple_yrs_"</span>,yrs))</span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>yr2024_Test1 <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"FER"</span>, <span class="st">"SEX"</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>multi_year <span class="ot">&lt;-</span> <span class="cf">function</span>(years, vars, <span class="at">restrictions =</span> <span class="st">""</span>) {</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (yrs <span class="cf">in</span> years) {</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    temp_data <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> yrs, vars, restrictions)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Create a new column with the year.</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    temp_data <span class="sc">|&gt;</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">YEAR =</span> yrs)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">assign</span>(<span class="fu">paste0</span>(<span class="st">"acs_data_"</span>, yrs), temp_data)</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Append the datasets together</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>  combined_acs_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(acs_data_2021, acs_data_2022)</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(combined_acs_data)</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>acs_2021_2022 <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">years =</span> <span class="fu">c</span>(<span class="dv">2021</span>,<span class="dv">2022</span>), <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"FER"</span>, <span class="st">"SEX"</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>However, even though I can’t get the function to work over multiple years, I’d like to keep going a bit further. Here I will backdoor an appended dataset.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Individually generate the two dataset, add a year variable.</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>acs_data_2021 <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2021</span>, <span class="at">vars  =</span> <span class="fu">c</span>(<span class="st">"SCHL"</span>, <span class="st">"GASP"</span>, <span class="st">"SEX"</span>), <span class="at">restriction =</span> <span class="st">"REGION:1"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">YEAR =</span> <span class="dv">2021</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>acs_data_2022 <span class="ot">&lt;-</span> <span class="fu">helper</span>(<span class="at">year =</span> <span class="dv">2022</span>, <span class="at">vars  =</span> <span class="fu">c</span>(<span class="st">"SCHL"</span>, <span class="st">"GASP"</span>, <span class="st">"SEX"</span>), <span class="at">restriction =</span> <span class="st">"REGION:1"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">YEAR =</span> <span class="dv">2022</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Combine the two together.</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>acs_2021_2022 <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(acs_data_2021, acs_data_2022)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
 <section id="part-2---writing-a-generic-function-for-summarizing" class="level1">
 <h1>Part 2 - Writing a Generic Function for Summarizing</h1>
-<p>This is the point in the project where I gave up. I wasn’t going to make sufficient progress in the time I have remaining, and felt like I had learned what I was going to learn from doing this activity.</p>
+<p>Given the artificially built data set, I began trying to do some of the EDA.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(tibble_name, <span class="at">numeric_vars =</span> <span class="fu">c</span>(<span class="st">"AGEP"</span>,<span class="st">"GASP"</span>,<span class="st">"GRPIP"</span>), <span class="at">categorical_vars =</span> <span class="fu">c</span>(<span class="st">"FER"</span>,<span class="st">"HHL"</span>,<span class="st">"SCH"</span>,<span class="st">"SCHL"</span>,<span class="st">"SEX"</span>)) {</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Parse the inputs:</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Run calculations on numeric</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">sapply</span>(numeric_vars, )</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>} </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">df =</span> acs_2021_2022, <span class="at">numeric_vars =</span> <span class="fu">c</span>(<span class="st">"GASP"</span>), <span class="at">categorical_vars =</span> <span class="fu">c</span>(<span class="st">"SCHL"</span>,<span class="st">"SEX"</span>)) {</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Parse the inputs:</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Run calculations on numeric</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  summaries <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>(GASP) <span class="sc">|&gt;</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">mean =</span> <span class="fu">sum</span>(GASP<span class="sc">*</span>PWGTP)<span class="sc">/</span><span class="fu">sum</span>(PWGTP),</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">stdev =</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>(GASP<span class="sc">*</span>GASP<span class="sc">*</span>PWGTP)<span class="sc">/</span><span class="fu">sum</span>(PWGTP)<span class="sc">-</span>mean<span class="sc">*</span>mean))</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">numeric_mean =</span> mean, <span class="at">numeric_stdbev =</span>stdev))</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>So far this function is operational, but when I try to run it I get an error stating that GASP is not numeric.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary_stats</span>(acs_2021_2022, <span class="at">numeric_vars =</span> <span class="st">"GASP"</span>, <span class="at">categorical_vars =</span> <span class="fu">c</span>(<span class="st">"SCHL"</span>,<span class="st">"SEX"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `mutate()`:
+ℹ In argument: `mean = sum(GASP * PWGTP)/sum(PWGTP)`.
+Caused by error in `GASP * PWGTP`:
+! non-numeric argument to binary operator</code></pre>
+</div>
+</div>
+<p>This is the point in the project where I gave up. I wasn’t going to make sufficient progress in the time I have remaining, and felt like I had learned what I was going to learn from doing this activity.</p>
 </section>
 
 </main>

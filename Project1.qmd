@@ -234,8 +234,7 @@ Great. At this point I'm ready to call the API and get to downloading some data!
   #Make API result into tibble, save it, and display it in the log
   api_result <- parsed |>
     janitor::row_to_names(row_number = 1) |>
-    as_tibble() |>
-    type_convert()
+    as_tibble()
 ```
 Now it's just a matter of applying the labels from above and letting it run!
 
@@ -299,9 +298,9 @@ helper <- function(year = 2024, vars = c(), restrictions = c()) {
       }
 
       #Create separate lists of the requested variables for each type
-       req_num_vars <- paste(vars[vars %in% numeric_vars], collapse = ",")
-       req_str_vars <- paste(vars[vars %in% string_vars], collapse = ",")
-       req_geo_vars <- paste(vars[vars %in% geography_vars], collapse = ",")
+      req_num_vars <- paste(vars[vars %in% numeric_vars], collapse = ",")
+      req_str_vars <- paste(vars[vars %in% string_vars], collapse = ",")
+      req_geo_vars <- paste(vars[vars %in% geography_vars], collapse = ",")
        
        #Push out defaults, in case nothing is listed (in a sub category)
        if (nchar(req_num_vars) == 0) req_num_vars <- "AGEP"
@@ -380,12 +379,11 @@ helper <- function(year = 2024, vars = c(), restrictions = c()) {
   #Call the API, parse the data
   variable_json <- httr::GET(final_api)
   parsed <- fromJSON(rawToChar(variable_json$content))
-
+  
   #Make API result into tibble, save it, and display it in the log
   api_result <- parsed |>
     janitor::row_to_names(row_number = 1) |>
-    as_tibble() |>
-    type_convert()
+    as_tibble()
   
   #Manipulate the data in the tibble, adding labels to categorical, dates to date variables, converting numeric-seen-as-strings to true numeric
   final_data <- api_result
@@ -423,6 +421,11 @@ yr2024e <- helper(vars = c("AGEP", "SEX"), restrict = "SEX = 1") #Adding restric
 ```{r}
 yr2022f <- helper(year = 2022, vars = c("AGEP", "SEX", "GASP", "GRPIP", "JWAP", "JWDP", "JWMNP", "FER","HHL","SCH","SCHL"), restrict = "REGION:1")
 ```
+And one last one where I ask for all the states:
+```{r}
+yr2022g <- helper(year = 2024, vars = c("AGEP", "SEX", "GASP", "GRPIP", "JWAP", "JWDP", "JWMNP", "FER","HHL","SCH","SCHL"), restrict = "STATE:all")
+```
+
 
 And a bunch where the function should fail:
 ```{r}
@@ -460,29 +463,59 @@ I began trying to loop the function, but it kept giving me an error in the geogr
 
 multi_year <- function(years, vars, restrictions = "") {
   for (yrs in years) {
-    paste0("multiple_yrs_",yrs) <- helper(year = yrs, vars, restrictions)
+    temp_data <- helper(year = yrs, vars, restrictions)
+    
+    #Create a new column with the year.
+    temp_data |>
+      mutate(YEAR = yrs)
+    
+    assign(paste0("acs_data_", yrs), temp_data)
   }
-  #Create a new column with the year.
-  return(paste0("multiple_yrs_",yrs))
+  #Append the datasets together
+  combined_acs_data <- bind_rows(acs_data_2021, acs_data_2022)
+  
+  return(combined_acs_data)
 }
 
-yr2024_Test1 <- helper(vars = c("FER", "SEX")) 
+acs_2021_2022 <- helper(years = c(2021,2022), vars = c("FER", "SEX")) 
+
 
 ```
+However, even though I can't get the function to work over multiple years, I'd like to keep going a bit further. Here I will backdoor an appended dataset.
+```{r}
+#Individually generate the two dataset, add a year variable.
+acs_data_2021 <- helper(year = 2021, vars  = c("SCHL", "GASP", "SEX"), restriction = "REGION:1") |>
+  mutate(YEAR = 2021)
+acs_data_2022 <- helper(year = 2022, vars  = c("SCHL", "GASP", "SEX"), restriction = "REGION:1") |>
+  mutate(YEAR = 2022)
 
+#Combine the two together.
+acs_2021_2022 <- bind_rows(acs_data_2021, acs_data_2022)
+```
 
 # Part  2 - Writing a Generic Function for Summarizing
 
-This is the point in the project where I gave up. I wasn't going to make sufficient progress in the time I have remaining, and felt like I had learned what I was going to learn from doing this activity.
+Given the artificially built data set, I began trying to do some of the EDA.
 
 ```{r}
-#| eval: false
-
-summary_stats <- function(tibble_name, numeric_vars = c("AGEP","GASP","GRPIP"), categorical_vars = c("FER","HHL","SCH","SCHL","SEX")) {
+summary_stats <- function(df = acs_2021_2022, numeric_vars = c("GASP"), categorical_vars = c("SCHL","SEX")) {
   #Parse the inputs:
   
   #Run calculations on numeric
-  results <- sapply(numeric_vars, )
+  summaries <- df |>
+    drop_na(GASP) |>
+    mutate(mean = sum(GASP*PWGTP)/sum(PWGTP),
+    stdev = sqrt(sum(GASP*GASP*PWGTP)/sum(PWGTP)-mean*mean))
   
-} 
+  return(list(numeric_mean = mean, numeric_stdbev =stdev))
+}
 ```
+
+So far this function is operational, but when I try to run it I get an error stating that GASP is not numeric.
+```{r}
+#| error: true
+
+summary_stats(acs_2021_2022, numeric_vars = "GASP", categorical_vars = c("SCHL","SEX"))
+```
+
+This is the point in the project where I gave up. I wasn't going to make sufficient progress in the time I have remaining, and felt like I had learned what I was going to learn from doing this activity.

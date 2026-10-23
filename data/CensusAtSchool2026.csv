@@ -1,0 +1,865 @@
+state,classgrade,gender,ageyears,handed,languages_spoken,travel_to_school,travel_time_to_school,favourite_physical_activity,birth_month,favorite_season,allergies,vegetarian,favorite_school_subject,home_occupants,home_internet_access,communication_with_friends,text_messages_sent_yesterday,text_messages_received_yesterday,doing_homework_hours,doing_things_with_family_hours,texting_messaging_hours,schoolwork_pressure,planned_education_level,favorite_music,superpower,preferred_status,role_model_type
+CA,12,Male,17,Right-Handed,2,Walk,3,Martial Arts,May,Winter,No,No,Science,6,Yes - other,"Myspace, Facebook, other social networking sites, or blog",8,35,4,1,1,None,Graduate degree,Heavy metal,Fly,Happy,Friend
+OK,12,Male,16,Ambidextrous,1,Car,6,Soccer,,,,,,,,,,,,,,,,,,,
+PA,4,Female,17,Right-Handed,1,Car,3,Lacrosse,June,Summer,No,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,30,40,2,5,7,A lot,Graduate degree,Pop,Fly,Happy,
+IL,12,Female,17,Right-Handed,1,Car,8,Lacrosse,June,Summer,No,No,Mathematics and statistics,3,Yes - other,In person,100,100,15,10,7,Some,Graduate degree,Country,Freeze time,Happy,Relative
+NJ,12,Female,16,Right-Handed,2,Car,5,Athletics,April,Spring,No,No,Science,4,Yes - broadband connection,Text messaging,100,100,3,5,5,Very little,Graduate degree,Rhythm and blues (R&B),Telepathy,Healthy,Doctor or nurse
+CA,12,Female,17,Right-Handed,2,Walk,4,Dancing,June,Fall,No,No,History,3,Yes - other,In person,30,30,8,0,1,Some,Undergraduate degree,Reggae,Telepathy,Rich,Politician
+CA,11,Female,16,Right-Handed,2,Car,80,Walking/Hiking,July,Winter,No,Yes,Languages,3,Yes - broadband connection,Other,120,90,3,2,6,A lot,Graduate degree,Rhythm and blues (R&B),Fly,Rich,Friend
+CA,11,Female,15,Right-Handed,1,Car,12,Hockey (Field),December,Winter,Yes,No,Art,4,Yes - other,In person,150,200,10,1,2,A lot,Graduate degree,Pop,Fly,Rich,Musician or singer
+OH,7,Female,12,Right-Handed,1,Bus,20,Other,May,Summer,Yes,No,Science,4,Yes - broadband connection,Text messaging,30,100,30,25,100,Some,Graduate degree,Rap/Hip hop,Freeze time,Happy,Other
+CA,10,Male,17,Right-Handed,1,Car,10,Basketball,May,Summer,No,No,Science,4,Yes - other,Internet chat or instant messaging,30,25,4,0,0,Some,Graduate degree,Rhythm and blues (R&B),Fly,Rich,Business person
+PA,12,Male,17,Left-Handed,1,Car,7,Tennis,December,Fall,Yes,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,90,160,4,6,2,Some,Graduate degree,Pop,Telepathy,Rich,Relative
+IL,12,Female,17,Right-Handed,2,Car,12,Other,September,Summer,No,No,Science,5,Yes - broadband connection,In person,50,55,16,10,3,Some,Graduate degree,Pop,Fly,Happy,Sports person
+CO,12,Male,17,Right-Handed,1,Car,15,Walking/Hiking,June,Fall,No,No,Mathematics and statistics,3,Yes - broadband connection,Text messaging,15,80,3,4,1,Very little,Graduate degree,Rap/Hip hop,Freeze time,Happy,Musician or singer
+MN,8,Male,13,Right-Handed,1,Car,18,Soccer,August,Summer,No,No,Geography,,Yes - other,Other,51,125,0,2,6,A lot,Other,Rap/Hip hop,Fly,Rich,Sports person
+MA,6,Male,11,Right-Handed,2,Car,20,Bowling,July,Winter,No,No,Other,4,Yes - broadband connection,Text messaging,2,2,0,.5,.5,A lot,Other,Techno/Electronic,Freeze time,Rich,Relative
+IN,12,Female,17,Right-Handed,2,Car,10,Soccer,June,Spring,Yes,No,History,6,Yes - other,Text messaging,180,165,4,6,15,Some,Graduate degree,Reggae,Telepathy,Rich,Friend
+IN,11,Female,17,Right-Handed,1,Bus,21,Walking/Hiking,May,Spring,Yes,No,Art,3,Yes - broadband connection,Text messaging,7,8,2,6,1,Some,Graduate degree,Punk rock,Fly,Rich,Doctor or nurse
+OH,12,Male,18,Right-Handed,2,Car,6,Dancing,September,Spring,Yes,No,Art,6,Yes - broadband connection,Text messaging,0,3,3,5,0,Very little,Graduate degree,Pop,Fly,Happy,Other
+CA,12,Male,17,Right-Handed,2,Car,12,Baseball/Softball,March,Winter,Yes,No,Art,6,Yes - other,In person,100,100,5,4,1,Some,High school,Rap/Hip hop,Freeze time,Healthy,Business person
+OR,11,Female,18,Right-Handed,1,Walk,7,Other,March,Spring,Yes,No,Science,4,Yes - broadband connection,In person,50,50,10,30,5,A lot,Graduate degree,Jazz,Fly,Rich,Religious figure
+WV,11,Female,17,Right-Handed,1,Bus,10,Other,February,Winter,Yes,No,Art,4,Yes - other,Cell phone,480,692,4,7,,,,,,,
+CA,10,Female,17,Right-Handed,2,Bus,10,Other,October,Summer,No,No,Other,5,,"Myspace, Facebook, other social networking sites, or blog",6,12,5,6,,,,,,,
+OK,11,Female,16,Right-Handed,2,Car,16,Other,August,Summer,No,No,Other,4,Yes - dial-up connection,Internet chat or instant messaging,200,220,3,3,20,Some,Graduate degree,Other,Freeze time,Rich,Relative
+GA,12,Female,17,Right-Handed,1,Car,7,Bowling,March,Spring,Yes,No,Languages,5,Yes - other,Cell phone,35,46,5,10,23,Some,Graduate degree,Other,Telepathy,Rich,Musician or singer
+OK,9,Female,14,Right-Handed,1,Car,5,Other,July,Fall,Yes,No,Art,3,Yes - other,Text messaging,15,27,5,3,1,A lot,Graduate degree,Other,Fly,Happy,Friend
+NJ,12,Female,17,Right-Handed,2,Car,15,Soccer,December,Fall,No,No,English,5,Yes - dial-up connection,Cell phone,66,67,1,14,8,Some,Graduate degree,Rap/Hip hop,Invisibility,Rich,Community leader or elder
+OK,11,Female,17,Right-Handed,1,Car,5,Walking/Hiking,February,Summer,No,No,Other,6,Yes - other,In person,20,61,14,15,10,A lot,Graduate degree,Pop,Invisibility,Happy,Friend
+OK,11,Female,17,Right-Handed,2,Car,15,Running/Jogging,December,Fall,No,No,Mathematics and statistics,3,Yes - other,Text messaging,5,10,2,5,2,Some,Graduate degree,Other,Telepathy,Healthy,Relative
+CO,12,Male,17,Ambidextrous,1,Car,7,Basketball,March,Fall,No,No,English,4,Yes - other,Cell phone,4,5,2,3,1,Some,Graduate degree,Rap/Hip hop,Fly,Rich,Relative
+GA,11,Female,16,Right-Handed,3,Bus,15,Dancing,August,Summer,No,No,History,5,Yes - broadband connection,In person,15,40,2,2,2,A lot,Graduate degree,Other,Super strength,Rich,Actor
+GA,11,Male,16,Right-Handed,2,Car,8,Athletics,May,Winter,Yes,No,Science,3,Yes - broadband connection,In person,20,40,4,20,5,Very little,Undergraduate degree,Rap/Hip hop,Fly,Healthy,Relative
+SC,12,Female,17,Right-Handed,1,Car,13,Other,,,,,,,,,,,,,,,,,,,
+MN,10,Female,16,Right-Handed,1,Car,4,Dancing,January,Summer,Yes,No,English,3,Yes - dial-up connection,In person,10,14,4,5,1,Some,Graduate degree,Country,Telepathy,Happy,Business person
+IL,12,Male,17,Right-Handed,4,Car,7,Soccer,December,Summer,No,No,Physical education,4,Yes - broadband connection,In person,100,120,1,4,6,Some,Graduate degree,Rap/Hip hop,Telepathy,Rich,Sports person
+MO,11,Female,16,Left-Handed,2,Car,4,None,May,Fall,No,No,Music,5,Yes - broadband connection,Text messaging,5,10,3,10,2,Some,Graduate degree,Rock and roll,Freeze time,Rich,Musician or singer
+NJ,12,Male,17,Right-Handed,1,Walk,3,Athletics,July,Summer,No,No,History,5,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",55,60,0,10,3,Very little,Some college,Rap/Hip hop,Super strength,Rich,Sports person
+SC,12,Female,17,Right-Handed,1,Car,15,Skateboarding/Rollerblading,June,Summer,Yes,No,Social studies,5,Yes - broadband connection,In person,30,20,,25,25,Some,Graduate degree,Other,,Rich,Religious figure
+NY,12,Female,17,Right-Handed,1,Car,7,Other,July,Summer,No,No,English,5,Yes - broadband connection,Text messaging,20,50,7,3,5,Some,Graduate degree,Pop,Invisibility,Happy,Relative
+PA,10,Male,14,Right-Handed,3,Car,7,Football (American),April,Fall,Yes,No,History,8,Yes - broadband connection,In person,10,9,3,6,2,Very little,Graduate degree,Pop,Telepathy,Happy,Relative
+CO,12,Female,17,Right-Handed,2,Car,8,Swimming,December,Summer,Yes,No,Science,3,Yes - other,Cell phone,25,75,10,,,,,,,,
+CA,12,Male,17,Right-Handed,3,Car,15,Basketball,September,Summer,No,No,Mathematics and statistics,5,Yes - broadband connection,In person,30,50,25,10,10,None,Undergraduate degree,Rap/Hip hop,Telepathy,Happy,Sports person
+MI,7,Female,12,Right-Handed,5,Car,7,Running/Jogging,July,Spring,Yes,No,Science,3,Yes - broadband connection,Text messaging,82,400,9,1,8,Some,Graduate degree,Pop,Fly,Happy,Friend
+WA,10,Male,14,Right-Handed,1,Car,15,Cycling,April,Summer,No,No,Other,4,Yes - broadband connection,Text messaging,20,200,0,20,10,Very little,Graduate degree,Other,Fly,Rich,Other
+GA,12,Female,17,Right-Handed,1,Car,15,Other,,,,,,,,,,,,,,,,,,,
+MN,10,Male,16,Right-Handed,1,Walk,2,Hockey (Ice),November,Summer,No,No,Art,4,Yes - other,Text messaging,5,5,7,15,1,Very little,Graduate degree,Punk rock,Freeze time,Rich,Sports person
+NC,12,Male,18,Ambidextrous,1,Car,10,Soccer,December,Winter,Yes,No,Social studies,2,Yes - broadband connection,Text messaging,500,1000,3,3,24,Some,Graduate degree,Punk rock,Freeze time,Rich,Business person
+IN,12,Female,17,Right-Handed,1,Car,3,Dancing,November,Summer,No,No,Art,4,Yes - broadband connection,Cell phone,4,10,5,2,2,None,Graduate degree,,Invisibility,Rich,Relative
+VA,10,Male,13,Right-Handed,1,Car,6,None,April,Fall,Yes,No,Music,3,Yes - broadband connection,Cell phone,23,48,2,10,3,Some,Other,Techno/Electronic,Super strength,Healthy,Other
+OR,12,Female,18,Right-Handed,1,Car,7,None,April,Spring,No,No,Music,4,Yes - broadband connection,Text messaging,1,10,4,4,1,Some,Undergraduate degree,Rock and roll,Invisibility,Happy,Musician or singer
+CA,12,Female,16,Right-Handed,1,Car,5,Baseball/Softball,September,Fall,Yes,No,History,5,Yes - other,Cell phone,1,5,24,14,7,Some,High school,Punk rock,Telepathy,Healthy,Relative
+IL,11,Female,17,Right-Handed,2,Car,7,Other,June,Fall,No,No,Science,4,Yes - other,Text messaging,70,65,15,2,7,A lot,Graduate degree,Pop,Freeze time,Happy,Friend
+MI,7,Male,13,Right-Handed,1,Bus,35,Hockey (Ice),September,Summer,Yes,No,Physical education,4,Yes - other,Text messaging,7,4,2,1,3,Some,Some college,Other,Freeze time,Happy,Sports person
+NC,12,Male,18,Right-Handed,1,Car,7,Football (American),August,Winter,Yes,No,History,4,Yes - broadband connection,Text messaging,50,60,3,2,5,Some,High school,Rap/Hip hop,Freeze time,Rich,Musician or singer
+NY,10,Male,16,Right-Handed,2,Walk,41,Other,February,Winter,Yes,No,Mathematics and statistics,5,Yes - broadband connection,In person,6,7,12,1,2,Some,High school,Other,Invisibility,Healthy,Friend
+NC,12,Female,18,Right-Handed,2,Car,30,None,September,Spring,No,No,Social studies,7,Yes - broadband connection,In person,50,60,0,0,10,Some,Undergraduate degree,Rap/Hip hop,Invisibility,Rich,Doctor or nurse
+GA,12,Male,17,Right-Handed,1,Car,35,Football (American),November,Summer,Yes,No,History,4,Yes - other,Text messaging,20,30,3,.5,2,Some,Graduate degree,Rock and roll,Freeze time,Famous,Musician or singer
+NC,10,Male,15,Left-Handed,2,Bus,30,Soccer,June,Spring,No,No,History,4,Yes - broadband connection,In person,84,56,9,2,6,A lot,Graduate degree,Rap/Hip hop,Freeze time,Rich,Relative
+MN,8,Male,13,Right-Handed,1,Car,3,Other,May,Summer,Yes,Yes,Art,,Yes - broadband connection,In person,5,9,.3,3,.2,Some,Graduate degree,Other,Freeze time,Happy,Sports person
+CA,12,Female,17,Right-Handed,1,Car,7,Soccer,March,Fall,No,No,History,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",72,70,2,5,10,A lot,Graduate degree,Pop,Telepathy,Happy,Friend
+OK,12,Female,18,Right-Handed,2,Car,15,Other,February,Summer,No,No,Mathematics and statistics,3,Yes - broadband connection,Internet chat or instant messaging,100,100,4,3,20,Very little,Graduate degree,Rap/Hip hop,Telepathy,Rich,Doctor or nurse
+MI,12,Female,16,Right-Handed,1,Car,5,Soccer,September,Summer,No,No,History,5,Yes - broadband connection,Text messaging,0,0,5,10,1,Some,Some college,Rock and roll,Fly,Happy,Religious figure
+ID,12,Male,18,Ambidextrous,1,Bus,45,Hockey (Ice),March,Winter,No,No,Other,,Yes - other,In person,5,7,0,4,.25,Some,High school,Other,Super strength,Happy,Other
+VA,10,Female,17,Right-Handed,1,Car,15,Athletics,November,Fall,Yes,No,Science,3,Yes - other,Cell phone,500,250,5,32,,Very little,Other,Country,Invisibility,Happy,Other
+NC,12,Female,17,Right-Handed,1,Bus,7,Dancing,November,Winter,Yes,No,Art,5,Yes - other,Internet chat or instant messaging,4,3,9,0,30,A lot,Less than high school,Other,Invisibility,Rich,Musician or singer
+OH,12,Male,17,Right-Handed,1,Car,5,Tennis,June,Summer,No,No,Other,4,Yes - other,Cell phone,50,0,0,10,80,None,High school,Heavy metal,Freeze time,Rich,Relative
+IA,12,Male,17,Right-Handed,1,Car,2,Athletics,August,Summer,Yes,No,Music,4,Yes - other,Cell phone,200,200,0,15,6,None,Graduate degree,Jazz,Telepathy,Healthy,Musician or singer
+FL,8,Male,14,Left-Handed,1,Car,20,Football (American),November,Fall,Yes,No,Physical education,4,Yes - broadband connection,In person,150,157,2,20,5,Some,Graduate degree,Rap/Hip hop,Telepathy,Rich,Sports person
+IN,12,Male,17,Left-Handed,1,Car,6,Walking/Hiking,March,Summer,No,No,Music,3,Yes - broadband connection,Text messaging,20,20,2,20,4,A lot,Graduate degree,Country,Fly,Happy,Relative
+NC,12,Female,17,Right-Handed,2,Car,9,Walking/Hiking,March,Spring,No,No,English,3,Yes - other,In person,2,2,5,60,1,Some,Undergraduate degree,Other,Telepathy,Rich,Relative
+MN,10,Female,16,Right-Handed,1,Car,10,Other,December,Fall,Yes,No,English,3,Yes - broadband connection,Internet chat or instant messaging,40,50,6,3,5,Some,Other,Pop,Fly,Healthy,Other
+NJ,12,Female,16,Right-Handed,1,Car,21,Other,September,Fall,No,No,Music,5,Yes - other,Internet chat or instant messaging,12,15,14,14,7,A lot,Undergraduate degree,Other,Telepathy,Happy,Musician or singer
+IN,11,Female,17,Right-Handed,1,Car,11,Walking/Hiking,June,Fall,Yes,No,Social studies,3,Yes - other,"Myspace, Facebook, other social networking sites, or blog",5,10,10,6,1,A lot,Graduate degree,Rhythm and blues (R&B),Telepathy,Healthy,Relative
+OR,11,Female,16,Right-Handed,2,Car,10,Basketball,December,Summer,No,No,English,6,Yes - broadband connection,Cell phone,120,79,7,3,3,A lot,Graduate degree,Rhythm and blues (R&B),Telepathy,Happy,Relative
+CA,12,Male,17,Right-Handed,2,Car,15,Football (American),August,Winter,No,No,Science,5,,Text messaging,200,300,6,3,5,Some,Graduate degree,Rap/Hip hop,Freeze time,Rich,Sports person
+IN,12,Male,17,Right-Handed,2,Car,19,Football (American),October,Winter,No,No,Physical education,5,Yes - broadband connection,Text messaging,8,14,1,5,3,None,Graduate degree,Country,Freeze time,Happy,Religious figure
+OK,12,Female,17,Right-Handed,1,Car,9,None,July,Summer,Yes,No,Art,3,Yes - other,Internet chat or instant messaging,2,9,0,28,80,Very little,Graduate degree,Other,Fly,Healthy,Relative
+CA,12,Female,17,Right-Handed,1,Car,15,Soccer,April,Spring,No,No,English,6,Yes - broadband connection,Text messaging,258,150,0,5,5,Some,Graduate degree,Country,Invisibility,Healthy,Relative
+CA,10,Female,15,Ambidextrous,1,Car,10,Baseball/Softball,April,Spring,No,No,Physical education,3,Yes - broadband connection,Text messaging,100,75,6,3,7,Some,Graduate degree,Rhythm and blues (R&B),Invisibility,Happy,Sports person
+CA,12,Female,17,Right-Handed,2,Car,45,Running/Jogging,January,Fall,No,No,History,3,Yes - other,Text messaging,40,30,20,3,7,A lot,Graduate degree,Rap/Hip hop,Freeze time,Happy,Politician
+OH,12,Female,18,Right-Handed,2,Bus,15,Walking/Hiking,November,Summer,No,No,Science,6,Yes - other,"Myspace, Facebook, other social networking sites, or blog",5,6,15,1,1,A lot,Undergraduate degree,Pop,Fly,Healthy,Relative
+OK,11,Male,16,Right-Handed,1,Car,4,Other,June,Winter,Yes,No,English,4,Yes - broadband connection,Text messaging,10,15,2,15,20,A lot,Some college,Heavy metal,Super strength,Healthy,Musician or singer
+PA,12,Male,17,Right-Handed,1,Bus,8,Walking/Hiking,April,Fall,No,No,Art,5,Yes - other,Text messaging,30,20,3,5,8,A lot,Graduate degree,Other,Telepathy,Happy,Friend
+PA,12,Female,17,Left-Handed,1,Car,7,Tennis,,,,,,,,,,,,,,,,,,,
+SC,12,Female,18,Right-Handed,,Bus,60,Walking/Hiking,December,Fall,Yes,No,Other,3,,,,,0,7,4,Very little,Some college,Rap/Hip hop,Invisibility,Rich,Friend
+MI,7,Female,13,Left-Handed,2,Car,10,None,February,Spring,No,Yes,Languages,4,Yes - other,Text messaging,80,70,18,2,15,A lot,Graduate degree,Punk rock,Telepathy,Healthy,Musician or singer
+NJ,12,Male,18,Right-Handed,1,Car,11,Soccer,March,Summer,Yes,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,50,60,1,5,3,Very little,Graduate degree,Pop,Freeze time,Happy,Relative
+MN,8,Male,12,Right-Handed,1,Bus,40,,,,,,,,,,,,,,,,,,,,
+OH,7,Male,12,Left-Handed,2,Bus,32,Athletics,June,Summer,Yes,No,Social studies,5,Yes - broadband connection,Text messaging,98,128,1,1,4,,,,,,
+TX,12,Male,16,Right-Handed,1,Car,15,Running/Jogging,May,Winter,No,No,Music,4,Yes - other,Cell phone,0,0,2,3,0,Very little,Graduate degree,Heavy metal,Telepathy,Famous,Musician or singer
+MN,8,Male,14,Right-Handed,1,Bus,20,Basketball,July,Winter,No,No,Social studies,4,Yes - other,In person,4,31,3,20,1,Very little,Graduate degree,Rap/Hip hop,Invisibility,Famous,Relative
+CO,12,Female,17,Right-Handed,2,Car,5,Dancing,September,Fall,Yes,Yes,Social studies,3,Yes - broadband connection,Text messaging,80,80,9,6,6,A lot,Undergraduate degree,Punk rock,Freeze time,Happy,Friend
+MI,7,Male,13,Right-Handed,1,Car,10,Tennis,January,Winter,No,No,Physical education,3,Yes - broadband connection,In person,0,0,7,10,0,Some,Graduate degree,Pop,Freeze time,Happy,Sports person
+IN,11,Male,17,Left-Handed,1,Car,15,Martial Arts,December,Winter,Yes,No,Mathematics and statistics,3,Yes - other,Internet chat or instant messaging,2,4,10,10,1,Some,Graduate degree,Rock and roll,Freeze time,Rich,Relative
+OK,11,Male,16,Right-Handed,1,Skateboard/Scooter/Rollerblade,7,Bowling,May,Fall,No,No,Science,3,Yes - other,Internet chat or instant messaging,11,60,3,4,2,A lot,Graduate degree,Punk rock,Super strength,Rich,Musician or singer
+IL,12,Female,17,Right-Handed,1,Car,16,Tennis,April,Winter,No,No,Science,4,Yes - other,Text messaging,161,161,4,40,7,Some,Graduate degree,Pop,Telepathy,Rich,Relative
+NJ,12,Female,18,Right-Handed,1,Car,8,Other,April,Spring,Yes,No,Mathematics and statistics,3,Yes - other,Text messaging,7,9,8,8,5,A lot,Graduate degree,Reggae,Telepathy,Healthy,Sports person
+NC,10,Female,16,Right-Handed,1,Car,12,Dancing,January,Summer,Yes,No,Physical education,2,Yes - other,,50,50,7,15,20,A lot,Graduate degree,Gospel,Telepathy,Happy,Relative
+MI,12,Female,17,Right-Handed,1,Car,17,Swimming,May,Summer,No,No,Social studies,2,Yes - broadband connection,Text messaging,120,100,8,2,10,Some,Graduate degree,Country,Telepathy,Rich,Other
+OK,11,Female,18,Right-Handed,1,Car,12,Other,January,Summer,No,No,Other,3,Yes - other,Cell phone,200,200,1,5,3,Some,Other,Pop,Fly,Happy,Relative
+NC,10,Male,15,Right-Handed,1,Car,15,Other,May,Fall,Yes,No,History,4,Yes - other,Text messaging,15,16,7,6,15,Some,Graduate degree,Heavy metal,Telepathy,Happy,Religious figure
+OH,8,Female,13,Right-Handed,2,Car,6,Dancing,,,,,,,,,,,,,,,,,,,
+IA,9,Male,15,Right-Handed,1,Car,25,Soccer,April,Winter,No,No,Music,5,Yes - other,Text messaging,45,120,1,1,5,Some,Graduate degree,Other,Freeze time,Happy,Other
+IN,12,Female,16,Left-Handed,2,Bus,32,Golf,October,Fall,No,No,Mathematics and statistics,4,Yes - broadband connection,Cell phone,50,50,7,14,2,A lot,Graduate degree,Rap/Hip hop,Freeze time,Happy,Relative
+ID,12,Male,18,Right-Handed,1,Walk,15,Basketball,March,Summer,No,No,Physical education,5,Yes - broadband connection,Text messaging,30,100,30,0,2,Some,Graduate degree,Rap/Hip hop,Invisibility,Happy,Relative
+NC,12,Male,17,Right-Handed,1,Car,11,Running/Jogging,November,Winter,No,No,Science,5,Yes - other,Text messaging,10,20,5,4,1.5,Some,Undergraduate degree,Rock and roll,Fly,Healthy,Relative
+CA,12,Female,17,Right-Handed,2,Car,13,Tennis,March,Summer,No,No,Art,4,Yes - broadband connection,Internet chat or instant messaging,400,450,5,10,14,Some,Graduate degree,Rap/Hip hop,Telepathy,Rich,Friend
+WA,10,Female,16,Right-Handed,1,Car,10,Skateboarding/Rollerblading,February,Summer,No,No,Music,2,Yes - broadband connection,In person,200,200,4,8,2,A lot,Graduate degree,Rap/Hip hop,Fly,Happy,Relative
+MN,8,Female,13,Right-Handed,1,Bus,15,Hockey (Ice),May,Fall,No,No,Art,4,Yes - broadband connection,Internet chat or instant messaging,30,50,1,2,2,Very little,Graduate degree,Rhythm and blues (R&B),Telepathy,Healthy,Coach or club leader
+WA,10,Male,16,Right-Handed,1,Car,4,Basketball,December,Summer,Yes,No,Computers and technology,3,Yes - other,Text messaging,20,20,,,,A lot,Some college,Rap/Hip hop,Fly,Rich,Relative
+CA,12,Female,18,Ambidextrous,1,Car,8,Athletics,January,Summer,No,No,Computers and technology,4,Yes - broadband connection,Text messaging,100,100,3,3,0,A lot,Graduate degree,Country,Telepathy,Happy,Relative
+IL,12,Male,17,Ambidextrous,4,Car,4,Martial Arts,June,Summer,No,No,Art,3,Yes - other,Internet chat or instant messaging,80,100,1,3,7,Some,Undergraduate degree,Rap/Hip hop,Fly,Happy,Actor
+GA,12,Female,18,Left-Handed,2,Car,10,Dancing,November,Fall,No,No,Art,4,Yes - other,Internet chat or instant messaging,45,60,1,12,3,Some,Graduate degree,Pop,Invisibility,Rich,Actor
+OK,11,Male,17,Right-Handed,1,Car,12,Football (American),February,Summer,No,No,Physical education,6,Yes - broadband connection,Text messaging,40,35,1,10,4,Some,Graduate degree,Country,Super strength,Rich,Business person
+MN,11,Female,17,Right-Handed,1,Bicycle,10,Walking/Hiking,December,Winter,No,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,5,15,10,20,,,,,,,
+OR,11,Male,17,Right-Handed,1,Bus,15,Martial Arts,November,Winter,No,No,Art,4,Yes - broadband connection,Text messaging,15,20,1,8,20,Some,Graduate degree,Rock and roll,Fly,Rich,Relative
+NC,10,Female,17,Right-Handed,1,Car,15,Other,January,Spring,No,No,History,4,Yes - other,Internet chat or instant messaging,150,130,10,9,49,Some,Graduate degree,Country,Freeze time,Happy,Other
+CA,12,Female,17,Right-Handed,2,Car,6,Dancing,February,Fall,No,No,Music,8,Yes - broadband connection,Cell phone,20,70,5,8,6,Some,Graduate degree,Rap/Hip hop,Fly,Rich,Actor
+KY,12,Female,17,Right-Handed,1,Car,10,Bowling,February,Winter,Yes,No,Mathematics and statistics,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",10,14,7,56,13,A lot,Graduate degree,Rap/Hip hop,Super strength,Healthy,Relative
+MS,12,Male,18,,3,Car,20,Soccer,October,Spring,No,No,Other,0,Yes - other,Text messaging,200,300,0,0,2,None,Other,Rap/Hip hop,Invisibility,Healthy,Business person
+CA,12,Female,16,Right-Handed,3,Walk,2,Other,October,Fall,No,No,Mathematics and statistics,6,Yes - other,Internet chat or instant messaging,23,20,15,0,18,A lot,Graduate degree,Other,Fly,Happy,Community leader or elder
+IN,12,Female,17,Right-Handed,1,Bus,10,Walking/Hiking,February,Fall,No,No,Art,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",40,30,3,8,10,Some,Some college,Other,Telepathy,Happy,Musician or singer
+SC,12,Female,18,Right-Handed,2,Car,35,Swimming,March,Fall,Yes,No,Music,5,Yes - broadband connection,Text messaging,8,2,0,3,1,Some,Other,Rhythm and blues (R&B),Telepathy,Healthy,Relative
+AZ,12,Male,17,Right-Handed,1,Car,15,Other,February,Winter,Yes,No,Art,5,Yes - other,In person,15,10,5,30,1,Some,Other,Other,Fly,Healthy,Relative
+OK,11,Male,18,Right-Handed,1,Car,10,None,January,Winter,Yes,No,Science,5,Yes - other,Text messaging,3,10,0,3,.5,A lot,Some college,Reggae,Freeze time,Rich,Relative
+MN,10,Male,16,Right-Handed,1,Car,6,Baseball/Softball,August,Summer,No,No,English,5,Yes - dial-up connection,Text messaging,20,30,2,10,10,Some,Some college,Jazz,Freeze time,Healthy,Religious figure
+NY,12,Male,17,Right-Handed,1,Car,5,Baseball/Softball,August,Fall,Yes,No,Physical education,4,Yes - dial-up connection,Text messaging,2,5,3,48,1,Some,Some college,Country,Invisibility,Happy,Relative
+CA,12,Male,17,Right-Handed,1,Car,8,Athletics,May,Summer,No,No,History,4,Yes - broadband connection,Text messaging,28,45,10,5,5,Very little,Graduate degree,Other,Fly,Rich,Religious figure
+NC,12,Male,18,Right-Handed,2,Car,18,Bowling,May,Winter,No,No,Other,2,Yes - other,Text messaging,28,30,0,0,2,A lot,Other,Reggae,Freeze time,Rich,Other
+KY,12,Female,17,Right-Handed,2,Car,40,Skateboarding/Rollerblading,June,Fall,No,No,History,6,Yes - other,Text messaging,230,370,7,5,11,A lot,Undergraduate degree,Heavy metal,Telepathy,Rich,Business person
+WA,10,Female,14,Ambidextrous,1,Car,35,Other,March,Summer,Yes,No,Other,4,Yes - broadband connection,Text messaging,60,400,3,2,1,Some,Graduate degree,Country,Telepathy,Happy,Relative
+CA,12,Female,17,Right-Handed,2,Bicycle,10,Walking/Hiking,May,Fall,No,No,Mathematics and statistics,5,Yes - other,Internet chat or instant messaging,20,30,3,7,1,Some,Graduate degree,Rap/Hip hop,Fly,Rich,Relative
+IL,12,Male,17,Right-Handed,,Car,2,Tennis,May,Summer,Yes,No,Mathematics and statistics,4,Yes - other,Text messaging,67,420,67,20,67,Some,Graduate degree,Punk rock,Invisibility,Rich,Sports person
+OK,11,Male,17,Right-Handed,1,Car,25,Walking/Hiking,August,Fall,Yes,No,Art,4,Yes - other,Other,5,7,1,35,1,Very little,Undergraduate degree,Other,Freeze time,Rich,Musician or singer
+MN,10,Female,14,Right-Handed,2,Car,7,Dancing,June,Summer,Yes,No,English,4,Yes - broadband connection,Internet chat or instant messaging,100,700,18,1,2,A lot,Graduate degree,Pop,Invisibility,Rich,Business person
+TX,12,Male,18,Left-Handed,1,Car,12,Martial Arts,July,Winter,No,No,History,4,Yes - broadband connection,Internet chat or instant messaging,0,2,0,1,1,Very little,High school,Heavy metal,Super strength,Happy,Friend
+MN,8,Male,13,Right-Handed,1,Bus,15,Other,February,Fall,Yes,No,Art,,Yes - broadband connection,Text messaging,,,0,1,1,Some,Graduate degree,Punk rock,Fly,Happy,Musician or singer
+VA,8,Male,13,Right-Handed,1,Car,5,Football (American),July,Summer,Yes,No,Mathematics and statistics,3,Yes - broadband connection,Internet chat or instant messaging,5,20,1,15,1,None,Undergraduate degree,Other,Freeze time,Healthy,Relative
+NY,11,Female,16,Right-Handed,2,Rail (Train/Tram/Subway),30,Other,December,Spring,No,Yes,Mathematics and statistics,3,No internet connection,"Myspace, Facebook, other social networking sites, or blog",33,33,10,10,1,Some,Graduate degree,Pop,Freeze time,Healthy,Business person
+OK,11,Female,17,Right-Handed,1,Car,15,Other,November,Fall,Yes,No,Music,4,Yes - other,In person,50,30,,,,A lot,Other,Other,Invisibility,Happy,Teacher
+OH,7,Female,13,Right-Handed,2,Bus,10,Soccer,January,Fall,Yes,No,English,3,Yes - other,Text messaging,500,500,5,60,100,A lot,Graduate degree,Punk rock,Super strength,Healthy,Teacher
+CA,12,Female,17,Right-Handed,1,Walk,13,Other,March,Fall,No,No,Other,5,Yes - other,Cell phone,10,15,8,70,10,Some,Undergraduate degree,Pop,Telepathy,Rich,Friend
+IN,12,Male,17,Right-Handed,1,Bus,21,Skateboarding/Rollerblading,June,Fall,Yes,No,Science,4,Yes - other,Text messaging,10,15,10,15,2,Some,Graduate degree,Punk rock,Fly,Happy,Relative
+IN,12,Female,17,Right-Handed,1,Car,13,None,May,Winter,No,No,Music,4,Yes - dial-up connection,In person,50,60,,,,,,,,,
+OH,12,Female,17,Right-Handed,1,Car,20,Hockey (Field),May,Fall,No,No,Mathematics and statistics,5,Yes - broadband connection,Text messaging,70,70,8,1,6,Some,Graduate degree,Pop,Fly,Happy,Friend
+CA,12,Male,17,Right-Handed,2,Car,10,Soccer,August,Summer,No,No,Mathematics and statistics,4,Yes - dial-up connection,Text messaging,10,5,4,1,1,A lot,Graduate degree,Rap/Hip hop,Freeze time,Happy,Sports person
+WA,10,Male,16,Right-Handed,1,Car,12,Running/Jogging,September,Fall,No,No,Languages,4,Yes - broadband connection,Text messaging,15,40,4,20,3,A lot,Graduate degree,Punk rock,Freeze time,Happy,Musician or singer
+NJ,12,Female,17,Right-Handed,,Car,3,Other,January,Winter,No,Yes,Other,6,Yes - broadband connection,Text messaging,,100,1,,24,Very little,Undergraduate degree,Country,Freeze time,Happy,Friend
+NY,10,Male,15,Left-Handed,3,Rail (Train/Tram/Subway),35,Martial Arts,December,Summer,Yes,No,Physical education,6,Yes - other,In person,12,24,3,3,1,A lot,Graduate degree,Pop,Freeze time,Happy,Sports person
+NY,12,Male,17,Right-Handed,2,Rail (Train/Tram/Subway),50,Other,December,Summer,Yes,No,Computers and technology,5,Yes - broadband connection,Internet chat or instant messaging,20,200,8,21,5,A lot,Undergraduate degree,Techno/Electronic,Freeze time,Happy,Business person
+WA,10,Female,15,Right-Handed,1,Walk,20,Swimming,August,Fall,No,No,English,4,Yes - other,In person,20,12,3,3,4,A lot,Graduate degree,Other,Freeze time,Happy,Relative
+PA,12,Female,17,Right-Handed,1,Car,13,Basketball,December,Summer,No,No,Physical education,4,Yes - broadband connection,In person,3,4,1,2,1,Very little,Undergraduate degree,Country,Invisibility,Rich,Relative
+MI,7,Male,12,Right-Handed,4,Bus,30,Swimming,,,,,,,,,,,,,,,,,,,
+CA,12,Female,17,Right-Handed,2,Car,25,Other,November,Fall,No,No,English,4,Yes - broadband connection,In person,75,150,25,2,5,Some,Graduate degree,Other,Freeze time,Famous,Friend
+OR,12,Male,16,Left-Handed,3,Bus,11,Table Tennis,August,Summer,Yes,No,Science,4,Yes - other,Internet chat or instant messaging,17,4,3,7,2,A lot,Graduate degree,Classical,Freeze time,Famous,Doctor or nurse
+MI,7,Female,12,Right-Handed,1,Car,8,Bowling,July,Summer,No,No,Languages,3,Yes - other,In person,47,15,12,1,10,A lot,Graduate degree,Pop,Freeze time,Happy,Relative
+OK,11,Male,17,Right-Handed,1,Car,14,Other,April,Winter,Yes,No,History,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",98,88,2,9,5,Some,Some college,Pop,Fly,Rich,Relative
+NC,12,Female,17,Right-Handed,1,Car,10,Swimming,,,,,,,,,,,,,,,,,,,
+PA,12,Male,17,Right-Handed,1,Car,8,Baseball/Softball,June,Fall,Yes,No,Other,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",20,20,0,5,3,Very little,Graduate degree,Rock and roll,Fly,Healthy,Relative
+VA,10,Male,15,Right-Handed,2,Bus,4,Football (American),March,Fall,No,No,Mathematics and statistics,3,Yes - broadband connection,Internet chat or instant messaging,2,2,1,10,2,Some,Graduate degree,Rap/Hip hop,Fly,Rich,Relative
+OR,12,Female,18,Right-Handed,2,Car,9,,,,,,,,,,,,,,,,,,,,
+OH,7,Male,12,Right-Handed,3,Bus,10,Soccer,June,Summer,Yes,No,Physical education,5,Yes - broadband connection,Text messaging,32,32,2,5,4,Very little,Graduate degree,Other,Freeze time,Healthy,Relative
+MN,10,Male,16,,2,Car,10,Football (American),February,Winter,No,No,Mathematics and statistics,11,Yes - broadband connection,Text messaging,,,2,4,5,Some,Some college,Other,Freeze time,Rich,Relative
+IL,12,Male,17,Right-Handed,3,Car,7,Athletics,November,Summer,Yes,No,Mathematics and statistics,4,Yes - other,In person,,,,,,Some,Graduate degree,Pop,Invisibility,Rich,Sports person
+NC,12,Male,17,Right-Handed,2,Car,23,Martial Arts,February,Fall,No,No,Social studies,4,Yes - other,Text messaging,,,4,1,1,Some,Graduate degree,Rhythm and blues (R&B),Telepathy,Happy,Relative
+NC,12,Male,17,Right-Handed,1,Car,2,Martial Arts,May,Winter,No,No,Mathematics and statistics,4,Yes - broadband connection,,2,2,0,10,0,None,High school,Heavy metal,Fly,Rich,Other
+PA,12,Female,17,Right-Handed,1,Car,10,Other,December,Winter,Yes,No,Other,4,Yes - other,Text messaging,50,150,9,5,7,A lot,Graduate degree,Techno/Electronic,Fly,Happy,Relative
+PA,10,Male,14,Right-Handed,3,Car,7,Football (American),April,Fall,Yes,No,History,8,Yes - broadband connection,In person,10,9,3,6,2,Very little,Graduate degree,Pop,Telepathy,Happy,Relative
+MN,10,Female,15,Ambidextrous,2,Bus,30,Other,April,Winter,Yes,No,Art,4,Yes - other,Text messaging,,,.3,3,4,A lot,Other,Other,Freeze time,Happy,Musician or singer
+SC,12,Female,17,Ambidextrous,,Car,10,Other,December,Fall,Yes,Yes,Science,2,Yes - broadband connection,In person,10,10,0,14,2,Very little,Other,Pop,Invisibility,Rich,Doctor or nurse
+CO,12,Female,17,Right-Handed,1,Car,8,Other,June,Winter,No,No,History,5,Yes - other,,30,45,7,9,8,Very little,Undergraduate degree,Punk rock,Telepathy,Healthy,Business person
+NC,12,Female,18,Left-Handed,2,Walk,4,Dancing,November,Fall,No,No,History,3,Yes - other,Internet chat or instant messaging,5,1000,2,3,2,Some,Graduate degree,Other,Freeze time,Happy,Relative
+CA,12,Male,17,Right-Handed,1,Car,30,Baseball/Softball,June,Fall,Yes,No,Other,4,Yes - other,Cell phone,13,20,3,0,20000,A lot,Other,Rap/Hip hop,Invisibility,Rich,Relative
+CA,12,Female,17,Left-Handed,2,Car,30,Swimming,November,Summer,No,No,Mathematics and statistics,5,Yes - broadband connection,In person,7,12,11,15,5,Very little,Graduate degree,Rap/Hip hop,Freeze time,Healthy,Doctor or nurse
+WV,11,Female,17,Right-Handed,2,Car,20,Walking/Hiking,May,Summer,No,No,English,6,Yes - other,Text messaging,50,150,3,10,7,Some,Undergraduate degree,Pop,Telepathy,Happy,Relative
+CO,12,Female,17,Ambidextrous,2,Walk,10,Dancing,March,Winter,No,No,English,6,Yes - broadband connection,Text messaging,70,84,6,3,10,A lot,Undergraduate degree,Pop,Freeze time,Rich,Friend
+GA,12,Female,17,Right-Handed,2,Bus,15,None,January,Fall,No,No,Geography,3,Yes - broadband connection,Text messaging,84,48,0,3,5,Some,Undergraduate degree,Pop,Freeze time,Happy,Other
+MN,10,Female,16,Right-Handed,2,Car,13,Hockey (Ice),October,Fall,No,No,Art,3,Yes - broadband connection,,50,50,6,5,9,Some,Graduate degree,Pop,Freeze time,Happy,Musician or singer
+WA,12,Female,17,Right-Handed,2,Bus,30,Walking/Hiking,October,Spring,Yes,No,History,4,Yes - broadband connection,Text messaging,110,100,5,7,50,Some,Some college,Rhythm and blues (R&B),Invisibility,Rich,Actor
+MI,7,Female,12,Right-Handed,5,Bus,10,Dancing,June,Summer,Yes,Yes,History,4,Yes - broadband connection,Text messaging,50,650,10,36,10,Some,High school,Other,Freeze time,Rich,
+NC,12,Female,16,Ambidextrous,1,Car,17,Soccer,August,Summer,Yes,No,Physical education,6,Yes - broadband connection,Text messaging,203,203,3,120,56,Very little,Some college,Country,Fly,Happy,Religious figure
+NC,12,Female,17,Right-Handed,1,Car,7,Baseball/Softball,October,Summer,No,No,History,5,Yes - other,"Myspace, Facebook, other social networking sites, or blog",12,30,4,15,12,Some,Graduate degree,Rhythm and blues (R&B),Invisibility,Healthy,Teacher
+WA,10,Female,15,Right-Handed,1,Car,15,Swimming,April,,Yes,No,Other,,Yes - broadband connection,Internet chat or instant messaging,,,2,0,4,A lot,Graduate degree,Other,Invisibility,Happy,Coach or club leader
+GA,12,Female,17,Right-Handed,3,Car,13,Dancing,March,Fall,Yes,No,History,4,Yes - broadband connection,Text messaging,100,300,7,7,6,A lot,Graduate degree,Rhythm and blues (R&B),Freeze time,Famous,Other
+OH,7,Male,13,Left-Handed,1,Other,1,Baseball/Softball,September,Summer,No,No,Other,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",180,200,0,7,14,A lot,Graduate degree,Rap/Hip hop,Invisibility,Rich,Sports person
+VT,12,Female,16,Left-Handed,1,Car,5,Dancing,June,Summer,Yes,No,Art,4,Yes - broadband connection,Internet chat or instant messaging,20,13,4,6,3,Some,Graduate degree,Other,Telepathy,Happy,Relative
+FL,8,Female,14,Right-Handed,2,Car,45,Walking/Hiking,June,Fall,Yes,No,Music,4,Yes - broadband connection,In person,200,600,7,35,90,A lot,Graduate degree,Pop,Telepathy,Rich,Friend
+OK,11,Male,17,Right-Handed,1,Car,15,Baseball/Softball,March,Winter,No,No,Computers and technology,4,Yes - broadband connection,Internet chat or instant messaging,2,1,5,25,40,Some,High school,Pop,Super strength,Happy,Relative
+MN,10,Male,16,,2,Car,10,Football (American),,,,,,,,,,,,,,,,,,,
+MI,7,Male,13,Right-Handed,1,Bus,21,Soccer,January,Winter,Yes,No,Music,4,Yes - other,In person,5,2000,4,6,.2,Some,Some college,Other,Freeze time,Happy,Doctor or nurse
+NC,12,Female,17,Right-Handed,1,Car,15,Walking/Hiking,March,Fall,No,No,Science,4,Yes - broadband connection,Internet chat or instant messaging,150,165,5,5,20,Some,Graduate degree,Heavy metal,Telepathy,Rich,Relative
+FL,12,Female,17,Right-Handed,1,Car,20,Swimming,May,Summer,No,No,Art,3,Yes - broadband connection,Internet chat or instant messaging,50,60,5,24,1,A lot,Graduate degree,Rock and roll,Fly,Happy,Relative
+IN,12,Male,16,Right-Handed,1,Car,3,Walking/Hiking,April,Fall,Yes,No,Other,3,Yes - other,Text messaging,50,40,1,3,3,A lot,High school,Rock and roll,Invisibility,Rich,Other
+IN,12,Male,16,Ambidextrous,1,Car,5,Basketball,November,Summer,No,No,Physical education,6,Yes - broadband connection,Cell phone,10,10,0,1,4,Some,Some college,Rap/Hip hop,Fly,Rich,Other
+CA,12,Female,17,Right-Handed,1,Car,3,Dancing,February,Summer,No,No,Mathematics and statistics,5,Yes - broadband connection,In person,40,63,10,10,5,,,,,,
+PA,12,Female,18,Right-Handed,1,Car,7,Other,December,Spring,No,No,History,5,Yes - broadband connection,Text messaging,80,100,2,5,3,Very little,Undergraduate degree,Other,Super strength,Rich,Relative
+MN,10,Female,15,Right-Handed,1,Bus,30,Swimming,August,Spring,Yes,Yes,Science,3,Yes - dial-up connection,Text messaging,20,30,1,25,1,Very little,Graduate degree,Pop,Telepathy,Happy,Doctor or nurse
+IN,12,Female,17,Right-Handed,1,Car,20,Walking/Hiking,October,Fall,Yes,No,Other,5,Yes - other,Text messaging,50,50,10,0,10,A lot,Graduate degree,Rhythm and blues (R&B),Telepathy,Rich,Relative
+CA,11,Male,17,Right-Handed,1,Car,13,Basketball,April,Summer,No,No,History,6,Yes - other,Cell phone,4,5,1,3,1,Very little,Graduate degree,Rhythm and blues (R&B),Super strength,Healthy,Sports person
+PA,12,Female,17,Right-Handed,2,Bus,20,Walking/Hiking,May,Summer,No,No,Other,4,Yes - other,Cell phone,100,140,4,4,9,A lot,Graduate degree,Other,Telepathy,Happy,Relative
+CA,12,Female,16,Right-Handed,2,Car,10,Other,February,Winter,No,No,Art,3,Yes - other,In person,36,47,6,3,7,Some,Some college,Other,Freeze time,Happy,Teacher
+AR,12,Male,18,Ambidextrous,1,Car,10,Martial Arts,September,Fall,Yes,No,History,3,Yes - other,Text messaging,2,3,1,3,4,Some,Graduate degree,Rap/Hip hop,Freeze time,Rich,Coach or club leader
+OK,10,Male,15,Right-Handed,1,Car,8,Cycling,July,Summer,No,No,Music,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",100,100,3,7,20,Some,Graduate degree,Heavy metal,Super strength,Famous,Musician or singer
+VA,10,Male,17,Right-Handed,1,Car,10,Basketball,November,Winter,Yes,No,English,4,Yes - broadband connection,Text messaging,5,4,5,3,1,Some,Graduate degree,Jazz,Freeze time,Healthy,Religious figure
+SC,12,Male,17,Left-Handed,1,,30,Other,August,Spring,No,No,Music,4,Yes - broadband connection,Text messaging,80,70,2,5,5,Very little,Some college,Other,Fly,Famous,Other
+MI,7,Female,13,Right-Handed,3,Car,15,Basketball,May,Summer,No,No,Mathematics and statistics,6,Yes - broadband connection,Text messaging,100,200,7,5,6,Some,Graduate degree,Classical,Telepathy,Happy,Relative
+CA,12,Male,17,Right-Handed,2,Car,5,Soccer,December,Winter,No,No,Physical education,6,Yes - dial-up connection,Text messaging,100,100,1,5,10,Some,High school,Pop,Telepathy,Healthy,Sports person
+NJ,12,Male,18,Right-Handed,1,Car,10,Lacrosse,August,Summer,No,No,Computers and technology,3,Yes - dial-up connection,Text messaging,50,50,1,3,12,Very little,Graduate degree,Rap/Hip hop,Fly,Rich,Sports person
+CA,12,Male,17,Right-Handed,2,Walk,20,Walking/Hiking,October,Winter,Yes,No,Physical education,5,Yes - broadband connection,In person,30,20,21,4,20,A lot,Graduate degree,Rock and roll,Telepathy,Happy,Actor
+OH,12,Male,17,Right-Handed,1,Car,5,Hockey (Ice),April,Summer,No,No,Mathematics and statistics,4,Yes - other,Internet chat or instant messaging,75,100,12,3,2,Some,Undergraduate degree,Country,Invisibility,Rich,Sports person
+IN,12,Male,18,Right-Handed,2,Bus,20,Soccer,May,Winter,Yes,No,Other,7,Yes - other,Cell phone,40,90,4,3,5,Some,High school,Other,Freeze time,Rich,Musician or singer
+GA,11,Male,16,Right-Handed,3,Car,10,Soccer,June,Summer,No,No,Mathematics and statistics,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",103,81,21,3,1,A lot,Graduate degree,Rap/Hip hop,Telepathy,Rich,Business person
+CA,10,Female,16,Right-Handed,2,Walk,25,Dancing,March,Summer,No,No,Art,2,Yes - broadband connection,In person,10,10,7,2,3,Some,Undergraduate degree,Rock and roll,Fly,Rich,Friend
+CA,12,Female,18,Right-Handed,2,Walk,10,Other,December,Summer,Yes,No,Other,5,Yes - broadband connection,Text messaging,50,30,1,2,12,Some,Graduate degree,Other,Telepathy,Rich,Relative
+OK,9,Female,15,Right-Handed,2,Car,7,Other,January,Fall,No,No,English,6,Yes - broadband connection,Text messaging,20,25,1,2,1,Some,Graduate degree,Other,Freeze time,Happy,Other
+MI,7,Male,12,Right-Handed,1,Car,15,Athletics,,,,,,,,,,,,,,,,,,,
+NY,11,Male,16,Right-Handed,2,Rail (Train/Tram/Subway),60,Football (American),December,Summer,Yes,No,Mathematics and statistics,3,Yes - other,Internet chat or instant messaging,100,100,7,7,3,Some,Graduate degree,Rap/Hip hop,Freeze time,Rich,Sports person
+MN,10,Female,16,Right-Handed,1,Car,10,Other,February,Fall,No,No,History,4,Yes - other,In person,10,19,2,25,1,Some,Undergraduate degree,Pop,Freeze time,Happy,Other
+OH,7,Female,12,Right-Handed,1,Bus,20,Other,May,Summer,Yes,No,Science,4,Yes - broadband connection,Text messaging,30,100,,,,Some,Graduate degree,,,,
+TN,12,Male,17,Right-Handed,1,Car,11,Baseball/Softball,March,Fall,No,No,History,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",20,20,10,5,10,Some,Graduate degree,Rap/Hip hop,Freeze time,Happy,Relative
+CO,12,Male,18,Right-Handed,1,Car,8,Other,November,Winter,Yes,,Other,3,Yes - other,Cell phone,50,60,0,30,1,A lot,High school,Techno/Electronic,Freeze time,Rich,Other
+MN,8,Male,13,Right-Handed,1,Car,15,Baseball/Softball,June,Fall,Yes,No,History,4,Yes - broadband connection,Other,800,830,10,20,30,Some,Some college,Rap/Hip hop,Super strength,Rich,Musician or singer
+NC,12,Female,18,Right-Handed,1,Car,8,Dancing,February,Spring,Yes,No,English,3,Yes - other,Text messaging,50,50,0,10,10,Some,Some college,Rap/Hip hop,Freeze time,Rich,Relative
+NC,12,Male,17,Right-Handed,1,Car,5,Football (American),May,Spring,Yes,No,Physical education,5,Yes - broadband connection,Text messaging,75,95,4,15,5,Some,Graduate degree,Rhythm and blues (R&B),Freeze time,Rich,Coach or club leader
+CA,10,Male,15,Right-Handed,3,Bicycle,10,Other,May,Spring,No,No,Other,4,Yes - dial-up connection,Text messaging,10,12,6,5,1,Very little,Graduate degree,Pop,Freeze time,Rich,Sports person
+TX,12,Female,16,Right-Handed,1,Car,15,Dancing,August,Winter,Yes,No,Physical education,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",8,12,2,0,12,Some,Graduate degree,Rhythm and blues (R&B),Freeze time,Rich,Coach or club leader
+CA,11,Female,17,Right-Handed,1,Car,10,,,,,,,,,,,,,,,,,,,,
+MN,12,Female,16,Right-Handed,1,Car,10,Basketball,June,Summer,No,No,English,4,Yes - other,Text messaging,120,140,8,12,10,Some,Undergraduate degree,Country,Invisibility,Happy,Relative
+MT,10,Female,16,Right-Handed,1,Car,10,Basketball,December,Summer,Yes,No,Art,5,Yes - broadband connection,Text messaging,600,600,10,40,120,A lot,Graduate degree,Country,Telepathy,Rich,Friend
+IN,12,Male,16,Left-Handed,1,Car,17,Tennis,May,Summer,No,No,Physical education,4,Yes - broadband connection,In person,30,120,0,30,10,Some,Graduate degree,Country,,Rich,Relative
+CA,12,Female,16,Right-Handed,2,Walk,2,Other,October,Summer,No,No,Social studies,6,Yes - broadband connection,In person,100,100,40,10,40,Some,Graduate degree,Pop,Freeze time,Rich,Musician or singer
+WA,12,Female,18,Right-Handed,1,Car,20,Soccer,December,Winter,Yes,No,English,6,Yes - broadband connection,In person,20,32,3,2,2,Some,Graduate degree,Other,Invisibility,Happy,Relative
+TN,12,Male,17,Right-Handed,2,Car,25,Baseball/Softball,December,Summer,Yes,No,Physical education,4,Yes - other,In person,12,15,6,3,1,Some,Graduate degree,Gospel,Fly,Happy,Relative
+TN,12,Female,17,Right-Handed,3,Car,20,Skateboarding/Rollerblading,December,Winter,No,No,Art,6,Yes - broadband connection,Cell phone,5,8,10,5,1,Some,Graduate degree,Rock and roll,Freeze time,Famous,Relative
+MO,11,Male,18,Left-Handed,1,Car,7,Football (American),July,Summer,Yes,No,Physical education,5,Yes - broadband connection,In person,30,40,1,6,2,A lot,Graduate degree,Country,Super strength,Happy,Business person
+CA,12,Male,17,Right-Handed,2,Car,5,Swimming,October,Fall,Yes,No,English,4,Yes - broadband connection,Internet chat or instant messaging,100,76,20,6,8,A lot,Graduate degree,Rap/Hip hop,Freeze time,Happy,Relative
+MI,7,Female,13,Ambidextrous,1,Car,4,Dancing,November,Fall,Yes,No,English,4,Yes - broadband connection,Text messaging,75,100,1,4,3,Some,Some college,Other,Freeze time,Healthy,Actor
+NC,12,Male,17,Right-Handed,1,Car,8,Basketball,May,Spring,No,No,History,4,Yes - other,Internet chat or instant messaging,10,15,5,7,8,Very little,Graduate degree,Rock and roll,Telepathy,Healthy,Sports person
+WA,12,Female,17,Right-Handed,1,Other,6,Dancing,November,Fall,Yes,No,Music,7,Yes - other,Text messaging,5,8,4,3,2,Some,Other,Other,Telepathy,Happy,Other
+NC,12,Female,17,Right-Handed,1,Car,13,Other,March,Spring,Yes,No,English,3,Yes - other,Text messaging,100,300,2,6,2,A lot,Graduate degree,Country,Telepathy,Happy,Coach or club leader
+OK,4,Female,17,Right-Handed,1,Car,8,Other,August,Fall,No,No,Art,5,Yes - broadband connection,Text messaging,6,2,5,3,2,Some,Undergraduate degree,Pop,Telepathy,Happy,Sports person
+MN,10,Female,16,Right-Handed,1,Car,5,Swimming,November,Fall,Yes,Yes,History,3,Yes - broadband connection,Text messaging,10,10,2,6,3,Some,Graduate degree,Other,Invisibility,Happy,Other
+NC,12,Female,17,Right-Handed,1,Car,12,Walking/Hiking,June,Fall,No,No,Mathematics and statistics,4,Yes - broadband connection,Internet chat or instant messaging,15,32,10,15,1,A lot,Graduate degree,Country,Freeze time,Happy,Business person
+NY,12,Male,17,Right-Handed,1,Rail (Train/Tram/Subway),75,Hockey (Ice),June,Summer,No,No,Physical education,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",65,85,6,6,2,Some,Graduate degree,Country,Fly,Happy,Sports person
+OR,11,Male,17,Right-Handed,2,Bus,10,Soccer,October,Summer,No,No,Other,4,Yes - dial-up connection,Text messaging,50,45,6,7,3,Some,Undergraduate degree,Rap/Hip hop,,Famous,Musician or singer
+IL,12,Male,17,Right-Handed,1,Car,11,Athletics,June,Spring,No,No,Mathematics and statistics,3,Yes - broadband connection,Text messaging,12,12,5,5,3,Some,Undergraduate degree,Pop,Super strength,Rich,Business person
+PA,12,Male,18,Right-Handed,2,Car,7,Soccer,August,Winter,Yes,No,Mathematics and statistics,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",90,120,6,4,4,Very little,Graduate degree,Other,Fly,Rich,Actor
+CO,12,Male,17,Left-Handed,1,Car,10,Tennis,May,Spring,No,No,Other,3,Yes - other,Internet chat or instant messaging,8,8,1,9,0,Some,Some college,Rock and roll,Fly,Happy,Sports person
+IN,12,Male,17,Right-Handed,1,Car,5,None,May,Fall,No,No,Other,3,Yes - broadband connection,Text messaging,340,340,8,2,12,None,Graduate degree,Rap/Hip hop,Super strength,Rich,Relative
+CA,10,Male,16,Right-Handed,2,Bicycle,15,Football (American),February,Winter,No,No,Other,3,Yes - broadband connection,Text messaging,100,200,6,1,20,Some,Graduate degree,Rap/Hip hop,Freeze time,Happy,Sports person
+IL,12,Male,17,Right-Handed,2,Car,12,Soccer,March,Winter,No,No,Physical education,7,Yes - broadband connection,In person,100,100,25,30,30,Some,Graduate degree,Rap/Hip hop,Fly,Rich,Actor
+NC,12,Female,17,Right-Handed,1,Car,6,Dancing,January,Summer,No,No,Art,5,Yes - broadband connection,In person,30,60,11,6,4,A lot,Graduate degree,Other,Freeze time,Happy,Relative
+OH,12,Female,17,Right-Handed,1,Car,5,Bowling,February,Winter,Yes,No,Social studies,6,Yes - other,"Myspace, Facebook, other social networking sites, or blog",700,300,6,15,3,Some,Graduate degree,Punk rock,Fly,Famous,Musician or singer
+IN,12,Male,18,Right-Handed,1,Boat,73,Bowling,August,Summer,No,Yes,Computers and technology,13,Yes - dial-up connection,E-mail,,1,0,0,0,None,Less than high school,Heavy metal,Freeze time,Famous,Politician
+SC,12,Male,17,Right-Handed,1,Car,15,Baseball/Softball,April,Fall,No,No,Other,3,Yes - broadband connection,Cell phone,9,25,0,.1,4,None,Some college,Country,Super strength,Famous,Other
+NC,12,Male,18,Right-Handed,1,Car,12,Other,January,Fall,No,No,Science,5,Yes - broadband connection,Cell phone,35,40,5,10,15,A lot,Graduate degree,Rock and roll,Telepathy,Happy,Musician or singer
+PA,12,Female,17,Right-Handed,1,Car,8,Tennis,May,Fall,Yes,No,Social studies,4,Yes - other,In person,40,100,5,0,2,Some,Graduate degree,Pop,Telepathy,Rich,Politician
+IN,12,Female,17,Right-Handed,1,Car,15,Baseball/Softball,November,Summer,No,No,Physical education,3,Yes - other,,25,25,5,7,5,Some,Some college,Pop,Invisibility,Happy,Relative
+CA,11,Female,17,Right-Handed,1,Car,20,Soccer,March,Winter,No,No,History,4,Yes - broadband connection,Cell phone,35,60,4,5,1,Very little,Graduate degree,Pop,Telepathy,Happy,Relative
+PA,12,Female,17,Right-Handed,1,Car,9,Dancing,June,Summer,No,No,History,5,Yes - broadband connection,,10,15,3,3,1,Some,Graduate degree,Pop,Telepathy,Happy,Coach or club leader
+NC,12,Female,18,Left-Handed,1,Car,15,Martial Arts,December,Winter,No,No,Science,4,Yes - broadband connection,Internet chat or instant messaging,50,50,5,1,12,A lot,Undergraduate degree,Other,Freeze time,Rich,Relative
+PA,12,Female,16,Right-Handed,2,Bus,10,Other,December,Fall,No,No,History,6,Yes - other,Text messaging,40,37,1,3,95,Some,High school,Rap/Hip hop,Freeze time,Happy,Relative
+CA,12,Male,18,Right-Handed,1,Walk,33,Bowling,November,Winter,No,No,Art,7,Yes - other,"Myspace, Facebook, other social networking sites, or blog",184,94,2,1,42,A lot,High school,Techno/Electronic,Fly,Rich,Friend
+CA,7,Male,13,Right-Handed,1,Bus,40,Other,October,Winter,Yes,No,Mathematics and statistics,3,Yes - broadband connection,Text messaging,10,20,2,10,2,,,,,,
+MD,11,Female,17,Right-Handed,1,Car,25,Other,November,Summer,Yes,No,History,3,Yes - broadband connection,Cell phone,1,6,2,2,1,A lot,Graduate degree,Other,Freeze time,Happy,Relative
+MI,7,Female,13,Left-Handed,1,Car,7,Soccer,October,Fall,Yes,No,Mathematics and statistics,5,Yes - other,In person,20,45,4,5,8,A lot,Graduate degree,Pop,Fly,Healthy,Relative
+MN,10,Male,16,Right-Handed,2,Car,12,Basketball,January,Winter,Yes,No,History,4,Yes - broadband connection,Text messaging,5,10,,,,Some,Graduate degree,Classical,Telepathy,Rich,Politician
+NC,12,Male,17,Right-Handed,1,Car,15,Football (American),October,Summer,No,No,Social studies,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",80,100,3,9,12,Very little,Graduate degree,Rap/Hip hop,Fly,Rich,Business person
+CA,12,Female,16,Right-Handed,2,Walk,12,Other,October,Winter,No,No,History,4,Yes - broadband connection,Text messaging,280,36,6,4,5,Very little,Graduate degree,Pop,Telepathy,Rich,Friend
+SC,11,Female,17,Left-Handed,2,Bus,20,Walking/Hiking,December,Fall,Yes,No,Social studies,4,Yes - other,In person,1000,1000,0,0,0,A lot,Other,Rhythm and blues (R&B),Freeze time,Healthy,Doctor or nurse
+IN,12,Male,17,Right-Handed,2,Car,5,Bowling,July,Fall,No,No,Other,4,Yes - other,Text messaging,90,100,0,5,5,Very little,Undergraduate degree,Rock and roll,Super strength,Rich,Relative
+GA,12,Male,17,Right-Handed,1,Car,7,Other,July,Fall,No,No,History,5,Yes - broadband connection,Internet chat or instant messaging,10,14,1,4,2,Very little,Graduate degree,Other,Telepathy,Happy,Religious figure
+GA,11,Male,16,Left-Handed,1,Car,4,Basketball,May,Fall,No,No,Mathematics and statistics,3,Yes - broadband connection,Cell phone,,,10,2,4,A lot,Graduate degree,Rap/Hip hop,Freeze time,Rich,Business person
+CA,10,Female,15,Right-Handed,2,Bus,20,Hockey (Field),November,Fall,No,Yes,English,4,Yes - broadband connection,In person,25,30,9,5,1,A lot,Graduate degree,Rhythm and blues (R&B),Freeze time,Rich,Relative
+CA,12,Male,17,Right-Handed,2,Car,3,Soccer,November,Spring,Yes,No,Other,5,Yes - broadband connection,Other,45,,,,,,,,,,
+PA,12,Male,17,Right-Handed,1,Car,7,Baseball/Softball,May,Spring,Yes,No,History,5,Yes - broadband connection,Internet chat or instant messaging,25,30,5,5,2,Very little,Graduate degree,Other,Fly,Happy,Relative
+TX,12,Male,17,Right-Handed,2,Car,7,Soccer,November,Fall,No,No,Physical education,5,Yes - other,In person,8,36,3,4,1,Some,Graduate degree,Other,Telepathy,Happy,Coach or club leader
+CA,10,Male,17,Right-Handed,2,Car,6,Athletics,January,Summer,No,No,Other,4,Yes - broadband connection,In person,40,60,10,4,3,Some,Some college,Rock and roll,Freeze time,Rich,Relative
+MN,8,Male,14,Right-Handed,1,Car,15,,,,,,,,,,,,,,,,,,,,
+GA,12,Female,16,Right-Handed,1,Car,15,Athletics,July,Summer,No,No,Computers and technology,6,Yes - broadband connection,Cell phone,26,30,15,24,9,Very little,Other,Rock and roll,Super strength,Rich,Sports person
+MN,8,Male,13,Right-Handed,1,Bus,10,Football (American),February,Fall,No,No,Languages,6,Yes - broadband connection,Cell phone,0,0,24,6,1,Some,Some college,Rhythm and blues (R&B),Fly,Rich,Actor
+OK,12,Female,18,Right-Handed,1,Car,10,Gymnastics,July,Fall,Yes,No,English,3,Yes - broadband connection,Cell phone,26,23,3,7,4,A lot,Graduate degree,Country,Invisibility,Happy,Relative
+CA,12,Female,17,Right-Handed,2,Car,15,Tennis,February,Fall,Yes,No,Science,4,Yes - broadband connection,In person,35,40,18,7,3,Some,Graduate degree,Pop,Fly,Happy,Relative
+NY,12,Male,17,Right-Handed,2,Rail (Train/Tram/Subway),25,Soccer,August,Summer,No,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,50,200,5,3,20,Some,Graduate degree,Pop,Fly,Rich,Relative
+GA,11,Male,17,Right-Handed,2,Bus,15,Soccer,November,Summer,No,No,Social studies,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",5,7,23,9,1,Some,Graduate degree,Pop,Freeze time,Happy,Politician
+CA,12,Female,17,Right-Handed,1,Car,7,Swimming,January,Summer,No,No,Other,6,Yes - other,"Myspace, Facebook, other social networking sites, or blog",342,450,4,0,12,Some,Some college,Pop,Fly,Rich,Musician or singer
+IL,12,Female,17,Right-Handed,1,Car,10,Walking/Hiking,May,Fall,Yes,No,English,2,Yes - broadband connection,In person,20,30,7,5,4,Some,Undergraduate degree,Rap/Hip hop,Fly,Happy,Relative
+OH,7,Female,12,Right-Handed,1,Walk,6,Swimming,July,Summer,No,No,Physical education,4,Yes - other,Internet chat or instant messaging,,,50,30,30,Some,Graduate degree,Pop,Super strength,Famous,Teacher
+MN,12,Female,18,Right-Handed,1,Car,13,Gymnastics,August,Summer,Yes,No,Social studies,4,Yes - other,Text messaging,50,55,8,5,3,Some,Graduate degree,Country,Invisibility,Happy,Relative
+GA,12,Male,16,Right-Handed,2,Car,30,Basketball,,,,,,,,,,,,,,,,,,,
+CO,12,Female,18,Right-Handed,1,Car,8,Cycling,December,Winter,No,No,Computers and technology,5,Yes - other,In person,300,320,3,2,8,Very little,Undergraduate degree,Country,Invisibility,Happy,Religious figure
+VT,12,Female,16,Right-Handed,1,Walk,3,Other,April,Summer,Yes,No,Other,6,,,100,100,5,10,6,Some,Other,Pop,Super strength,Rich,Relative
+IL,12,Male,17,Right-Handed,2,Bus,20,Soccer,July,Spring,No,No,Physical education,2,Yes - broadband connection,Text messaging,4,5,3,2,3,Some,Graduate degree,Other,Telepathy,Rich,Religious figure
+NC,12,Female,17,Right-Handed,1,Car,15,Soccer,February,Fall,No,No,Music,4,Yes - broadband connection,In person,30,30,0,30,10,A lot,Undergraduate degree,Pop,Telepathy,Rich,Business person
+OH,8,Male,14,Right-Handed,1,Car,13,Swimming,November,Spring,No,No,Mathematics and statistics,4,Yes - broadband connection,In person,200,120,4,3,8,None,Other,Other,Super strength,Happy,Other
+OK,11,Male,17,Right-Handed,1,Car,9,Swimming,April,Fall,No,No,Social studies,4,Yes - other,In person,8,10,15,2,1,A lot,Graduate degree,Other,Fly,,Other
+NC,12,Female,16,Right-Handed,2,Car,17,Hockey (Field),July,Summer,No,No,History,4,Yes - broadband connection,In person,20,20,15,50,7,A lot,Graduate degree,Country,Fly,Happy,Relative
+IN,12,Female,18,Right-Handed,1,Car,15,Golf,,,,,,,,,,,,,,,,,,,
+OR,12,Female,17,Right-Handed,1,Car,9,Walking/Hiking,June,Summer,No,No,Geography,5,Yes - broadband connection,In person,40,50,1,2,2,Very little,Graduate degree,Pop,Invisibility,Rich,Actor
+MN,10,Male,16,Right-Handed,1,Car,10,Baseball/Softball,September,Fall,No,No,,4,Yes - broadband connection,Text messaging,15,20,0,3,1,None,Graduate degree,Rap/Hip hop,Super strength,Happy,Musician or singer
+VA,9,Male,14,Left-Handed,1,Car,7,Soccer,April,Summer,Yes,No,History,5,Yes - broadband connection,Text messaging,40,55,5,4,2,A lot,Graduate degree,Rap/Hip hop,Telepathy,Rich,Religious figure
+MN,12,Female,16,Right-Handed,2,Car,10,None,September,Fall,Yes,No,Science,2,Yes - other,Text messaging,120,145,6,30,28,A lot,Graduate degree,,Telepathy,Rich,Religious figure
+NJ,12,Male,18,Left-Handed,1,Car,25,Martial Arts,August,Summer,Yes,No,Computers and technology,4,Yes - broadband connection,In person,40,50,5,30,15,Very little,Graduate degree,Rap/Hip hop,Freeze time,Healthy,Relative
+CA,10,Female,17,Left-Handed,2,Car,12,Other,March,Fall,Yes,Yes,Science,4,Yes - broadband connection,Text messaging,151,165,8,2,1,A lot,Undergraduate degree,Pop,Invisibility,Happy,Teacher
+CA,12,Female,17,Left-Handed,2,Car,20,Other,October,Winter,No,No,Mathematics and statistics,4,Yes - dial-up connection,Text messaging,20,60,8,2,2,Some,Graduate degree,Pop,Telepathy,Happy,Musician or singer
+MI,12,Male,18,Right-Handed,1,Bus,30,Walking/Hiking,November,Fall,Yes,No,Mathematics and statistics,5,Yes - broadband connection,Internet chat or instant messaging,30,40,6,1,2,Very little,Graduate degree,Other,Freeze time,Happy,Friend
+TX,12,Male,17,Right-Handed,2,Car,20,Basketball,November,Fall,No,No,Physical education,6,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",,,0,40,40,None,Other,Rap/Hip hop,Super strength,Happy,Sports person
+NY,11,Male,16,Right-Handed,1,Bus,10,Running/Jogging,December,Winter,No,No,Art,3,Yes - other,Text messaging,2,4,1,27,3,A lot,Some college,Other,Freeze time,Happy,Relative
+CA,12,Male,17,Right-Handed,1,Car,15,Football (American),January,Winter,No,No,English,3,Yes - broadband connection,Text messaging,20,20,1,1,1,None,Graduate degree,Rap/Hip hop,Super strength,Rich,Relative
+MI,7,Female,12,Right-Handed,2,Car,6,Soccer,August,Winter,No,No,Physical education,5,Yes - broadband connection,In person,106,145,3,5,6,A lot,Graduate degree,Jazz,Telepathy,Healthy,Relative
+NY,12,Male,17,Right-Handed,1,Rail (Train/Tram/Subway),30,Walking/Hiking,June,Fall,Yes,No,Mathematics and statistics,7,Yes - broadband connection,Internet chat or instant messaging,0,6,4,3,2,Very little,Graduate degree,Techno/Electronic,Invisibility,Rich,Friend
+CA,12,Male,17,Right-Handed,2,Car,8,Other,June,Summer,No,No,Art,6,Yes - broadband connection,Text messaging,50,60,10,6,8,Some,Graduate degree,Rhythm and blues (R&B),Fly,Happy,Friend
+CO,12,Female,16,Right-Handed,1,Car,13,Soccer,August,Fall,No,No,Mathematics and statistics,5,Yes - broadband connection,Text messaging,30,35,5,10,3.5,A lot,Graduate degree,Rap/Hip hop,Freeze time,Happy,Relative
+PA,12,Male,18,Right-Handed,2,Car,15,Baseball/Softball,January,Fall,No,No,Science,4,Yes - other,Text messaging,7,23,3,48,2,Very little,Undergraduate degree,Pop,Super strength,Healthy,Sports person
+AR,12,Female,17,Left-Handed,1,Car,15,Walking/Hiking,April,Summer,No,No,Physical education,5,Yes - broadband connection,Internet chat or instant messaging,35,50,1,5,10,Some,Other,Country,Fly,Rich,Coach or club leader
+OK,9,Female,15,Right-Handed,1,Walk,14,Swimming,January,Fall,Yes,Yes,English,2,Yes - broadband connection,Text messaging,40,70,4,8,20,A lot,Graduate degree,Pop,Fly,Happy,Relative
+NY,12,Female,18,Right-Handed,2,Rail (Train/Tram/Subway),45,None,January,Fall,No,No,Science,4,Yes - dial-up connection,Text messaging,200,180,28,10,20,A lot,Graduate degree,Pop,Telepathy,Healthy,Doctor or nurse
+NC,12,Female,17,Right-Handed,2,Car,20,Other,December,Fall,Yes,No,English,6,Yes - other,Text messaging,100,100,5,10,11,A lot,Graduate degree,Other,Invisibility,Healthy,Relative
+CA,12,Female,17,Right-Handed,1,Car,25,Basketball,June,Summer,No,,Other,5,Yes - other,Text messaging,21,37,5,17,4,Some,High school,Reggae,Invisibility,Rich,Musician or singer
+CA,12,Male,17,Right-Handed,2,Car,8,Soccer,July,Summer,No,No,Mathematics and statistics,4,Yes - broadband connection,In person,15,100,2,2,2,A lot,Graduate degree,Rap/Hip hop,Telepathy,Happy,Business person
+OH,7,Female,13,Right-Handed,1,Walk,0,Soccer,January,Summer,No,No,English,3,Yes - other,Internet chat or instant messaging,60,70,6,3,100,A lot,Graduate degree,Rhythm and blues (R&B),Freeze time,Rich,Politician
+CA,11,Male,16,Right-Handed,2,Car,15,Tennis,December,Summer,Yes,No,Social studies,4,Yes - broadband connection,Cell phone,15,40,8,10,2,Some,Undergraduate degree,Rap/Hip hop,Freeze time,Rich,Sports person
+MD,11,Female,17,Right-Handed,1,Car,40,Swimming,January,Winter,No,No,History,5,Yes - other,Cell phone,,,7,60,140,Very little,Graduate degree,Rap/Hip hop,Telepathy,Famous,Relative
+IA,12,Female,17,Right-Handed,2,Car,5,Soccer,November,Fall,No,No,Science,3,Yes - other,Text messaging,30,45,5,5,2,Some,Graduate degree,Rock and roll,Fly,Happy,Relative
+CA,12,Female,17,Right-Handed,1,Car,15,Other,February,Spring,Yes,No,Science,5,Yes - other,Text messaging,10,9,20,12,12,Some,Some college,Pop,Freeze time,Healthy,Business person
+IN,12,Female,17,Right-Handed,1,Car,4,Swimming,August,Fall,No,Yes,Mathematics and statistics,4,Yes - other,Text messaging,17,20,2,1,1,A lot,Graduate degree,Other,Fly,Rich,Doctor or nurse
+OH,7,Male,13,Right-Handed,1,Bus,25,Soccer,December,Summer,Yes,No,Physical education,6,Yes - broadband connection,Cell phone,250,250,1,6,20,Some,Graduate degree,Rap/Hip hop,Fly,Rich,Sports person
+FL,8,Female,13,Right-Handed,1,Car,10,Dancing,July,Summer,No,No,English,4,Yes - other,Text messaging,250,250,4,2,5,A lot,Other,Pop,Telepathy,Rich,Other
+IN,12,Female,17,Right-Handed,1,Car,8,Athletics,March,Fall,Yes,No,Art,4,Yes - other,Text messaging,100,100,4,4,8,Some,Graduate degree,Country,Fly,Happy,Religious figure
+KY,12,Female,16,Right-Handed,1,Car,30,Swimming,August,Summer,No,No,History,2,Yes - other,"Myspace, Facebook, other social networking sites, or blog",100,100,11,10,21,A lot,Undergraduate degree,Country,Telepathy,Happy,Other
+OH,12,Female,17,Right-Handed,1,Car,15,Other,,,,,,,,,,,,,,,,,,,
+NC,12,Male,17,Right-Handed,1,Car,15,Athletics,August,Summer,Yes,No,Physical education,3,Yes - other,Text messaging,100,,0,10,5,Some,Graduate degree,Rap/Hip hop,Invisibility,Happy,Relative
+MI,7,Male,13,Ambidextrous,1,Car,10,Golf,May,Summer,Yes,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,5,7,1,10,1,Very little,Some college,Country,Super strength,Happy,Business person
+CA,12,Male,17,Right-Handed,1,Car,13,Soccer,June,Summer,No,No,Physical education,4,Yes - broadband connection,Text messaging,100,200,4,20,6,Some,Some college,Reggae,Super strength,Healthy,Sports person
+MN,10,Female,15,Right-Handed,1,Car,8,Basketball,June,Fall,Yes,No,English,4,Yes - broadband connection,Text messaging,30,60,6,5,2,Some,Undergraduate degree,Other,Telepathy,Happy,Relative
+TX,12,Female,17,Right-Handed,2,Car,20,Soccer,November,Fall,No,No,Mathematics and statistics,4,Yes - broadband connection,Cell phone,5,6,0,10,0,None,Some college,Jazz,Invisibility,Happy,Relative
+IN,12,Male,18,Right-Handed,1,Car,7,Basketball,September,Fall,No,No,Computers and technology,5,Yes - dial-up connection,Cell phone,20,20,6,10,4,Some,Undergraduate degree,Rhythm and blues (R&B),Fly,Rich,Sports person
+MI,12,Female,17,Right-Handed,1,Car,8,Other,July,Summer,Yes,No,History,5,Yes - broadband connection,Internet chat or instant messaging,70,60,5,7,15,A lot,Graduate degree,Country,Fly,Rich,Actor
+CA,12,Male,17,Right-Handed,2,Car,15,Walking/Hiking,March,Winter,Yes,No,Physical education,6,Yes - broadband connection,,10,10,0,3,30,Some,Undergraduate degree,Other,Freeze time,Rich,Relative
+CA,11,Female,16,Right-Handed,1,Car,8,Dancing,June,Spring,Yes,No,Art,4,Yes - broadband connection,Text messaging,20,20,0,20,2,None,Some college,Punk rock,Fly,Happy,Relative
+NC,12,Female,15,Right-Handed,1,Car,12,Running/Jogging,October,Fall,Yes,No,English,5,Yes - broadband connection,Text messaging,70,250,15,28,6,A lot,Graduate degree,Rhythm and blues (R&B),Freeze time,Healthy,Doctor or nurse
+PA,12,Male,16,Right-Handed,1,Walk,25,Basketball,September,Summer,Yes,No,Physical education,3,Yes - broadband connection,Text messaging,12,5,1,8,10,Some,Some college,Rap/Hip hop,Telepathy,Happy,Business person
+CO,12,Male,17,Right-Handed,1,Car,10,Walking/Hiking,September,Fall,Yes,No,Mathematics and statistics,4,Yes - broadband connection,In person,6,8,7,10,1,Some,Undergraduate degree,Rock and roll,Fly,Happy,Religious figure
+CA,11,Male,16,Right-Handed,1,Car,25,Soccer,March,Winter,Yes,No,Mathematics and statistics,,Yes - other,In person,1,2,2,10,1,Some,High school,Rap/Hip hop,Invisibility,Rich,Sports person
+CA,10,Female,17,Right-Handed,2,Car,15,Other,August,Winter,No,No,Art,2,Yes - other,In person,6,4,1,1,1,Some,Graduate degree,Other,Freeze time,Famous,Musician or singer
+MN,9,Male,15,Left-Handed,1,Bicycle,11,Football (American),,,,,,,,,,,,,,,,,,,
+IN,12,Male,17,Right-Handed,2,Car,15,Other,February,Fall,No,No,Other,4,Yes - broadband connection,In person,3,5,1,1,1,A lot,Other,Gospel,Freeze time,Healthy,Relative
+PA,12,Female,17,Right-Handed,2,Bus,11,None,August,Fall,No,No,English,6,Yes - broadband connection,Cell phone,50,50,2,20,150,Some,Graduate degree,Pop,Fly,,Relative
+CA,12,Male,16,Left-Handed,2,Car,20,Basketball,July,Summer,No,No,Social studies,6,Yes - broadband connection,Text messaging,50,52,4,5,4,Very little,Graduate degree,Rhythm and blues (R&B),Super strength,Happy,Business person
+CA,12,Female,17,Left-Handed,2,Car,25,Baseball/Softball,January,Fall,No,No,Other,4,Yes - broadband connection,In person,100,100,2,3,3,A lot,Graduate degree,Rap/Hip hop,Telepathy,Rich,Relative
+VT,12,Male,17,Right-Handed,2,Car,17,Other,December,Spring,No,No,History,4,Yes - broadband connection,Text messaging,52,48,0,10,,,Some college,Gospel,Telepathy,Healthy,Other
+OK,11,Male,17,Right-Handed,1,Bus,65,Football (American),November,Summer,No,No,Other,7,Yes - other,Text messaging,6,6,7,8,5,Very little,Other,Rap/Hip hop,Fly,Healthy,Other
+OH,7,Male,13,Right-Handed,1,Car,4,Football (American),September,Winter,Yes,No,Social studies,5,Yes - other,In person,0,0,1,36,0,None,Graduate degree,Rap/Hip hop,Invisibility,Famous,Coach or club leader
+MN,10,Female,16,Right-Handed,2,Car,4,Other,November,Fall,No,No,Art,5,Yes - other,Text messaging,25,20,6,10,7,A lot,Undergraduate degree,Pop,Invisibility,Happy,Friend
+IL,12,Female,16,Right-Handed,3,Car,15,Soccer,November,Summer,No,No,Mathematics and statistics,4,Yes - dial-up connection,Cell phone,80,80,9,4,8,A lot,Graduate degree,Country,Fly,Happy,Relative
+MN,8,,13,Right-Handed,2,Bus,,Other,June,,Yes,No,,4,Yes - other,In person,8,22,3,6,2,A lot,Graduate degree,Heavy metal,Telepathy,Happy,Musician or singer
+NC,12,Female,17,Right-Handed,1,Car,10,Athletics,May,Spring,Yes,No,History,,,,,,,,,,,,,,
+NC,12,Male,17,Right-Handed,1,Car,11,Baseball/Softball,September,Summer,Yes,No,Mathematics and statistics,4,Yes - broadband connection,Cell phone,50,50,0,10,5,Some,Some college,Country,Super strength,Healthy,Sports person
+VA,10,Male,15,Right-Handed,1,Bus,30,Lacrosse,January,Fall,No,No,Mathematics and statistics,6,Yes - other,Internet chat or instant messaging,34,53,3,6,1,Some,Graduate degree,Rock and roll,Super strength,Happy,Musician or singer
+MN,11,Male,17,Right-Handed,1,Car,4,Running/Jogging,December,Fall,Yes,No,History,4,Yes - broadband connection,Text messaging,1,3,3,1,0,Very little,Some college,Rap/Hip hop,Freeze time,Rich,Business person
+AZ,12,Female,17,Right-Handed,1,Car,25,Walking/Hiking,September,Summer,Yes,No,Languages,3,Yes - broadband connection,Cell phone,20,35,7,10,4,Some,Graduate degree,Other,Telepathy,Happy,Musician or singer
+OK,10,Female,15,Right-Handed,2,Car,7,Soccer,July,Summer,No,No,History,4,Yes - other,In person,4,9,0,7,5,Some,Undergraduate degree,Rap/Hip hop,Telepathy,Happy,Relative
+AR,12,Female,18,Right-Handed,1,Car,10,Other,December,Summer,Yes,No,Other,4,Yes - other,Text messaging,29,40,0,2,3,None,Other,Country,Invisibility,Rich,Other
+CA,12,Male,17,Right-Handed,2,Walk,2,Soccer,November,Fall,No,No,English,5,Yes - broadband connection,Text messaging,92,127,3,30,5,Very little,Graduate degree,Rap/Hip hop,Telepathy,Healthy,Sports person
+VA,10,Male,15,Right-Handed,1,Walk,6,Soccer,February,Fall,Yes,No,English,3,Yes - broadband connection,Text messaging,7,2,6,1,2,Very little,Graduate degree,Rhythm and blues (R&B),Fly,Happy,Sports person
+CA,12,Male,17,Right-Handed,2,Car,10,Basketball,July,Spring,No,No,Mathematics and statistics,4,Yes - broadband connection,Cell phone,25,100,25,15,3,A lot,Graduate degree,Rhythm and blues (R&B),Freeze time,Rich,Sports person
+PA,12,Female,17,Left-Handed,2,Car,10,Dancing,October,Fall,Yes,No,English,3,Yes - broadband connection,Other,23,17,2,5,4,A lot,Undergraduate degree,Pop,Telepathy,Happy,Relative
+OR,12,Female,17,Right-Handed,2,Car,7,Golf,April,Spring,Yes,No,Social studies,3,Yes - broadband connection,Text messaging,85,120,8,4,4,A lot,Graduate degree,Rhythm and blues (R&B),Telepathy,Happy,Relative
+IN,12,Male,17,Right-Handed,3,Car,10,Soccer,November,Fall,No,No,Mathematics and statistics,6,Yes - broadband connection,Other,0,79,1,4,1,Some,Some college,Rap/Hip hop,Freeze time,Rich,Sports person
+NY,12,Male,17,Right-Handed,3,Rail (Train/Tram/Subway),45,Athletics,,,,,,,,,,,,,,,,,,,
+MN,12,Male,18,Left-Handed,1,Car,12,Football (American),,,,,,,,,,,,,,,,,,,
+CA,12,Female,17,Right-Handed,2,Car,10,Swimming,September,Summer,Yes,No,Physical education,5,Yes - other,Text messaging,40,66,2,25,3,A lot,Other,Reggae,Invisibility,Happy,Relative
+NC,12,Female,18,Right-Handed,1,Car,5,Dancing,September,Spring,Yes,No,Other,3,Yes - broadband connection,Internet chat or instant messaging,12,34,8,0,6,Some,Graduate degree,Pop,Freeze time,Happy,Relative
+AR,12,Male,17,Right-Handed,1,Car,7,Football (American),December,Winter,No,No,Social studies,6,Yes - other,In person,15,8,0,1,2,Very little,Less than high school,Rap/Hip hop,Super strength,Rich,Business person
+MN,10,Male,15,Right-Handed,2,Car,6,Soccer,June,Summer,No,No,Physical education,4,Yes - other,Text messaging,30,60,2,3,3,Some,Some college,Pop,Fly,Happy,Religious figure
+SC,12,Male,16,Right-Handed,1,Car,18,Football (American),August,Summer,Yes,No,Physical education,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",692,1034,0,5,4,A lot,Graduate degree,Rap/Hip hop,Freeze time,Rich,Other
+TX,12,Male,18,Left-Handed,1,Car,15,Basketball,June,Summer,No,No,Science,3,Yes - other,Cell phone,27,50,0,6,1,Some,Graduate degree,Rap/Hip hop,Freeze time,Happy,Relative
+NC,12,Female,17,Right-Handed,1,Car,10,Soccer,May,Fall,Yes,No,Science,5,Yes - broadband connection,Text messaging,60,70,5,3,4,Some,Graduate degree,Pop,Fly,Rich,Sports person
+GA,12,Male,16,Right-Handed,1,Bus,16,Other,May,Summer,Yes,No,Music,4,Yes - broadband connection,In person,30,100,50,30,65,Some,Graduate degree,Rhythm and blues (R&B),Telepathy,Happy,Coach or club leader
+CA,12,Female,17,Left-Handed,1,Car,6,Other,December,Winter,No,No,English,3,Yes - other,In person,10,20,9,4,3,A lot,Graduate degree,Pop,Freeze time,Happy,Coach or club leader
+CA,12,Female,17,Right-Handed,2,Car,9,None,June,Summer,No,No,English,3,Yes - broadband connection,In person,20,30,8,0,5,Some,Graduate degree,Rap/Hip hop,Freeze time,Happy,Religious figure
+OH,8,Female,13,Ambidextrous,1,Bus,12,Walking/Hiking,February,Fall,Yes,No,Art,2,Yes - other,In person,5,7,4,3,1,A lot,Some college,Other,Freeze time,Happy,Relative
+OH,12,Female,17,Right-Handed,1,Car,4,Other,February,Fall,No,No,Mathematics and statistics,2,Yes - broadband connection,Internet chat or instant messaging,10,180,2,0,1,Very little,Graduate degree,Pop,Telepathy,Rich,Community leader or elder
+WA,12,Female,17,Right-Handed,1,Car,3,Martial Arts,May,Spring,No,No,History,2,Yes - broadband connection,Text messaging,100,100,0,100,100,None,Other,Pop,Invisibility,Famous,Relative
+TX,12,Female,17,Ambidextrous,1,Car,10,Dancing,September,Summer,No,No,Computers and technology,5,Yes - other,In person,100,90,4,0,5,None,High school,Rap/Hip hop,Invisibility,Famous,Musician or singer
+MN,12,Male,17,Right-Handed,1,Car,12,Hockey (Ice),November,Summer,No,No,Physical education,5,Yes - dial-up connection,Text messaging,75,75,1,3,1,Very little,Graduate degree,Country,Invisibility,Rich,Sports person
+IN,12,Female,16,Right-Handed,1,Car,5,None,May,Fall,No,No,History,4,Yes - other,Text messaging,20,14,56,12,13,A lot,Graduate degree,Pop,Telepathy,Famous,Musician or singer
+MN,9,Female,14,Right-Handed,1,Bus,15,Other,December,Summer,No,No,Science,5,Yes - other,Text messaging,10,5,7,21,5,Some,Undergraduate degree,Country,Telepathy,Happy,Relative
+CO,11,Male,16,Left-Handed,1,Car,5,Basketball,September,Fall,Yes,No,,4,Yes - broadband connection,Cell phone,20,80,.5,8,20,Very little,High school,Rap/Hip hop,Fly,Famous,Other
+IL,12,Male,16,Right-Handed,2,Car,14,Other,September,Fall,No,No,Other,3,Yes - other,Text messaging,300,600,1,2,20,Some,Graduate degree,Heavy metal,Telepathy,Rich,Relative
+CA,11,Female,17,Right-Handed,1,Car,4,Walking/Hiking,September,Summer,Yes,Yes,Art,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",100,100,16,2,10,A lot,High school,Rhythm and blues (R&B),Fly,Rich,Relative
+GA,12,Male,16,Right-Handed,2,Bus,4,Martial Arts,July,Winter,No,No,Music,5,Yes - broadband connection,Text messaging,30,50,5,20,3,Some,Graduate degree,Classical,Super strength,Happy,Musician or singer
+GA,12,Male,17,Right-Handed,2,Car,15,Athletics,August,Fall,No,No,Mathematics and statistics,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",20,20,3,3,1,Some,Graduate degree,Rap/Hip hop,Fly,Rich,Coach or club leader
+NC,12,Male,17,Right-Handed,1,Car,10,Baseball/Softball,July,Summer,No,No,Other,2,Yes - other,"Myspace, Facebook, other social networking sites, or blog",2,20,0,20,10,None,Some college,Country,Super strength,Rich,Business person
+CA,12,Female,16,Right-Handed,2,Car,11,Rowing,April,Spring,Yes,No,History,4,Yes - other,Text messaging,5,30,5,2,1,Some,Graduate degree,Pop,Telepathy,Rich,Politician
+VA,10,Female,15,Right-Handed,1,Bus,20,Walking/Hiking,May,Summer,No,No,Science,4,Yes - broadband connection,Text messaging,100,200,5,30,15,Some,Graduate degree,Country,Telepathy,Happy,Relative
+MN,12,Male,18,Left-Handed,1,Car,3,Football (American),July,Winter,No,No,Computers and technology,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",2,5,5,0,1,Very little,High school,Pop,Invisibility,Rich,Sports person
+NY,12,Female,18,Right-Handed,1,Rail (Train/Tram/Subway),30,Tennis,,,,,,,,,,,,,,,,,,,
+IN,12,Female,18,Right-Handed,2,Bus,10,Swimming,,,,,,,,,,,,,,,,,,,
+CA,10,Male,16,Right-Handed,2,Bicycle,3,Cycling,October,Fall,Yes,No,Science,,,,,,,,,,,,,,
+MI,12,Male,17,Right-Handed,1,Car,8,Baseball/Softball,March,Spring,No,No,Social studies,8,Yes - broadband connection,Text messaging,10,20,7,15,1,Some,Graduate degree,Pop,Fly,Rich,Relative
+CA,12,Female,17,Right-Handed,1,Car,5,Running/Jogging,August,Summer,Yes,Yes,Mathematics and statistics,4,Yes - other,In person,20,46,12,4,3,A lot,Graduate degree,Gospel,Fly,Happy,Religious figure
+NC,12,Female,18,Right-Handed,1,Car,8,Skateboarding/Rollerblading,February,Fall,No,No,Art,4,Yes - other,Text messaging,20,15,,,,,,,,,
+IN,12,Male,17,Right-Handed,2,Car,8,Swimming,February,Fall,Yes,No,Other,4,Yes - broadband connection,Cell phone,20,90,10,5,11,Very little,High school,Rhythm and blues (R&B),Telepathy,Happy,Friend
+IA,12,Female,17,Right-Handed,1,Car,12,Running/Jogging,September,Summer,No,No,Social studies,2,Yes - other,Cell phone,10,20,3,7,5,Some,Undergraduate degree,Other,Fly,Happy,Relative
+CA,12,Male,17,Left-Handed,1,Car,12,Gymnastics,February,Summer,No,No,English,2,Yes - broadband connection,In person,466,122,67,5,32,Very little,Graduate degree,Pop,Invisibility,Rich,Friend
+PA,10,Male,18,Right-Handed,3,Car,10,None,,,,,,,,,,,,,,,,,,,
+PA,12,Male,16,Left-Handed,1,Bus,30,Baseball/Softball,April,Summer,Yes,No,Computers and technology,3,Yes - broadband connection,Text messaging,60,100,,,,,,,,,
+MO,11,Male,16,Right-Handed,1,Car,15,Basketball,March,Fall,No,No,Physical education,5,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",4,6,3,7,1,A lot,Undergraduate degree,Rhythm and blues (R&B),Freeze time,Rich,Relative
+CA,10,Male,17,Right-Handed,2,Bicycle,8,Football (American),November,Summer,No,No,Physical education,3,Yes - dial-up connection,In person,180,202,3,5,2,Some,Graduate degree,Country,Freeze time,Healthy,Relative
+MN,10,Male,15,Right-Handed,1,Car,10,Hockey (Ice),April,Summer,No,No,Art,3,Yes - other,Cell phone,50,50,3,2,3,Very little,Graduate degree,Rap/Hip hop,Super strength,Happy,Other
+VA,10,Male,14,Right-Handed,1,Bus,45,Baseball/Softball,September,Fall,No,No,Physical education,5,Yes - broadband connection,Cell phone,3,20,0,5,1,Very little,High school,Country,Freeze time,Rich,Other
+PA,12,Female,17,Right-Handed,2,Bus,45,Cycling,February,Fall,No,No,History,2,Yes - other,Internet chat or instant messaging,5,5,4,5,3,Some,,Pop,Fly,Happy,Other
+IA,12,Male,17,Right-Handed,2,Car,7,Other,September,Fall,Yes,No,History,4,Yes - broadband connection,Text messaging,10,10,0,2,1,Very little,Graduate degree,Rap/Hip hop,Super strength,Rich,Sports person
+OR,12,Male,18,Right-Handed,2,Car,25,Walking/Hiking,September,Summer,No,No,Mathematics and statistics,6,Yes - other,"Myspace, Facebook, other social networking sites, or blog",50,50,1,4,4,Very little,Graduate degree,Rock and roll,Fly,Rich,Relative
+AR,12,Female,18,Right-Handed,1,Car,12,Other,October,Fall,Yes,No,Other,4,Yes - other,Text messaging,40,55,0,8,15,None,Some college,Rhythm and blues (R&B),Fly,Rich,Relative
+MN,12,Male,17,Right-Handed,2,Car,10,Soccer,February,Fall,No,No,Physical education,3,Yes - dial-up connection,Text messaging,75,80,4,5,3,Very little,Undergraduate degree,Rhythm and blues (R&B),Fly,Rich,Sports person
+CA,12,Female,18,Right-Handed,2,Car,15,Soccer,January,Winter,No,No,History,5,Yes - other,In person,6,10,3,6,4,Some,Graduate degree,Rap/Hip hop,Telepathy,Happy,Musician or singer
+MN,8,Male,13,Right-Handed,1,Bus,10,Walking/Hiking,August,Fall,No,No,Science,4,Yes - other,Text messaging,50,50,3,3,4,Very little,Graduate degree,Other,Fly,Happy,Other
+CA,12,Male,17,Right-Handed,1,Car,25,Baseball/Softball,February,Winter,Yes,No,History,4,Yes - other,Cell phone,139,129,6,11,147,Some,Some college,Rhythm and blues (R&B),Super strength,Rich,Community leader or elder
+GA,11,Male,17,Right-Handed,2,Walk,10,Basketball,May,Summer,No,No,History,3,Yes - broadband connection,In person,30,50,10,1,10,Some,Graduate degree,Gospel,Super strength,Happy,Religious figure
+NC,12,Female,15,Right-Handed,1,Car,10,Other,May,Summer,No,No,Art,5,Yes - other,Text messaging,16,17,10,18,7,A lot,Graduate degree,Country,Freeze time,Rich,Friend
+OR,11,Male,18,Right-Handed,3,Walk,15,Athletics,July,Spring,No,No,Mathematics and statistics,5,Yes - broadband connection,In person,50,600,1,2,5,Very little,Undergraduate degree,Rhythm and blues (R&B),Freeze time,Rich,Sports person
+CA,12,Male,17,Right-Handed,2,Walk,1,Walking/Hiking,July,Winter,No,No,History,7,Yes - other,Text messaging,150,150,16,5,15,Very little,Graduate degree,Pop,Fly,Happy,Teacher
+MI,7,Male,13,Right-Handed,2,Car,5,Hockey (Ice),,,,,,,,,,,,,,,,,,,
+PA,12,Female,17,Right-Handed,1,Car,6,Soccer,May,Spring,Yes,No,Other,3,Yes - other,Text messaging,100,150,2,4,10,A lot,Graduate degree,Pop,Telepathy,Happy,Relative
+MI,7,,12,Right-Handed,2,Car,6,Basketball,October,Summer,No,No,Physical education,4,Yes - dial-up connection,In person,0,0,7,7,1,Some,Graduate degree,Other,Fly,Happy,Friend
+NC,12,Female,18,Right-Handed,1,Car,20,Soccer,October,Summer,No,No,Art,4,Yes - broadband connection,Text messaging,,,,,,,,,,,
+OK,11,Male,17,Right-Handed,1,Car,13,Bowling,July,Winter,No,No,Computers and technology,3,Yes - broadband connection,Text messaging,12,8,0,10,3,Very little,Undergraduate degree,Punk rock,Freeze time,Rich,Other
+CA,12,Male,18,Left-Handed,1,Car,15,Swimming,February,Summer,Yes,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,19,22,3,5,2,A lot,Graduate degree,Pop,Invisibility,Healthy,Musician or singer
+CO,12,Male,17,Ambidextrous,3,Car,10,Other,May,Fall,Yes,No,Science,4,Yes - broadband connection,Cell phone,87,96,50,2,12,A lot,Other,Techno/Electronic,Telepathy,Rich,Friend
+NC,12,Female,17,Right-Handed,1,Car,12,Other,February,Winter,Yes,No,Other,3,Yes - other,In person,80,60,8,5,8,A lot,Undergraduate degree,Pop,Freeze time,Happy,Friend
+IA,9,Female,13,Right-Handed,1,Bus,2,Baseball/Softball,November,Spring,No,No,Mathematics and statistics,3,Yes - broadband connection,Text messaging,11,8,1,5,3,Very little,Graduate degree,Other,Super strength,Happy,Relative
+PA,12,Female,16,Right-Handed,2,Car,3,None,September,Summer,Yes,No,English,5,Yes - broadband connection,Text messaging,32,50,10,4,3,A lot,Graduate degree,Pop,Invisibility,Rich,Business person
+SC,11,Male,18,Right-Handed,1,Bicycle,10,Skateboarding/Rollerblading,April,Fall,No,No,Other,2,Yes - broadband connection,Text messaging,12,15,3,4,1,A lot,Some college,Pop,Freeze time,Happy,Relative
+OR,11,Male,16,Right-Handed,1,Car,6,Walking/Hiking,April,Fall,Yes,No,Other,6,Yes - broadband connection,Text messaging,10,9,2,4,1,Very little,High school,Rock and roll,Fly,Happy,Relative
+MN,8,Female,13,Left-Handed,1,Bus,20,Other,,,,,,,,,,,0,20,5,Some,Some college,Rhythm and blues (R&B),Fly,Healthy,Musician or singer
+IN,11,Female,16,Right-Handed,1,Car,16,Golf,November,Fall,No,No,Other,11,Yes - broadband connection,Internet chat or instant messaging,500,700,2,4,3,Some,Graduate degree,Rap/Hip hop,Telepathy,Healthy,Teacher
+IN,12,Female,17,Right-Handed,1,Car,7,Dancing,July,Summer,Yes,No,Science,2,Yes - other,Text messaging,100,150,6,.5,8,A lot,Graduate degree,Other,Fly,Happy,Friend
+VA,10,Female,16,Right-Handed,1,Car,15,Soccer,April,Summer,No,No,English,5,Yes - other,Text messaging,25,30,3,5,8,A lot,Graduate degree,Country,Telepathy,Happy,Relative
+MI,7,Female,12,Left-Handed,3,Car,5,Tennis,July,Spring,Yes,No,History,4,Yes - other,Text messaging,1000,2000,14,12,45,A lot,Graduate degree,Pop,Invisibility,Happy,Relative
+OR,11,Male,17,Right-Handed,1,Car,6,Athletics,May,Winter,Yes,No,Art,5,Yes - other,In person,1,1,3,12,2,Very little,Graduate degree,Rock and roll,Freeze time,Happy,Teacher
+PA,10,Male,18,Right-Handed,3,Car,10,None,May,Spring,No,No,Other,,Yes - other,Other,,,,,,A lot,Other,Other,Freeze time,Happy,Other
+NY,10,Male,16,Right-Handed,2,Rail (Train/Tram/Subway),45,Soccer,January,Spring,No,No,Physical education,3,Yes - other,In person,4,5,24,30,1,Very little,Graduate degree,Other,Fly,Happy,Sports person
+MN,10,Male,15,Left-Handed,2,Car,4,Baseball/Softball,,,,,,,,,,,,,,,,,,,
+NC,12,Female,18,Right-Handed,1,Car,8,Dancing,February,Spring,Yes,No,English,3,Yes - other,Text messaging,50,50,,,,,,,,,
+MN,8,Female,14,Right-Handed,2,Bus,20,Dancing,August,Fall,No,No,Music,,Yes - broadband connection,Text messaging,50,60,40,20,10,Some,High school,Other,Invisibility,Rich,Musician or singer
+GA,12,Male,16,Right-Handed,2,Walk,30,Basketball,September,Spring,Yes,No,Mathematics and statistics,3,Yes - broadband connection,In person,15,20,30,15,10,Very little,Graduate degree,Rap/Hip hop,Telepathy,Healthy,Sports person
+CA,12,Male,17,Right-Handed,1,Car,30,Lacrosse,January,Fall,No,No,English,5,Yes - other,In person,100,200,7,12,5,None,Graduate degree,Pop,Telepathy,Rich,Musician or singer
+CA,10,Female,16,Right-Handed,2,Car,5,Cycling,March,Spring,No,No,Other,4,Yes - broadband connection,In person,0,0,40,2,4,A lot,Graduate degree,Pop,Fly,Happy,Musician or singer
+OK,11,Male,17,Right-Handed,1,Car,15,Other,July,Summer,Yes,No,Science,,,,,,,,,,,,,,
+OR,11,Male,16,Right-Handed,2,Bus,10,Other,March,Summer,No,No,Music,4,Yes - broadband connection,In person,4,20,1,3,1,A lot,Other,Other,Freeze time,Rich,Sports person
+OK,12,Male,17,Right-Handed,1,Car,15,Baseball/Softball,May,Summer,No,No,Mathematics and statistics,5,Yes - broadband connection,Text messaging,30,30,0,15,20,Some,Graduate degree,Gospel,Super strength,Happy,Religious figure
+MI,12,Female,17,Right-Handed,1,Car,10,Lacrosse,March,Summer,No,No,Other,4,Yes - broadband connection,Text messaging,20,25,6,5,3,Some,Graduate degree,Rap/Hip hop,Telepathy,Happy,Relative
+CA,12,Female,17,Ambidextrous,2,Walk,3,Other,May,Spring,No,No,Art,3,,Text messaging,25,26,5,1,9,Some,Graduate degree,Rhythm and blues (R&B),Telepathy,Happy,Musician or singer
+CA,7,Male,13,Right-Handed,1,Car,6,Skateboarding/Rollerblading,October,Spring,Yes,No,History,2,Yes - other,Text messaging,200,150,3,15,3,A lot,Graduate degree,Jazz,Freeze time,Happy,Relative
+CA,12,Male,17,Left-Handed,1,Car,,Football (American),July,Winter,No,No,History,5,Yes - dial-up connection,Internet chat or instant messaging,50,50,0,10,,Some,Undergraduate degree,Other,Freeze time,Happy,Sports person
+NC,12,Male,18,Right-Handed,2,Car,4,Soccer,April,Spring,No,No,History,5,Yes - other,Internet chat or instant messaging,220,350,1,1,7,None,High school,Rap/Hip hop,Super strength,Rich,Sports person
+CA,10,Male,15,Right-Handed,3,Car,10,Soccer,October,Summer,Yes,No,Physical education,4,Yes - broadband connection,Text messaging,10,16,15,2,7,Some,Undergraduate degree,Other,Freeze time,Rich,Relative
+NC,12,Male,18,Left-Handed,1,Car,9,Swimming,October,Fall,No,No,History,,,,27,34,,,,,,,,,
+MN,8,Male,13,Right-Handed,1,Bus,31,Martial Arts,December,Winter,No,No,,,Yes - other,Text messaging,10,30,0,1.5,24,Some,High school,Other,Fly,Rich,Other
+CA,12,Male,16,Right-Handed,2,Car,20,Golf,September,Summer,No,No,Mathematics and statistics,4,Yes - broadband connection,Cell phone,4,2,10,8,0,Some,Graduate degree,Reggae,Invisibility,Happy,Politician
+WA,10,Male,15,Right-Handed,1,Car,15,Basketball,March,Summer,No,No,Physical education,4,Yes - broadband connection,In person,20,20,3,2,1,Some,Graduate degree,Country,Fly,Rich,Sports person
+VA,10,Male,17,Right-Handed,,Bus,29,Bowling,,,,,,,,,,,,,,,High school,Other,Fly,Rich,Relative
+TX,12,Male,16,Right-Handed,2,Bus,30,Soccer,October,Winter,No,No,English,6,Yes - broadband connection,Internet chat or instant messaging,5,10,7,14,12,A lot,Some college,Jazz,Freeze time,Healthy,Relative
+CA,12,Male,18,Right-Handed,2,Car,5,Soccer,March,Fall,Yes,No,Science,5,Yes - broadband connection,In person,100,100,8,4,17,Some,Graduate degree,Rhythm and blues (R&B),Fly,Healthy,Sports person
+NC,12,Male,17,Right-Handed,1,Car,22,Baseball/Softball,May,Fall,Yes,No,Science,3,Yes - broadband connection,Text messaging,5,20,2,5,5,Some,Graduate degree,Rap/Hip hop,Invisibility,Rich,Sports person
+PA,12,Male,17,Left-Handed,,Car,23,Basketball,July,Summer,Yes,No,Other,5,Yes - other,Cell phone,100,150,0,5,10,A lot,Graduate degree,Rhythm and blues (R&B),Freeze time,Rich,Coach or club leader
+MS,12,Male,18,Right-Handed,1,Car,12,None,March,Summer,No,No,Science,7,Yes - other,Text messaging,45,200,2,7,72,Some,Graduate degree,Other,Fly,Rich,Friend
+CA,12,Female,17,Right-Handed,1,Car,2,Other,March,Summer,No,Yes,Other,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",100,150,5,12,1,Some,Other,Country,Fly,Rich,Sports person
+NC,12,Female,17,Right-Handed,2,Car,17,Soccer,February,Summer,Yes,No,English,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",10,8,1,3,0,Some,Undergraduate degree,Other,Telepathy,Healthy,Business person
+OK,12,Female,18,Right-Handed,1,Car,10,Hockey (Ice),February,Spring,Yes,No,Art,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",70,72,1,25,5,A lot,Undergraduate degree,Rap/Hip hop,Invisibility,Famous,Religious figure
+SC,12,Female,17,Right-Handed,2,Car,20,None,June,Winter,No,No,Music,5,Yes - broadband connection,Text messaging,24,36,1,7,3,Very little,Graduate degree,Rap/Hip hop,Invisibility,Happy,Relative
+MI,7,Female,12,Right-Handed,1,Bus,10,Tennis,August,Winter,No,No,History,5,Yes - broadband connection,In person,3,13,1,14,1,Very little,Graduate degree,Rap/Hip hop,Telepathy,Happy,Doctor or nurse
+CO,12,Male,18,Right-Handed,1,Car,15,Other,October,Summer,No,No,Art,4,Yes - broadband connection,Internet chat or instant messaging,20,25,15,15,5,A lot,Undergraduate degree,Techno/Electronic,Super strength,Healthy,Relative
+TX,12,Male,17,Right-Handed,1,Car,11,Baseball/Softball,July,Summer,No,No,Mathematics and statistics,5,Yes - other,Text messaging,,,0,2,1,Some,Graduate degree,Rap/Hip hop,Fly,Rich,Other
+OK,11,Female,17,Right-Handed,1,Car,10,Athletics,December,Fall,No,No,History,4,Yes - other,In person,5,3,1,11,1,Some,Graduate degree,Classical,Telepathy,Healthy,Relative
+PA,12,Male,18,Right-Handed,1,Car,15,Baseball/Softball,,,,,,,,,,,,,,,,,,,
+NC,10,Male,17,Right-Handed,2,Car,30,Basketball,October,Fall,No,No,Physical education,6,Yes - other,Cell phone,150,310,3,8,140,Very little,Graduate degree,Pop,Freeze time,Happy,Sports person
+PA,12,Female,18,Right-Handed,1,Car,7,Soccer,December,Fall,No,No,Geography,3,Yes - other,Cell phone,50,55,5,3,3,Some,Graduate degree,Other,Freeze time,Happy,Actor
+IN,12,Male,17,Right-Handed,1,Car,30,Basketball,October,Summer,Yes,No,Physical education,4,Yes - other,Text messaging,4,10,1,2,3,Some,Graduate degree,Rap/Hip hop,Fly,Rich,Relative
+MI,7,Male,13,Right-Handed,1,Bus,30,Soccer,November,Summer,No,No,Physical education,4,Yes - broadband connection,Internet chat or instant messaging,300,300,1,5,7,Some,Some college,Rap/Hip hop,Freeze time,Happy,Sports person
+TN,12,Female,17,Right-Handed,1,Car,15,Other,October,Fall,No,No,Mathematics and statistics,2,Yes - other,Text messaging,10,20,5,2,1,Some,Undergraduate degree,Punk rock,Freeze time,Healthy,Business person
+CA,12,Female,17,Right-Handed,2,Bus,13,Swimming,April,Fall,No,No,Other,7,Yes - other,Text messaging,50,70,15,28,5,A lot,Undergraduate degree,Pop,Telepathy,Happy,Relative
+OR,12,Male,17,,2,Car,5,Basketball,December,Summer,No,No,Physical education,4,Yes - broadband connection,In person,75,70,10,10,2,A lot,Graduate degree,Rap/Hip hop,Freeze time,Rich,Business person
+NY,12,Male,17,Right-Handed,2,Rail (Train/Tram/Subway),40,Other,November,Summer,No,No,Mathematics and statistics,5,No internet connection,Text messaging,4,8,3,7,1,Some,Graduate degree,Pop,Freeze time,Healthy,Friend
+IN,12,Male,17,Right-Handed,1,Car,10,Walking/Hiking,June,Winter,Yes,Yes,Art,5,Yes - broadband connection,Internet chat or instant messaging,1,1,5,10,5,Very little,Graduate degree,Other,Telepathy,Happy,Relative
+CA,12,Female,18,Right-Handed,2,Car,30,Running/Jogging,September,Winter,No,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,10,20,21,5,8,A lot,Graduate degree,Pop,Freeze time,Healthy,Relative
+WA,10,Male,16,Right-Handed,1,Bus,45,Other,February,Summer,No,No,Mathematics and statistics,2,Yes - broadband connection,Text messaging,10,5,3,20,1,A lot,Some college,Rap/Hip hop,Super strength,Rich,Relative
+MI,7,Male,13,Right-Handed,3,Bus,5,Football (American),October,Summer,Yes,No,Physical education,4,Yes - other,Text messaging,10,50,3,1,1,Very little,Graduate degree,Rap/Hip hop,Telepathy,Healthy,Relative
+NC,10,Male,16,Right-Handed,1,Car,32,Martial Arts,November,Summer,Yes,No,English,4,Yes - other,In person,200,350,10,0,30,Some,Graduate degree,Rock and roll,Super strength,Happy,Other
+CO,11,Female,16,Ambidextrous,2,Car,5,Golf,July,Winter,Yes,No,Science,2,Yes - broadband connection,Internet chat or instant messaging,100,100,10,6,40,Very little,Graduate degree,Other,Fly,Happy,Relative
+MN,12,Female,16,Right-Handed,2,Car,15,Baseball/Softball,June,Fall,No,No,Geography,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",120,260,3,5,10,Some,Graduate degree,Rap/Hip hop,Fly,Healthy,Relative
+MI,12,Male,17,Right-Handed,1,Car,8,Basketball,July,Summer,Yes,No,Physical education,6,Yes - other,In person,4,1,0,5,1,Some,High school,Rap/Hip hop,Freeze time,Rich,Sports person
+GA,11,Male,17,Right-Handed,3,Car,9,Soccer,June,Winter,No,No,Science,3,Yes - broadband connection,In person,20,300,20,6,4,A lot,Graduate degree,Other,Freeze time,Healthy,Sports person
+NJ,12,Female,17,Right-Handed,1,Car,5,Other,November,Summer,No,No,Art,4,Yes - broadband connection,Internet chat or instant messaging,300,200,,,,,,,,,
+SC,12,Male,17,Right-Handed,1,Car,5,Football (American),February,Fall,No,No,Social studies,5,Yes - dial-up connection,In person,8,10,1,48,36,Very little,High school,Rap/Hip hop,Super strength,Rich,Sports person
+GA,12,Male,15,Right-Handed,2,Car,5,Basketball,June,Summer,No,Yes,Mathematics and statistics,3,Yes - broadband connection,Text messaging,15,19,2,2,2,Some,Graduate degree,Rap/Hip hop,Fly,Happy,Sports person
+CA,10,Female,17,Left-Handed,2,Car,20,Walking/Hiking,,,,,,,,,,,,,,,,,,,
+MI,7,Female,13,Right-Handed,2,Car,5,Dancing,March,Winter,No,No,English,4,Yes - broadband connection,Text messaging,40,300,10,10,8,Some,Graduate degree,Other,Telepathy,Rich,Friend
+FL,8,Female,13,Right-Handed,1,Bus,20,Swimming,July,Fall,No,No,Other,8,Yes - broadband connection,Text messaging,560,560,3,10,10,A lot,Some college,Other,Telepathy,Rich,Religious figure
+CA,12,Female,17,,2,Car,,Other,November,Summer,No,No,History,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",18,23,17.5,10,10,A lot,Graduate degree,Rap/Hip hop,Telepathy,Rich,Relative
+CA,12,Male,17,Right-Handed,1,Car,5,Walking/Hiking,March,Fall,Yes,No,Mathematics and statistics,4,Yes - other,In person,10,60,5,4,3,Very little,Undergraduate degree,Rap/Hip hop,Telepathy,Happy,Business person
+NY,12,Male,15,Right-Handed,1,Car,7,Soccer,April,Summer,No,No,Physical education,5,Yes - other,"Myspace, Facebook, other social networking sites, or blog",20,50,8,12,5,A lot,Graduate degree,Rap/Hip hop,Fly,Happy,Relative
+MN,10,Female,16,Right-Handed,1,Car,6,Other,January,Fall,No,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,10,20,2,3,3,Very little,Graduate degree,Rhythm and blues (R&B),Telepathy,Happy,Relative
+CO,12,Male,17,Right-Handed,1,Car,5,Soccer,November,Winter,No,No,Physical education,6,Yes - other,In person,50,100,10,8,6,Very little,Some college,Rap/Hip hop,Fly,Rich,Sports person
+OR,11,Female,18,Right-Handed,2,Car,7,Gymnastics,April,Summer,No,No,Social studies,4,Yes - broadband connection,Text messaging,150,200,1,5,9,Some,Graduate degree,Pop,Invisibility,Rich,Musician or singer
+PA,12,Female,17,Right-Handed,2,Car,12,Football (American),November,Winter,Yes,No,Science,3,Yes - other,Text messaging,100,120,7,10,3,Some,Graduate degree,Pop,Fly,Happy,Relative
+IN,12,Male,17,Left-Handed,1,Bus,13,Swimming,April,Fall,Yes,No,Other,9,Yes - other,Cell phone,70,70,2,7,20,Some,Graduate degree,Pop,Invisibility,Rich,Business person
+SC,12,Male,17,Left-Handed,1,Bus,10,Soccer,December,,No,No,History,3,Yes - broadband connection,Text messaging,7,13,0,6,1,Very little,Some college,Rap/Hip hop,Invisibility,Rich,Religious figure
+IN,11,Female,17,Right-Handed,2,Car,10,Cycling,June,Fall,No,No,Art,4,Yes - broadband connection,Cell phone,6,7,6,4,1,A lot,Graduate degree,Pop,Telepathy,Rich,Teacher
+CA,12,Female,17,Right-Handed,2,Walk,5,Other,March,Fall,No,No,Other,5,Yes - broadband connection,Text messaging,15,20,14,10,5,Some,Graduate degree,Pop,Telepathy,Rich,Friend
+CA,12,Female,17,Right-Handed,1,Car,10,Dancing,June,Summer,No,No,History,7,Yes - broadband connection,,50,100,3,8,5,Some,Some college,Pop,Telepathy,Rich,Other
+MN,8,Female,13,Right-Handed,1,Bus,10,Basketball,February,Spring,No,No,Art,7,Yes - other,In person,0,0,5,1000,0,Some,Other,Other,Telepathy,Famous,Relative
+NY,12,Female,18,Right-Handed,1,Rail (Train/Tram/Subway),45,Baseball/Softball,March,Fall,Yes,No,History,3,Yes - other,In person,50,150,24,24,12,Some,Graduate degree,Pop,Telepathy,Rich,Relative
+GA,12,Male,16,Right-Handed,2,Boat,15,Tennis,December,Winter,No,No,Physical education,3,Yes - broadband connection,Text messaging,3,2,54,3,25,Some,Less than high school,Gospel,Freeze time,Rich,Business person
+CA,12,Male,18,Right-Handed,2,Car,5,Soccer,February,Winter,No,No,Science,6,Yes - broadband connection,Text messaging,300,200,1,8,30,Some,Graduate degree,Rap/Hip hop,Freeze time,Rich,Business person
+CA,12,Male,17,Right-Handed,2,Bicycle,15,Running/Jogging,July,Winter,Yes,No,Art,4,Yes - broadband connection,Text messaging,60,50,1,2,2,A lot,Some college,Other,Freeze time,Happy,Relative
+WA,12,Female,18,Right-Handed,2,Car,5,Other,January,Summer,No,No,History,5,Yes - other,Telephone,50,50,10,0,20,Some,Some college,Rap/Hip hop,Telepathy,Rich,Musician or singer
+CA,12,Female,17,Left-Handed,1,Car,10,Walking/Hiking,November,Fall,No,No,Art,6,Yes - other,In person,0,0,0,0,0,None,Some college,Pop,Invisibility,Healthy,Relative
+PA,12,Male,18,Right-Handed,1,Car,10,Football (American),,,,,,,,,,,,,,,,,,,
+PA,4,Female,17,Right-Handed,1,Car,10,Football (American),October,Fall,No,No,English,1,Yes - other,"Myspace, Facebook, other social networking sites, or blog",8,7,1,1,15,Some,Graduate degree,Rap/Hip hop,Freeze time,Happy,Relative
+NC,12,Female,18,Right-Handed,1,Car,15,Other,April,Fall,No,No,Science,3,Yes - broadband connection,In person,8,6,14,2,2,A lot,Graduate degree,Punk rock,Freeze time,Happy,Actor
+MI,7,Male,13,Right-Handed,2,Bicycle,10,Soccer,March,Winter,No,No,Mathematics and statistics,4,Yes - broadband connection,E-mail,2,9,5,.1,.5,Very little,Graduate degree,Classical,Telepathy,Happy,Friend
+FL,8,Male,14,Right-Handed,,Car,10,Other,September,Fall,No,No,Art,4,Yes - broadband connection,Text messaging,100,100,20,10,4,Very little,Graduate degree,Rap/Hip hop,Freeze time,Happy,Friend
+NJ,11,Female,17,Right-Handed,2,Car,8,Dancing,April,Summer,Yes,No,Mathematics and statistics,5,Yes - other,In person,150,250,13,7,2,A lot,Graduate degree,Pop,Fly,Healthy,Relative
+NC,12,Male,17,Right-Handed,1,Car,17,Golf,January,Fall,No,No,Mathematics and statistics,3,Yes - broadband connection,Text messaging,150,150,10,10,5,Some,Graduate degree,Rap/Hip hop,Freeze time,Rich,Relative
+WA,12,Female,17,Right-Handed,2,Bus,,Soccer,October,Summer,Yes,No,Other,10,Yes - other,Text messaging,100,100,5,4,10,A lot,Graduate degree,Rap/Hip hop,Invisibility,Healthy,Relative
+IN,12,Male,17,Right-Handed,1,Bus,20,Football (American),July,Summer,Yes,No,Physical education,5,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",400,325,0,10,,,,,,,
+CO,12,Female,17,Right-Handed,1,Car,5,Basketball,March,Fall,No,No,History,4,Yes - broadband connection,Text messaging,30,35,5,5,3,Very little,Graduate degree,Pop,Telepathy,Happy,Relative
+CA,12,Male,17,Right-Handed,2,Car,3,Soccer,November,Spring,Yes,No,Other,5,Yes - broadband connection,Other,45,65,15,20,2,None,Graduate degree,Other,Freeze time,Famous,Doctor or nurse
+NY,12,Male,17,Right-Handed,1,Bicycle,6,Golf,January,Spring,Yes,No,Computers and technology,3,Yes - broadband connection,,8,7,9,6,2,Some,Undergraduate degree,Rock and roll,Fly,,Relative
+IN,12,Female,17,Right-Handed,1,Car,45,Other,October,Fall,No,No,Music,4,No internet connection,Text messaging,50,45,3,0,10,Some,Graduate degree,Other,Freeze time,Healthy,Coach or club leader
+NJ,12,Male,17,Right-Handed,2,Walk,5,Soccer,May,Winter,No,No,Mathematics and statistics,5,Yes - broadband connection,Text messaging,10,15,1,4,3,Some,Graduate degree,Other,Super strength,Rich,Sports person
+CA,12,Male,17,Right-Handed,2,Walk,25,None,,Winter,No,No,English,3,Yes - broadband connection,Text messaging,7,9,4,46,64,Some,Graduate degree,Rap/Hip hop,Freeze time,Rich,Politician
+CA,11,Female,16,Ambidextrous,1,Car,6,Soccer,December,Summer,No,Yes,Art,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",130,230,10,29,3,Some,Undergraduate degree,Punk rock,Telepathy,Rich,Friend
+PA,12,Male,17,Right-Handed,1,Car,4,Soccer,September,Fall,No,No,Social studies,6,Yes - broadband connection,Text messaging,50,300,2,10,8,Very little,Graduate degree,Rap/Hip hop,Telepathy,Rich,Sports person
+IN,12,Female,17,Right-Handed,2,Car,15,Dancing,June,Fall,Yes,No,Music,4,Yes - broadband connection,In person,4,12,20,5,2,A lot,Undergraduate degree,Punk rock,Fly,Happy,Teacher
+SC,12,Female,17,Right-Handed,1,Car,5,Swimming,February,Summer,No,No,Social studies,3,Yes - broadband connection,Text messaging,50,40,1,1,4,Some,Graduate degree,Rap/Hip hop,Telepathy,Healthy,Religious figure
+IA,12,Female,18,Ambidextrous,2,Car,10,Other,September,Fall,No,No,Science,6,Yes - other,Text messaging,115,99,15,5,2,Some,Other,Punk rock,Invisibility,Healthy,Relative
+NC,12,Male,17,Right-Handed,3,Car,18,Basketball,June,Winter,Yes,No,History,5,Yes - broadband connection,Cell phone,10,50,14,5,21,Some,Graduate degree,Gospel,Fly,Happy,Doctor or nurse
+MT,10,Male,16,Right-Handed,1,Walk,2,Baseball/Softball,April,Summer,No,No,Physical education,5,Yes - broadband connection,Internet chat or instant messaging,200,150,4,4,,,,,,,
+VA,10,Male,14,Right-Handed,1,Bus,45,Soccer,April,Spring,No,No,Mathematics and statistics,3,Yes - broadband connection,Cell phone,10,10,3,20,2,Very little,Undergraduate degree,Pop,Fly,Happy,Relative
+CA,12,Male,16,Right-Handed,1,Car,5,Basketball,September,Summer,No,No,,6,Yes - other,In person,2,5,1,,0,Very little,Some college,Rap/Hip hop,Super strength,Happy,Relative
+MI,7,Male,13,Right-Handed,2,Bus,10,Soccer,,,,,,,,,,,,,,,,,,,
+FL,8,Male,14,Right-Handed,4,Bus,40,Basketball,December,Winter,Yes,No,Social studies,3,Yes - broadband connection,Text messaging,6,8,3,2,1,A lot,Other,Other,Freeze time,Rich,Sports person
+IN,12,Male,18,Left-Handed,1,Bus,12,Other,September,Fall,No,No,Social studies,5,Yes - broadband connection,Text messaging,4,3,1,5,4,Some,Graduate degree,Jazz,Fly,Happy,Relative
+CA,12,Male,17,Right-Handed,2,Walk,5,Basketball,July,Winter,No,No,Other,6,Yes - other,"Myspace, Facebook, other social networking sites, or blog",30,25,3,4,5,Some,Graduate degree,Other,Freeze time,Happy,Religious figure
+VA,8,Female,13,Right-Handed,2,Walk,5,Soccer,August,Summer,Yes,No,Science,3,Yes - other,Cell phone,150,300,3,9,24,Some,Graduate degree,Rap/Hip hop,Invisibility,Happy,Relative
+CA,12,Male,18,Right-Handed,2,Skateboard/Scooter/Rollerblade,20,Athletics,September,Winter,No,No,Physical education,5,Yes - broadband connection,Text messaging,48,233,10,5,2,A lot,Graduate degree,Rap/Hip hop,Fly,Famous,Sports person
+NY,12,Female,16,Right-Handed,2,Rail (Train/Tram/Subway),80,Swimming,October,Fall,Yes,No,Science,4,Yes - broadband connection,In person,40,40,12,4,3,Some,Graduate degree,Rock and roll,Fly,Healthy,Teacher
+CA,7,Male,13,Right-Handed,1,Car,20,Football (American),September,Winter,No,No,History,5,Yes - broadband connection,Text messaging,1,3,1,57,1,Very little,Graduate degree,Country,Fly,Happy,Relative
+WV,11,Male,18,Right-Handed,1,Car,5,Football (American),December,Fall,No,No,Mathematics and statistics,5,Yes - broadband connection,Text messaging,35,30,1,2,2,Very little,Some college,Rap/Hip hop,Freeze time,Happy,Relative
+CA,12,Female,16,Right-Handed,1,Car,13,Dancing,December,Winter,Yes,No,Mathematics and statistics,9,Yes - other,Cell phone,79,91,2,10,3,Some,Graduate degree,Rhythm and blues (R&B),Telepathy,Happy,Relative
+MI,7,Male,13,Right-Handed,2,Bus,5,Lacrosse,October,Winter,Yes,No,Languages,4,Yes - other,Text messaging,10,60,10,3,1,A lot,Graduate degree,Rock and roll,Freeze time,Healthy,Business person
+PA,12,Male,17,Right-Handed,2,Bus,13,Walking/Hiking,October,Fall,No,No,History,4,Yes - other,Text messaging,5,5,3,30,2,Some,Other,Rock and roll,Fly,Happy,Other
+FL,12,Male,18,Left-Handed,1,Car,30,Basketball,September,Spring,Yes,No,Science,4,Yes - other,Cell phone,30,40,6,7,2,Some,Undergraduate degree,Rock and roll,Fly,Rich,Sports person
+CA,12,Male,17,Right-Handed,2,Walk,10,Basketball,July,Winter,No,No,History,3,Yes - other,Telephone,1,5,3,6,0,Some,Graduate degree,Classical,Fly,Healthy,Relative
+PA,11,Male,18,Right-Handed,1,Car,2,Soccer,April,Summer,No,No,Mathematics and statistics,4,Yes - other,In person,15,15,,,,,,,,,
+NJ,11,Male,17,Right-Handed,2,Car,40,Skateboarding/Rollerblading,March,Summer,No,No,Computers and technology,4,Yes - broadband connection,Text messaging,10,100,4,6,3,Some,Graduate degree,Pop,Telepathy,Happy,Friend
+AZ,12,Female,17,Right-Handed,2,Car,10,Dancing,January,Summer,No,No,English,3,Yes - broadband connection,In person,6,2,14,6,3,Some,Graduate degree,Reggae,Freeze time,Happy,Relative
+SC,12,Female,17,Right-Handed,1,Car,6,Other,August,Summer,No,No,Other,5,Yes - other,"Myspace, Facebook, other social networking sites, or blog",30,30,3,50,60,Very little,Some college,Country,Telepathy,Rich,Relative
+NC,12,Female,17,Right-Handed,1,Car,16,Athletics,July,Summer,No,No,Science,4,Yes - broadband connection,Text messaging,20,20,14,3,5,A lot,Graduate degree,Pop,Invisibility,Happy,Relative
+MI,7,Male,13,Right-Handed,2,Car,20,Baseball/Softball,September,Fall,No,No,Mathematics and statistics,4,Yes - dial-up connection,Cell phone,10,15,7,8,1,Very little,Graduate degree,Rock and roll,Super strength,Healthy,Sports person
+GA,12,Male,16,Right-Handed,1,Bus,15,Athletics,September,Winter,No,No,Mathematics and statistics,4,Yes - other,Cell phone,,,1.5,8,.5,Very little,Graduate degree,Pop,Fly,Famous,Relative
+OH,7,Male,13,Right-Handed,1,Bus,30,Basketball,April,Summer,No,No,Social studies,6,Yes - other,Cell phone,100,100,2,9,7,Some,Graduate degree,Pop,Fly,Healthy,Sports person
+OH,7,Male,12,Right-Handed,1,Bus,25,Lacrosse,February,Winter,No,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,5,400,1,20,5,Very little,Graduate degree,Rap/Hip hop,Freeze time,Happy,Relative
+VA,8,Female,14,Right-Handed,3,Car,3,Martial Arts,December,Winter,,,Art,3,Yes - broadband connection,In person,24,21,.5,1,.25,Some,Graduate degree,Other,Freeze time,Rich,Actor
+NJ,12,Female,18,Right-Handed,1,Car,12,Other,May,Winter,No,No,Mathematics and statistics,8,Yes - other,Cell phone,30,30,4,16,7,Some,Undergraduate degree,Other,Invisibility,Rich,Relative
+IL,11,Male,17,Right-Handed,2,Car,7,Swimming,May,Spring,Yes,No,Music,4,Yes - broadband connection,Text messaging,20,10,7,7,7,Some,Graduate degree,Pop,Fly,Rich,Friend
+PA,12,Female,16,Right-Handed,2,Car,10,Other,,,,,,,,,,,,,,,,,,,
+OK,10,Male,16,Left-Handed,1,Bus,20,Table Tennis,October,Summer,No,No,History,3,,Text messaging,20,15,2,3,4,Some,Some college,Rap/Hip hop,Fly,Healthy,Relative
+VT,12,Male,18,Left-Handed,1,Car,9,Martial Arts,May,Winter,Yes,No,Mathematics and statistics,5,Yes - broadband connection,Text messaging,0,56,12,21,10,,Graduate degree,Techno/Electronic,Invisibility,Rich,Actor
+CO,12,Female,17,Right-Handed,1,Car,15,Lacrosse,October,Fall,No,No,Other,4,Yes - broadband connection,Internet chat or instant messaging,500,400,10,3,3,A lot,Graduate degree,Techno/Electronic,Telepathy,Rich,Business person
+FL,12,Male,17,Right-Handed,2,Car,15,Football (American),August,Summer,Yes,No,English,4,Yes - broadband connection,Text messaging,75,100,2,20,3,A lot,Graduate degree,Country,Super strength,Famous,Relative
+OK,11,Female,16,Right-Handed,1,Car,8,Dancing,July,Fall,No,No,History,4,Yes - broadband connection,Internet chat or instant messaging,60,65,5,10,5,A lot,Graduate degree,Rhythm and blues (R&B),Telepathy,Happy,Doctor or nurse
+IN,12,Female,17,Right-Handed,1,Car,20,Table Tennis,June,Summer,No,No,English,4,Yes - other,Text messaging,27,25,3,5,,,,,,,
+MN,10,Male,16,Right-Handed,1,Car,15,Soccer,December,Fall,No,No,Physical education,4,Yes - other,Cell phone,120,102,.5,5,10,Some,Graduate degree,Rap/Hip hop,Super strength,Rich,Community leader or elder
+OR,12,Male,18,Left-Handed,2,Car,12,Table Tennis,January,Summer,Yes,No,Mathematics and statistics,4,Yes - broadband connection,Internet chat or instant messaging,200,250,1,3,25,Very little,Graduate degree,Classical,Telepathy,Healthy,Teacher
+AR,12,Female,18,Right-Handed,2,Car,14,Walking/Hiking,November,Summer,Yes,No,Physical education,4,Yes - other,Text messaging,10,6,6,4,1,Some,Graduate degree,Rhythm and blues (R&B),Invisibility,Healthy,Religious figure
+CA,12,Male,17,Right-Handed,2,Walk,14,Running/Jogging,December,Winter,No,No,Physical education,6,Yes - broadband connection,Internet chat or instant messaging,9,1,12,1,1,Some,Graduate degree,Other,Super strength,Rich,Business person
+OR,11,Female,16,Right-Handed,2,Car,10,Basketball,,,,,,,,,,,,,,,,,,,
+MN,12,Female,16,Right-Handed,2,Car,15,Dancing,April,Spring,No,No,Mathematics and statistics,2,Yes - other,Text messaging,10,30,8,10,3,Some,Some college,Rhythm and blues (R&B),Super strength,Happy,Sports person
+GA,12,Female,18,Right-Handed,2,Car,7,Dancing,August,Spring,No,No,Languages,3,Yes - broadband connection,Text messaging,20,25,6,2,100,Very little,High school,Rhythm and blues (R&B),Fly,Rich,Relative
+MA,12,Female,17,Right-Handed,1,Bus,60,Running/Jogging,April,Summer,No,No,Science,4,Yes - broadband connection,Text messaging,,,8,2,8,A lot,Undergraduate degree,,Fly,Rich,Friend
+PA,4,Male,17,Ambidextrous,2,Bus,16,Other,May,Summer,Yes,No,Mathematics and statistics,,Yes - dial-up connection,Other,1,0,0,0,0,A lot,High school,Other,Freeze time,Rich,Other
+OK,9,Female,15,Right-Handed,2,Car,7,Dancing,November,Spring,No,No,Science,3,Yes - other,In person,52,148,5,12,6,Some,Graduate degree,Other,,Happy,Friend
+OH,7,Female,13,Right-Handed,2,Bus,6,Dancing,May,Summer,Yes,No,History,4,Yes - other,Text messaging,0,4,6,1,5,Some,Graduate degree,Other,Invisibility,Famous,Actor
+NY,12,Female,17,Right-Handed,1,Rail (Train/Tram/Subway),45,Dancing,April,Spring,No,No,English,4,Yes - broadband connection,Internet chat or instant messaging,80,30,6,2,84,A lot,Graduate degree,Rap/Hip hop,Telepathy,Rich,Other
+CA,11,Female,16,Right-Handed,2,Car,35,Tennis,September,Spring,Yes,No,Other,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",50,70,20,7,4,A lot,Graduate degree,Pop,Telepathy,Rich,Actor
+NC,12,Female,17,Right-Handed,2,Car,8,Other,June,Summer,Yes,No,History,7,Yes - other,Text messaging,10,8,6,2,1,Some,Some college,Rhythm and blues (R&B),Fly,Happy,Doctor or nurse
+IL,12,Female,15,Right-Handed,1,Car,10,Other,August,Spring,No,No,Mathematics and statistics,3,Yes - other,In person,15,100,6,5,5,Some,Graduate degree,Other,Freeze time,Happy,Friend
+CA,12,Male,17,Right-Handed,1,Car,10,Athletics,December,Winter,No,No,Science,3,Yes - broadband connection,Text messaging,100,100,5,10,15,Some,Graduate degree,Country,Fly,Rich,Doctor or nurse
+NC,10,Male,16,Right-Handed,2,Car,15,Basketball,December,Fall,Yes,No,Physical education,5,Yes - other,Text messaging,10,30,5,20,3,Some,High school,Other,Invisibility,Rich,Sports person
+VA,10,Female,14,Right-Handed,1,Car,20,Lacrosse,September,Fall,Yes,No,History,3,Yes - other,Text messaging,26,15,6,6,15,Some,Graduate degree,Country,Telepathy,Happy,Religious figure
+MI,7,Female,12,Ambidextrous,1,Car,5,Other,October,Fall,Yes,No,Mathematics and statistics,5,Yes - other,Text messaging,100,200,2,3,10,Some,Graduate degree,Pop,Telepathy,Rich,Relative
+SC,12,Male,17,Right-Handed,1,Bus,20,Baseball/Softball,March,Winter,No,No,Other,4,Yes - other,Text messaging,355,273,1,1,7,Some,Some college,Rap/Hip hop,Fly,Rich,Sports person
+VA,10,Male,15,Right-Handed,3,Car,10,Football (American),February,Fall,No,No,Science,4,Yes - broadband connection,Text messaging,23,50,20,35,60,A lot,Undergraduate degree,Other,Freeze time,Happy,Musician or singer
+IL,12,Female,17,Right-Handed,2,Car,10,Other,December,Summer,No,No,Social studies,5,Yes - broadband connection,Text messaging,15,15,3,1,3,Some,Graduate degree,Rap/Hip hop,Freeze time,Rich,Actor
+VA,10,Female,17,Right-Handed,2,Car,7,Soccer,May,Fall,No,,Science,5,Yes - other,Text messaging,40,50,5,2,15,A lot,High school,Country,Telepathy,Rich,Relative
+NC,12,Male,17,Right-Handed,2,Car,25,Basketball,May,Summer,No,No,Physical education,3,Yes - broadband connection,Text messaging,600,650,60,10,50,Some,Graduate degree,Other,Fly,Happy,Other
+MI,7,Male,12,Right-Handed,2,Bus,15,Skateboarding/Rollerblading,May,Winter,No,No,Computers and technology,4,Yes - other,Text messaging,7,4,2,.5,.1,Very little,Graduate degree,Other,Freeze time,Rich,Other
+CA,12,Female,17,Left-Handed,2,Car,20,Other,December,Winter,No,No,Other,4,Yes - other,Text messaging,20,20,3,2,1,Some,Graduate degree,Rhythm and blues (R&B),Invisibility,Rich,Friend
+CO,9,Female,14,Left-Handed,1,Car,4,Basketball,,,,,,,,,,,,,,,,,,,
+NY,12,Male,18,Right-Handed,1,Bicycle,15,Tennis,June,Spring,No,No,History,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",14,14,4,2,1,Very little,Graduate degree,Pop,Telepathy,Healthy,Politician
+OR,11,Male,17,Right-Handed,1,Bus,20,Walking/Hiking,June,Spring,No,No,Science,3,Yes - broadband connection,In person,7,3,800,850,300,Some,Graduate degree,Pop,Fly,Healthy,Friend
+NY,10,Male,15,Right-Handed,2,Rail (Train/Tram/Subway),122,Other,September,Fall,No,Yes,Science,3,Yes - broadband connection,Text messaging,2,2,6,1,1,Some,Graduate degree,Other,Freeze time,Happy,Other
+OK,9,Male,15,Right-Handed,3,Bus,30,Soccer,December,Summer,No,No,Mathematics and statistics,4,Yes - other,Cell phone,20,20,40,3,1,Some,Graduate degree,,Freeze time,Happy,Doctor or nurse
+FL,12,Male,17,Right-Handed,3,Walk,2,Football (American),May,Spring,Yes,No,Mathematics and statistics,4,Yes - dial-up connection,In person,100,150,10,0,10,None,Graduate degree,Rap/Hip hop,Fly,Rich,Business person
+PA,12,Female,17,Right-Handed,2,Car,7,Swimming,September,Winter,Yes,No,Social studies,4,Yes - other,Text messaging,5,14,3,6,.5,A lot,Undergraduate degree,Pop,Telepathy,Rich,Actor
+NC,12,Male,17,Right-Handed,2,Car,30,Running/Jogging,September,Winter,Yes,No,Mathematics and statistics,3,Yes - broadband connection,Internet chat or instant messaging,10,10,10,5,3,A lot,Graduate degree,Techno/Electronic,Telepathy,Happy,Teacher
+CA,12,Female,17,Right-Handed,1,Car,30,Other,June,Fall,No,No,Art,5,Yes - other,In person,500,500,17,7,32,A lot,Graduate degree,Rhythm and blues (R&B),Freeze time,Rich,Relative
+OK,12,Male,17,Right-Handed,1,Bus,25,Walking/Hiking,May,Fall,Yes,No,Mathematics and statistics,5,Yes - broadband connection,Internet chat or instant messaging,200,100,5,10,30,Some,Undergraduate degree,Other,Telepathy,Rich,Other
+FL,8,Male,14,Left-Handed,1,Bus,10,Basketball,September,Summer,Yes,No,Science,4,Yes - broadband connection,Text messaging,130,140,1,3,7,Some,Graduate degree,Other,Fly,Rich,Sports person
+MN,12,Male,16,Right-Handed,1,Car,7,Other,June,Fall,No,No,Other,3,Yes - broadband connection,Text messaging,15,100,7,4,4,Some,Graduate degree,Other,Freeze time,Rich,Musician or singer
+SC,12,Female,17,Right-Handed,1,Car,16,Baseball/Softball,April,Fall,Yes,No,Science,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",3,5,0,10,5,None,Graduate degree,Country,Fly,Happy,Religious figure
+GA,12,Female,17,Right-Handed,1,Bus,10,Running/Jogging,December,Spring,Yes,No,Languages,,Yes - other,In person,,,,,,,,,,,
+SC,12,Female,16,Right-Handed,4,Car,8,Skateboarding/Rollerblading,July,Winter,Yes,No,Music,5,Yes - other,Text messaging,5,20,0,7,3,Some,Graduate degree,Punk rock,Telepathy,Happy,Musician or singer
+SC,12,Male,18,Right-Handed,1,Car,10,Other,October,Winter,No,No,Music,6,Yes - other,In person,0,0,0,0,0,None,Graduate degree,Rock and roll,Freeze time,Happy,Musician or singer
+VA,10,Male,14,Right-Handed,1,Car,,Swimming,September,Spring,No,No,Mathematics and statistics,5,Yes - broadband connection,In person,3,25,3,15,1,Some,Graduate degree,Pop,Fly,Rich,Sports person
+IL,12,Male,17,Right-Handed,1,Car,13,Other,January,Fall,No,No,English,4,Yes - broadband connection,Text messaging,,,6,3,1,A lot,Undergraduate degree,Jazz,Freeze time,Happy,Business person
+IL,12,Female,17,Right-Handed,2,Car,8,Other,September,Spring,No,No,English,4,Yes - broadband connection,In person,10,16,9,5,8,Some,Undergraduate degree,Rap/Hip hop,Freeze time,Healthy,Relative
+CO,12,Male,17,Right-Handed,4,Car,7,Hockey (Ice),,,,,,,,,,,,,,,,,,,
+PA,12,Male,18,Right-Handed,1,Car,2,Soccer,June,Fall,No,No,Science,4,Yes - broadband connection,Internet chat or instant messaging,3,4,0,10,20,Some,High school,Other,Invisibility,Famous,Other
+NY,12,Male,17,Right-Handed,2,Rail (Train/Tram/Subway),40,Baseball/Softball,September,Summer,No,No,Mathematics and statistics,6,Yes - other,Text messaging,20,20,5,5,5,A lot,Undergraduate degree,Punk rock,Fly,Rich,Relative
+GA,12,Female,17,Right-Handed,2,Bus,20,Walking/Hiking,February,Fall,Yes,No,History,5,Yes - other,Internet chat or instant messaging,20,30,7,4,18,A lot,Graduate degree,Heavy metal,Telepathy,Happy,Other
+OK,11,Male,18,Right-Handed,1,Car,20,Football (American),March,Fall,No,No,History,3,Yes - other,Text messaging,8,10,,,,,,,,,
+CA,12,Female,16,Right-Handed,2,Car,12,Other,August,Fall,No,No,Art,5,Yes - other,In person,300,200,30,4,30,A lot,Graduate degree,Rap/Hip hop,Invisibility,Happy,Friend
+OK,12,Male,16,Right-Handed,1,Car,10,Basketball,May,Fall,No,No,History,5,Yes - other,Cell phone,40,80,9,11,45,Some,Graduate degree,Rap/Hip hop,Super strength,Healthy,Relative
+MI,12,Female,17,Right-Handed,1,Car,7,Running/Jogging,March,Summer,No,No,English,4,Yes - broadband connection,Text messaging,10,10,10,3,2,A lot,Undergraduate degree,Pop,Invisibility,Rich,Other
+FL,8,Female,13,Right-Handed,3,Car,15,Soccer,May,Summer,Yes,No,Other,4,Yes - broadband connection,In person,5,20,10,4,0,A lot,Graduate degree,Other,Freeze time,Happy,Religious figure
+VA,9,Male,14,Right-Handed,1,Boat,,Lacrosse,,,,,,,,,,,,,,,,,,,
+MI,7,Male,13,Right-Handed,1,Car,10,Football (American),November,Summer,No,No,Mathematics and statistics,6,Yes - other,Text messaging,5,20,3,3,1,Very little,Graduate degree,Rap/Hip hop,Fly,Happy,Relative
+MA,12,Male,17,Right-Handed,1,Car,7,Other,August,Summer,Yes,No,Physical education,3,Yes - other,In person,20,20,0,0,3,Some,Some college,Other,Freeze time,Rich,Other
+NC,12,Male,16,Right-Handed,1,Car,60,Football (American),July,Summer,No,No,Physical education,4,Yes - other,Cell phone,52,40,4,12,24,Very little,Other,Rap/Hip hop,Freeze time,Rich,Sports person
+IA,12,Female,17,Right-Handed,1,Car,15,Athletics,July,Summer,No,No,Science,8,Yes - dial-up connection,Text messaging,225,225,1,8,4,Some,Undergraduate degree,Rock and roll,Invisibility,Happy,Relative
+CA,12,Female,17,Right-Handed,2,Car,18,Walking/Hiking,July,Fall,No,No,Science,4,Yes - other,Text messaging,,,9,10,,,,,,,
+PA,12,Male,18,Right-Handed,1,Bus,15,Other,December,Fall,Yes,No,History,7,Yes - other,Text messaging,8,9,0,2,16,Very little,High school,Rap/Hip hop,Freeze time,Rich,Relative
+MN,8,Male,13,Right-Handed,1,Car,6,Basketball,August,Summer,Yes,No,Physical education,2,Yes - other,Text messaging,30,30,0,15,10,A lot,Some college,Rap/Hip hop,,,Other
+NC,12,Male,16,Right-Handed,1,Car,27,Walking/Hiking,June,Summer,No,,Science,5,Yes - other,Internet chat or instant messaging,8,10,1,0,3,A lot,Graduate degree,Rock and roll,Invisibility,Rich,Relative
+CA,12,Female,17,Right-Handed,2,Car,15,None,,,,,,,,,,,,,,,,,,,
+MT,10,Female,16,Left-Handed,1,Car,7,Baseball/Softball,July,Spring,Yes,No,Art,2,Yes - broadband connection,In person,10,12,2,2,2,Some,Less than high school,Pop,Fly,Happy,Relative
+NJ,12,Male,17,Left-Handed,1,Bus,12,Running/Jogging,March,Spring,No,No,History,2,Yes - other,Text messaging,30,25,3,1,3,Some,High school,Rap/Hip hop,Super strength,Rich,Relative
+VA,10,Female,15,Right-Handed,2,Car,15,Soccer,May,Fall,No,No,Music,4,Yes - broadband connection,Text messaging,13,10,15,45,15,A lot,Graduate degree,Pop,Telepathy,Rich,Musician or singer
+NJ,8,Female,13,Right-Handed,2,Walk,12,Dancing,September,Summer,No,No,Computers and technology,4,Yes - broadband connection,Cell phone,5,20,4,18,3,Some,Some college,Rock and roll,Freeze time,Rich,Other
+PA,12,Male,17,Right-Handed,3,Car,5,Tennis,May,Spring,,No,Science,3,Yes - broadband connection,In person,20,70,2,.5,7,A lot,Undergraduate degree,Rap/Hip hop,Freeze time,Happy,Business person
+NC,10,Male,14,Right-Handed,3,Bus,45,Soccer,November,Spring,No,No,Physical education,4,Yes - broadband connection,Text messaging,67,67,4,5,4,Very little,Less than high school,Other,Super strength,Rich,Sports person
+IN,12,Female,17,Right-Handed,1,Car,8,Baseball/Softball,March,Summer,No,No,Science,5,Yes - other,Text messaging,50,40,8,0,14,Some,Graduate degree,Rhythm and blues (R&B),Freeze time,Rich,Doctor or nurse
+CA,12,Female,17,Right-Handed,1,Car,5,Swimming,February,Fall,Yes,No,History,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",100,100,14,7,7,A lot,Graduate degree,Rhythm and blues (R&B),Telepathy,Healthy,Musician or singer
+PA,12,Male,17,Right-Handed,1,Car,5,Lacrosse,March,Spring,Yes,No,Physical education,4,Yes - broadband connection,In person,50,50,5,12,6,Some,Graduate degree,Reggae,Telepathy,Rich,Sports person
+CA,12,Female,17,Left-Handed,1,Bicycle,15,Martial Arts,December,Fall,No,No,Art,4,Yes - broadband connection,Text messaging,50,20,5,2,14,A lot,Some college,Other,Fly,Rich,Relative
+CA,12,Male,16,Left-Handed,2,Car,30,Golf,October,Fall,No,No,Art,5,Yes - broadband connection,Text messaging,9,7,0,1,1,Some,High school,Rock and roll,Freeze time,Rich,Other
+NJ,12,Male,17,Right-Handed,1,Car,3,Baseball/Softball,July,Summer,No,No,Art,4,Yes - broadband connection,Text messaging,50,80,0,10,5,Some,Graduate degree,Rhythm and blues (R&B),Fly,Rich,Relative
+IA,12,Female,18,Right-Handed,1,Car,20,Swimming,June,Fall,No,No,English,6,Yes - other,Text messaging,1,1,1,3,1,A lot,Graduate degree,Pop,Invisibility,Rich,Relative
+WA,12,Male,16,Right-Handed,1,Car,25,Other,February,Summer,No,No,Other,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",10,50,0,20,2,None,High school,Rock and roll,Super strength,Healthy,Relative
+NC,10,Female,16,Right-Handed,2,Car,30,Dancing,January,Fall,Yes,No,Science,3,Yes - other,Text messaging,47,74,5,1,1,A lot,Undergraduate degree,Gospel,Freeze time,Healthy,Relative
+IA,12,Female,17,Right-Handed,2,Car,23,Walking/Hiking,July,Fall,Yes,No,History,5,Yes - other,Text messaging,100,100,2,10,2,A lot,Some college,Country,Telepathy,Happy,Relative
+CA,12,Female,17,Right-Handed,1,Car,17,Running/Jogging,January,Spring,No,No,English,3,Yes - broadband connection,In person,200,190,0,20,5,Very little,Graduate degree,Country,Invisibility,Healthy,Relative
+CA,10,Female,16,Right-Handed,2,Car,10,Walking/Hiking,August,Winter,No,No,Mathematics and statistics,4,Yes - other,Text messaging,20,20,13,4,1,A lot,Graduate degree,Rhythm and blues (R&B),Telepathy,Famous,Doctor or nurse
+PA,12,Male,18,Right-Handed,2,Bus,15,Athletics,August,Fall,No,No,Science,5,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",1,26,10,4,2,Some,Graduate degree,Techno/Electronic,Freeze time,Rich,Teacher
+OK,11,Male,17,Right-Handed,1,Car,10,Athletics,December,Summer,Yes,No,Art,3,Yes - other,Other,50,50,2,20,1,A lot,Graduate degree,Other,Freeze time,Rich,Relative
+KY,12,Female,17,Right-Handed,1,Car,15,Other,May,Fall,No,No,History,4,Yes - other,Internet chat or instant messaging,1,8,.5,3,1,Very little,Graduate degree,Pop,Fly,Healthy,Relative
+CA,10,Male,16,Right-Handed,2,Car,10,Basketball,January,Summer,No,No,Physical education,3,Yes - dial-up connection,Text messaging,80,90,2,2,2,Some,Graduate degree,Rap/Hip hop,Fly,Happy,Business person
+CA,12,Female,17,Right-Handed,1,Car,20,Martial Arts,June,Fall,No,No,Art,4,Yes - broadband connection,Cell phone,50,50,12,5,3,Some,Graduate degree,Pop,Fly,Happy,Friend
+NC,12,Male,17,Right-Handed,1,Car,15,Football (American),August,Fall,No,No,Physical education,3,Yes - broadband connection,Text messaging,20,15,0,1,2,Some,Graduate degree,Punk rock,Telepathy,Rich,Other
+CA,12,Female,17,Right-Handed,1,Walk,8,Other,June,Summer,No,No,Art,4,Yes - broadband connection,Text messaging,100,100,2,10,10,Very little,Other,Country,Fly,Happy,Relative
+GA,12,Male,15,Right-Handed,2,Bus,15,Tennis,August,Fall,No,No,Science,4,Yes - broadband connection,Text messaging,20,25,5,3,5,Some,High school,Other,Telepathy,Healthy,Business person
+OH,7,Male,13,Right-Handed,1,Bus,15,None,October,Winter,No,No,Mathematics and statistics,2,Yes - other,In person,0,1,.5,10,1,None,Graduate degree,Rap/Hip hop,Fly,Rich,
+GA,12,Female,16,Right-Handed,2,Car,15,Martial Arts,August,Spring,Yes,No,Art,5,Yes - other,Text messaging,36,135,12,4,1,A lot,Graduate degree,Heavy metal,Fly,Healthy,Friend
+IN,12,Male,18,Right-Handed,3,Car,10,Football (American),May,Winter,No,No,Computers and technology,2,,Text messaging,20,80,3,4,4,Some,Graduate degree,Rap/Hip hop,Invisibility,Rich,Musician or singer
+OH,8,Male,13,Right-Handed,1,Walk,5,Baseball/Softball,February,Winter,No,No,Physical education,5,Yes - broadband connection,Text messaging,75,100,3,7,20,Some,Some college,Rap/Hip hop,Freeze time,Rich,Other
+NJ,8,Female,13,Right-Handed,3,Car,10,Soccer,August,Winter,Yes,No,English,3,Yes - other,Internet chat or instant messaging,100,520,3,12,4,Some,Graduate degree,Pop,Telepathy,Rich,Actor
+OH,7,Male,13,Right-Handed,2,Bus,15,Swimming,December,Winter,Yes,No,Geography,3,Yes - other,In person,0,0,1,1,0,Some,High school,Rap/Hip hop,Fly,Happy,Friend
+MI,7,Male,13,Ambidextrous,2,Skateboard/Scooter/Rollerblade,10,Martial Arts,May,Spring,Yes,No,Other,4,Yes - broadband connection,Text messaging,852,,20,2,1,Some,Other,Pop,Freeze time,Healthy,Business person
+CA,12,Male,17,Right-Handed,3,Bicycle,10,None,November,Winter,No,No,Other,5,Yes - broadband connection,Text messaging,10,15,10,5,7,A lot,Graduate degree,Pop,Invisibility,Happy,Relative
+CA,12,Female,17,Right-Handed,1,Car,8,Other,July,Fall,Yes,No,Science,4,Yes - broadband connection,Text messaging,10,25,10,4,.5,A lot,Graduate degree,Rap/Hip hop,Super strength,Happy,Coach or club leader
+WA,10,Female,15,Right-Handed,2,Walk,1,Athletics,January,Spring,No,No,Languages,3,Yes - broadband connection,Text messaging,15,10,.5,5,4,Some,Graduate degree,Punk rock,Fly,Happy,Relative
+SC,12,Female,17,Right-Handed,1,Car,10,Athletics,May,Fall,Yes,No,English,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",100,100,0,30,20,Very little,Graduate degree,Country,Telepathy,Healthy,Relative
+CA,12,Female,17,Right-Handed,1,Car,30,Walking/Hiking,March,Spring,No,No,History,3,Yes - broadband connection,In person,100,200,4,3,2,A lot,Graduate degree,Rock and roll,Fly,Happy,Religious figure
+GA,12,Female,17,Right-Handed,1,Car,10,Athletics,September,Spring,No,No,History,2,Yes - broadband connection,Text messaging,40,40,1,8,10,Some,Graduate degree,Pop,Invisibility,,Relative
+OK,12,Male,18,Left-Handed,1,Bicycle,25,Baseball/Softball,February,Fall,No,No,Art,6,Yes - broadband connection,Text messaging,85,100,0,10,28,Very little,Other,Punk rock,Super strength,Happy,Relative
+OK,11,Female,16,Right-Handed,1,Car,10,Running/Jogging,July,Spring,No,No,English,5,Yes - broadband connection,In person,0,1,10,10,2,Some,Graduate degree,Pop,Invisibility,Happy,Relative
+PA,12,Female,17,Right-Handed,2,Car,25,Soccer,August,Fall,No,No,English,5,Yes - other,Internet chat or instant messaging,48,67,2,160,20,A lot,Graduate degree,Rhythm and blues (R&B),Fly,Happy,Religious figure
+GA,12,Male,17,Right-Handed,2,Car,30,Lacrosse,September,Summer,Yes,No,Languages,3,Yes - broadband connection,Text messaging,12,15,2,3,2,Some,Graduate degree,Country,Fly,Healthy,Relative
+NY,10,Male,15,Right-Handed,2,Rail (Train/Tram/Subway),25,Basketball,October,Fall,Yes,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,50,100,8,4,4,A lot,Graduate degree,Rap/Hip hop,Freeze time,Happy,Business person
+IN,12,Female,17,Right-Handed,1,Car,10,Baseball/Softball,December,Fall,No,No,History,8,Yes - other,Internet chat or instant messaging,10,20,2,3,10,Some,Graduate degree,Pop,Fly,Happy,Religious figure
+VA,8,Female,14,Right-Handed,1,Car,10,Baseball/Softball,February,Summer,No,No,Physical education,4,Yes - other,In person,220,210,5,20,13,Some,Other,Gospel,Telepathy,Happy,Religious figure
+OR,11,Female,17,Right-Handed,1,Car,20,Dancing,June,Winter,No,No,English,4,Yes - broadband connection,Cell phone,100,40,1,1,3,Some,Graduate degree,Rhythm and blues (R&B),Fly,Rich,Friend
+CA,12,Female,17,Left-Handed,2,Car,5,Walking/Hiking,October,Fall,No,No,English,7,Yes - broadband connection,Text messaging,450,400,9,12,12,A lot,Graduate degree,Other,Invisibility,Happy,Relative
+CO,12,Female,17,Right-Handed,1,Car,30,Soccer,August,Winter,No,No,Social studies,3,Yes - other,Other,34,45,7,3,2,Some,Graduate degree,Pop,Invisibility,Happy,Relative
+VT,12,Male,16,Right-Handed,1,Car,2,Basketball,September,Summer,No,No,Physical education,4,Yes - broadband connection,In person,30,33,3,14,1,Some,Some college,Rap/Hip hop,Invisibility,Happy,Relative
+OR,12,Female,18,Right-Handed,3,Car,5,Walking/Hiking,April,Fall,Yes,No,History,5,Yes - broadband connection,Text messaging,100,100,6,6,7,Very little,Graduate degree,Pop,Freeze time,Happy,Business person
+CA,12,Male,17,Right-Handed,2,Car,15,Football (American),August,Summer,Yes,No,History,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",100,100,3,3,5,Some,Undergraduate degree,Other,Fly,Happy,Friend
+CA,12,Male,17,Right-Handed,1,Car,30,Baseball/Softball,May,Summer,No,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,80,75,4,3,2,Very little,Undergraduate degree,Classical,Super strength,Rich,Religious figure
+CA,11,Male,16,Right-Handed,2,Walk,10,Martial Arts,October,Winter,No,No,Art,6,Yes - broadband connection,Text messaging,30,100,6,6,30,Very little,Some college,Rap/Hip hop,Freeze time,Happy,Sports person
+NC,12,Male,18,Right-Handed,1,Car,10,Football (American),December,Summer,Yes,No,Computers and technology,4,Yes - broadband connection,Internet chat or instant messaging,30,45,3,12,1,A lot,Graduate degree,Pop,Invisibility,Rich,Relative
+CA,12,Male,17,Ambidextrous,3,Car,5,Skateboarding/Rollerblading,April,Winter,No,No,Art,6,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",15,30,1,5,2,Very little,Some college,Rhythm and blues (R&B),Fly,Happy,Relative
+MN,8,Male,13,Right-Handed,1,Walk,,Soccer,March,Summer,No,No,Physical education,4,Yes - other,Text messaging,7,3,0,6,2,None,High school,Other,Invisibility,Rich,Relative
+PA,12,Female,17,Right-Handed,1,Car,7,Swimming,June,Spring,Yes,No,English,3,Yes - other,In person,100,150,8,5,3,A lot,Graduate degree,Pop,Freeze time,Happy,Relative
+CA,12,Female,17,Right-Handed,3,Car,8,Running/Jogging,May,Spring,Yes,No,English,3,Yes - broadband connection,Text messaging,60,100,18,2,6,A lot,Graduate degree,Rhythm and blues (R&B),Telepathy,Rich,Friend
+SC,12,Male,17,Left-Handed,1,Car,15,Golf,September,Fall,No,No,History,5,Yes - broadband connection,In person,10,15,6,8,3,Some,High school,Rap/Hip hop,Invisibility,Rich,Relative
+GA,12,Female,16,Left-Handed,4,Bus,20,Dancing,August,Fall,No,Yes,History,4,Yes - broadband connection,Internet chat or instant messaging,15,10,18,26,1,Some,Graduate degree,Other,Telepathy,Happy,Musician or singer
+OH,10,Male,15,Right-Handed,1,Car,8,Soccer,April,Fall,Yes,No,Physical education,5,Yes - other,Cell phone,40,40,1,5,3,Some,Some college,Other,Freeze time,Rich,Other
+OH,12,Female,18,Right-Handed,1,Car,5,Other,July,Fall,Yes,No,Other,3,Yes - other,Other,10,15,2,5,2,Some,Other,Pop,Telepathy,Happy,Relative
+PA,12,Male,18,Right-Handed,1,Car,20,Basketball,October,Fall,No,No,Physical education,5,Yes - other,Text messaging,20,25,0,1,5,None,Graduate degree,Rap/Hip hop,Fly,Rich,Business person
+GA,12,Male,17,Right-Handed,3,Car,13,Other,January,Summer,No,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,12,15,20,10,2,Some,Graduate degree,Pop,Super strength,Healthy,Other
+FL,8,Male,14,Left-Handed,2,Bicycle,5,Skateboarding/Rollerblading,September,Winter,Yes,No,History,3,Yes - broadband connection,Internet chat or instant messaging,22,21,4,5,6,Some,Some college,Punk rock,Freeze time,Rich,Relative
+NC,12,Male,17,Right-Handed,1,Car,5,Football (American),June,Spring,Yes,No,,4,Yes - other,Cell phone,5,20,5,20,1,Some,Graduate degree,Country,Freeze time,Happy,Relative
+VA,10,Female,15,Right-Handed,2,Bus,12,Soccer,June,Winter,No,No,Art,7,Yes - other,Text messaging,1000,1000,,30,40,Some,Graduate degree,Rap/Hip hop,Telepathy,Rich,Business person
+MN,8,Female,13,Right-Handed,1,Walk,10,Other,August,Winter,Yes,No,Languages,5,Yes - other,Text messaging,50,20,2,5,4,Some,Some college,Other,Telepathy,Happy,Sports person
+CA,12,Female,18,Right-Handed,2,Car,7,Basketball,July,Summer,Yes,No,Social studies,5,Yes - other,Internet chat or instant messaging,30,20,5,20,4,A lot,Graduate degree,Pop,Fly,Happy,Teacher
+IL,12,Female,17,Right-Handed,2,Bus,10,Basketball,October,Spring,No,No,English,4,Yes - broadband connection,Text messaging,10,10,10,8,3,Some,Graduate degree,Rap/Hip hop,Fly,Happy,Relative
+WA,11,Male,17,Right-Handed,2,Car,12,Other,June,Spring,No,No,Music,6,Yes - dial-up connection,Cell phone,25,35,7,1,2,A lot,Other,Country,Fly,Rich,Friend
+CA,12,Female,17,Right-Handed,2,Car,25,Basketball,June,Summer,No,No,Mathematics and statistics,3,Yes - broadband connection,Cell phone,1000,1000,4,47,11,A lot,Graduate degree,Other,Freeze time,Happy,Relative
+CA,12,Male,17,Right-Handed,1,Car,10,Soccer,January,Winter,No,No,Art,6,Yes - other,Internet chat or instant messaging,60,70,1,2,5,Very little,High school,Rap/Hip hop,Telepathy,Rich,Relative
+OH,7,Male,13,Left-Handed,1,Walk,2,Basketball,March,Summer,Yes,No,Mathematics and statistics,4,Yes - other,Internet chat or instant messaging,30,50,5,30,40,Very little,Graduate degree,Rap/Hip hop,Invisibility,Famous,Relative
+NC,12,Female,17,Right-Handed,3,Car,12,Swimming,December,Winter,Yes,No,Science,3,Yes - broadband connection,Text messaging,50,50,20,10,20,A lot,Other,Rhythm and blues (R&B),Freeze time,Rich,Other
+SC,12,Female,18,Right-Handed,2,Car,5,Soccer,February,Summer,Yes,No,Science,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",8,23,4,6,5,Some,Undergraduate degree,Country,Telepathy,Happy,Friend
+OR,12,Female,16,Right-Handed,2,Car,10,Athletics,August,Spring,Yes,No,Physical education,2,Yes - other,In person,12,50,3,2,2,A lot,Graduate degree,Rhythm and blues (R&B),Telepathy,Healthy,Actor
+VT,12,Female,16,Right-Handed,1,Car,5,Basketball,November,Fall,No,No,Music,4,Yes - broadband connection,Text messaging,50,50,1,12,3,Some,Graduate degree,Pop,Fly,Healthy,Musician or singer
+OH,8,Male,13,Right-Handed,2,Car,5,Dancing,September,Spring,Yes,No,Art,3,Yes - other,In person,0,12,6,21,3,Some,Undergraduate degree,Other,Invisibility,Happy,Relative
+CO,12,Female,17,Right-Handed,1,Car,18,Other,December,Spring,No,No,History,4,Yes - broadband connection,Cell phone,5,30,7,5,1,A lot,Graduate degree,Other,Fly,Rich,Coach or club leader
+CA,7,Female,12,Right-Handed,2,Car,15,Running/Jogging,March,Spring,No,No,Music,,Yes - broadband connection,Text messaging,30,25,5,14,3.5,Some,Graduate degree,Other,Freeze time,Happy,Relative
+CO,12,Female,17,Right-Handed,1,Car,6,Dancing,April,Fall,Yes,No,Art,2,Yes - other,Text messaging,23,54,3,8,2,A lot,Graduate degree,Pop,Freeze time,Healthy,Relative
+PA,4,Female,17,Right-Handed,1,Car,10,Football (American),October,Fall,No,No,English,1,Yes - other,"Myspace, Facebook, other social networking sites, or blog",8,7,,,,,,,,,
+CA,12,Female,16,Right-Handed,2,Walk,20,Walking/Hiking,June,Fall,No,No,Other,4,Yes - dial-up connection,Text messaging,100,120,1,20,2,Some,Undergraduate degree,Country,Telepathy,Rich,Religious figure
+CA,12,Male,16,Ambidextrous,4,Walk,30,,,,,,,,,,,,,,,,,,,,
+MN,10,Female,15,Right-Handed,2,Car,10,Soccer,June,Fall,No,No,English,5,Yes - other,Text messaging,,5,5,4,2,A lot,Graduate degree,Other,Fly,Happy,Relative
+OK,12,Male,17,Right-Handed,2,Car,15,Athletics,July,Spring,Yes,No,Mathematics and statistics,7,Yes - broadband connection,In person,21,9,0,10,1,Very little,Graduate degree,Rap/Hip hop,Freeze time,Rich,Religious figure
+CA,11,Female,18,Right-Handed,3,Car,15,Basketball,August,Summer,Yes,No,Art,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",103,128,2,1,3,Some,Graduate degree,Punk rock,Telepathy,Happy,Relative
+CA,11,Male,17,Left-Handed,1,Car,20,Other,July,Winter,No,No,History,6,Yes - broadband connection,Text messaging,15,20,1,10,1,Very little,Undergraduate degree,Country,Fly,Happy,Relative
+VA,10,Male,14,Ambidextrous,2,Car,15,Gymnastics,September,Fall,Yes,No,Languages,5,Yes - other,Internet chat or instant messaging,75,150,2,3,14,Some,Some college,Rap/Hip hop,Telepathy,Happy,Musician or singer
+NC,12,Male,18,Right-Handed,1,Bus,,Swimming,August,Winter,Yes,No,Science,4,Yes - other,Text messaging,0,16,1,1,0,Some,Graduate degree,Rock and roll,Super strength,Happy,Community leader or elder
+FL,12,Male,18,Right-Handed,2,Car,11,Golf,November,Summer,Yes,No,History,7,Yes - other,Text messaging,120,50,21,8,42,Very little,Graduate degree,Pop,Fly,Healthy,Friend
+OR,12,Male,17,Right-Handed,3,Car,10,Swimming,June,Winter,No,Yes,Geography,3,Yes - other,Text messaging,50,50,1,3,2,None,Graduate degree,Pop,Freeze time,Rich,Musician or singer
+NY,12,Male,17,Right-Handed,1,Rail (Train/Tram/Subway),45,Table Tennis,October,Spring,No,No,Social studies,4,Yes - other,Internet chat or instant messaging,30,40,7,5,3,Some,Graduate degree,Rock and roll,Freeze time,Happy,Relative
+MI,7,Male,13,Right-Handed,2,Bus,30,Cycling,July,Summer,Yes,No,Other,4,Yes - other,In person,0,2,2,3,,Very little,Graduate degree,Classical,Freeze time,Healthy,Other
+MI,7,Male,13,Left-Handed,3,Bus,7,Martial Arts,April,Fall,Yes,No,Art,7,Yes - other,Text messaging,10,50,2,14,1,Some,Graduate degree,Rap/Hip hop,Telepathy,Famous,Doctor or nurse
+TX,12,Male,16,Right-Handed,1,Car,10,None,February,Winter,No,No,Mathematics and statistics,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",40,65,1,3,20,Very little,Graduate degree,Other,Super strength,Rich,Relative
+MI,7,Male,12,Right-Handed,2,Car,7,Soccer,July,Summer,Yes,No,Physical education,4,Yes - broadband connection,Text messaging,30,30,8,10,3,Some,Some college,Pop,Freeze time,Healthy,Sports person
+MN,10,Female,16,Right-Handed,2,Walk,15,Soccer,February,Winter,Yes,No,,2,Yes - other,Text messaging,0,1,2,6,1,Very little,Graduate degree,Other,Freeze time,Rich,Other
+NJ,12,Male,17,Right-Handed,2,Car,13,Basketball,January,Winter,No,No,,2,Yes - broadband connection,Cell phone,15,22,0,0,2,Some,Graduate degree,,Fly,Rich,Politician
+CA,11,Female,17,Right-Handed,1,Car,6,Soccer,January,Fall,No,No,Art,3,Yes - broadband connection,In person,14,60,8,12,5,Some,Graduate degree,Pop,Freeze time,Rich,Relative
+IL,11,Male,17,Right-Handed,2,Car,10,Basketball,March,Summer,No,No,Science,5,Yes - other,Text messaging,10,10,20,5,1,A lot,Graduate degree,Rap/Hip hop,Fly,Happy,Relative
+CA,10,Female,16,Right-Handed,1,Car,15,Dancing,September,Fall,Yes,No,History,5,Yes - broadband connection,In person,200,200,11,3,8,A lot,Graduate degree,Rap/Hip hop,Fly,Happy,Friend
+OH,12,Female,17,Left-Handed,1,Car,11,None,August,Fall,No,No,Art,6,Yes - other,Text messaging,65,40,2,2,10,Some,High school,Rap/Hip hop,Telepathy,Happy,Friend
+SC,12,Male,17,Right-Handed,1,Bus,40,None,April,Winter,No,No,Computers and technology,5,Yes - broadband connection,Internet chat or instant messaging,5,23,0,21,1,None,Some college,Rock and roll,Telepathy,Happy,Other
+NY,12,Female,17,Right-Handed,1,Walk,25,Walking/Hiking,June,Summer,Yes,,History,4,Yes - broadband connection,In person,16,18,4,5,2,Some,Graduate degree,Pop,Freeze time,Happy,Sports person
+NC,12,Female,17,Right-Handed,1,Bus,6,Walking/Hiking,June,Summer,No,No,Other,4,Yes - other,Text messaging,20,24,,,,Very little,High school,Rap/Hip hop,Telepathy,Rich,Business person
+NC,12,Male,18,Right-Handed,1,Car,10,Walking/Hiking,September,Spring,Yes,No,History,4,Yes - broadband connection,Text messaging,40,30,2,5,3,Some,Graduate degree,Other,Freeze time,Happy,Relative
+OK,10,Female,17,Left-Handed,1,Car,5,Dancing,May,Spring,Yes,Yes,Art,4,Yes - broadband connection,In person,71,118,2,20,2,A lot,Undergraduate degree,Techno/Electronic,Freeze time,Famous,Musician or singer
+OR,12,Male,17,Right-Handed,1,Car,12,Other,January,Summer,No,No,English,4,Yes - broadband connection,In person,24,40,8,6,4,A lot,Graduate degree,Rap/Hip hop,Super strength,Rich,Sports person
+SC,12,Male,16,Ambidextrous,1,Car,13,Baseball/Softball,March,Summer,No,No,Physical education,4,Yes - broadband connection,Text messaging,100,100,25,1,10,A lot,Graduate degree,Rock and roll,Telepathy,Rich,Friend
+NC,10,Female,16,Right-Handed,1,Car,38,Baseball/Softball,November,Summer,No,No,Mathematics and statistics,7,Yes - broadband connection,Text messaging,34,32,30,72,15,A lot,Graduate degree,Gospel,Invisibility,Healthy,Religious figure
+GA,11,Female,17,Right-Handed,1,Car,15,Other,May,Fall,No,No,Mathematics and statistics,4,Yes - dial-up connection,Cell phone,30,20,4,3,7,Very little,Graduate degree,Rhythm and blues (R&B),Telepathy,Healthy,Doctor or nurse
+CA,10,Male,15,Right-Handed,2,Bicycle,15,Basketball,December,Winter,No,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,40,50,3,20,3,None,Graduate degree,Pop,Invisibility,Rich,Relative
+GA,12,Male,17,Right-Handed,2,Car,7,Running/Jogging,January,Fall,No,No,Mathematics and statistics,3,Yes - broadband connection,Internet chat or instant messaging,76,108,10,3,4,Some,Graduate degree,Other,Freeze time,Rich,Relative
+VA,10,Male,15,Left-Handed,2,Bus,10,None,June,Fall,Yes,No,Music,4,Yes - broadband connection,Text messaging,5,30,2,7,10,Some,Some college,Classical,Fly,Healthy,Friend
+CA,10,Male,15,Right-Handed,2,Car,10,Other,June,Spring,Yes,No,Other,4,Yes - broadband connection,Cell phone,30,100,12,7,8,Some,Graduate degree,Other,Freeze time,Happy,Other
+NC,12,Male,17,Left-Handed,1,Car,8,Football (American),December,Fall,No,No,Physical education,2,Yes - other,Text messaging,50,70,8,24,168,None,High school,Rhythm and blues (R&B),Fly,Rich,Sports person
+CA,12,Female,16,Right-Handed,1,Car,10,Baseball/Softball,August,Fall,Yes,No,History,3,Yes - other,Cell phone,50,40,2,6,3,Some,Graduate degree,Country,Telepathy,Happy,Relative
+MI,12,Female,17,Right-Handed,1,Car,13,Other,August,Summer,No,No,Art,1,Yes - other,Internet chat or instant messaging,30,30,1,1,5,Some,Graduate degree,Rhythm and blues (R&B),Invisibility,Happy,Community leader or elder
+OK,12,Female,18,Right-Handed,1,Car,10,Bowling,October,Fall,No,No,English,4,Yes - broadband connection,Text messaging,20,40,0,5,35,A lot,Graduate degree,Rock and roll,Telepathy,Rich,Relative
+TX,12,Male,17,Right-Handed,1,Car,30,Running/Jogging,November,Spring,Yes,No,,3,Yes - broadband connection,Text messaging,15,17,1,7,1,Some,Some college,Pop,Super strength,Healthy,Relative
+IN,12,Male,17,Right-Handed,1,Bus,10,Martial Arts,June,Fall,Yes,No,Physical education,4,Yes - broadband connection,Text messaging,100,75,3,3,10,Very little,Other,Rap/Hip hop,Fly,Rich,Musician or singer
+IN,12,Male,17,Right-Handed,1,Car,5,Other,January,Fall,Yes,No,Computers and technology,5,Yes - broadband connection,Cell phone,60,70,1,10,12,Very little,Graduate degree,Rhythm and blues (R&B),Telepathy,Rich,Relative
+CA,12,Female,17,Right-Handed,2,Walk,10,Walking/Hiking,March,Summer,No,No,Art,5,Yes - other,"Myspace, Facebook, other social networking sites, or blog",70,100,1,6,3,A lot,Some college,Other,Invisibility,Rich,Friend
+GA,11,Male,17,Right-Handed,3,Car,14,Basketball,May,Summer,Yes,,Science,4,Yes - broadband connection,Text messaging,220,200,6,4,15,A lot,Graduate degree,Rhythm and blues (R&B),Telepathy,Rich,Musician or singer
+CA,12,Male,17,Left-Handed,2,Car,6,Basketball,,Summer,Yes,No,History,4,Yes - other,Text messaging,60,45,12,10,2,Some,Graduate degree,Rhythm and blues (R&B),Super strength,Healthy,Friend
+CO,11,Male,16,Ambidextrous,2,Car,10,Soccer,November,Winter,Yes,No,Physical education,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",2,4,4,2,5,A lot,Graduate degree,Rap/Hip hop,Super strength,Rich,Relative
+MI,7,Female,13,Right-Handed,2,Car,45,Other,October,Fall,Yes,No,Music,8,Yes - dial-up connection,Text messaging,,3000,0,3,30,A lot,Some college,Pop,Telepathy,Happy,Other
+CA,10,Male,16,Right-Handed,2,Walk,5,Baseball/Softball,September,Summer,No,No,Music,3,Yes - broadband connection,Cell phone,20,30,15,5,6,Some,Graduate degree,Classical,Fly,Rich,Sports person
+OH,12,Female,17,Right-Handed,1,Car,33,Athletics,October,Fall,No,No,Science,2,Yes - broadband connection,Text messaging,30,30,7,1,8,A lot,Graduate degree,Pop,Freeze time,Healthy,Doctor or nurse
+NY,12,Female,17,Right-Handed,3,Rail (Train/Tram/Subway),30,None,October,Fall,No,No,English,5,Yes - broadband connection,Cell phone,500,450,24,8,24,Some,Graduate degree,Pop,Freeze time,Happy,Friend
+OK,11,Male,18,Ambidextrous,1,Car,15,Basketball,October,Summer,Yes,No,Physical education,4,Yes - broadband connection,In person,300,500,1.5,0,3,None,Less than high school,Gospel,Fly,Happy,Sports person
+NY,12,Female,17,Right-Handed,1,Car,10,Basketball,March,Summer,No,No,Physical education,5,Yes - other,In person,40,25,5,7,10,Some,Graduate degree,Country,Fly,Happy,Relative
+OK,11,Female,17,Right-Handed,2,Car,16,Walking/Hiking,March,Spring,Yes,No,Mathematics and statistics,3,Yes - broadband connection,Cell phone,210,220,2,20,4,A lot,Graduate degree,Rock and roll,Freeze time,Healthy,Doctor or nurse
+IN,12,Male,17,Left-Handed,3,Bus,2,None,July,Winter,No,No,Mathematics and statistics,10,Yes - other,In person,2,16,4,12,0,Some,High school,Pop,Freeze time,Healthy,Relative
+PA,12,Female,17,Right-Handed,1,Car,6,Baseball/Softball,July,Fall,No,No,Mathematics and statistics,4,Yes - broadband connection,Internet chat or instant messaging,3,30,3,10,20,A lot,Graduate degree,Pop,Freeze time,Rich,Relative
+AZ,12,Female,18,Left-Handed,1,Car,4,Walking/Hiking,September,Fall,Yes,No,English,7,Yes - dial-up connection,Internet chat or instant messaging,10,5,12,18,8,Some,Graduate degree,Rap/Hip hop,Telepathy,Healthy,Relative
+IL,12,Male,17,Right-Handed,3,Car,8,Swimming,February,Winter,No,No,Science,4,Yes - broadband connection,Text messaging,200,200,10,10,5,Some,Undergraduate degree,Rap/Hip hop,Invisibility,Healthy,Relative
+CA,12,Male,16,Right-Handed,2,Car,13,Basketball,August,Summer,No,No,History,4,Yes - broadband connection,Text messaging,10,40,0,3,7,Some,Other,Pop,Telepathy,Rich,Other
+IN,12,Female,17,Right-Handed,1,Car,15,None,October,Fall,No,No,English,4,Yes - broadband connection,Text messaging,55,60,1,12,12,A lot,Graduate degree,Pop,Telepathy,Rich,Relative
+WA,10,Male,15,Right-Handed,2,Bus,50,Soccer,December,Winter,No,No,History,2,Yes - other,In person,15,25,0,0,1,Some,Undergraduate degree,Punk rock,Telepathy,Famous,Relative
+MN,8,Female,13,Left-Handed,2,Car,10,Other,February,Fall,Yes,No,English,5,Yes - other,"Myspace, Facebook, other social networking sites, or blog",5,10,10,20,4,Some,Graduate degree,Classical,Telepathy,Rich,Doctor or nurse
+MN,10,Male,16,Right-Handed,1,Walk,,Cycling,November,Spring,No,No,English,4,Yes - broadband connection,Other,2,4,2,12,2,Some,Undergraduate degree,Other,Fly,Happy,Sports person
+IL,12,Female,17,Right-Handed,1,Car,10,Basketball,May,Summer,No,No,Mathematics and statistics,4,Yes - other,In person,,,,,,Some,Graduate degree,Pop,Freeze time,Happy,Relative
+CA,12,Male,17,Right-Handed,2,Walk,5,Basketball,April,Winter,No,No,History,3,Yes - other,Text messaging,150,400,2,3,3,Very little,Graduate degree,Rhythm and blues (R&B),Telepathy,Rich,Relative
+IN,12,Female,18,,1,Car,20,Baseball/Softball,September,Summer,No,No,Other,7,Yes - dial-up connection,Cell phone,25,25,5,5,20,A lot,Undergraduate degree,Rap/Hip hop,,,Business person
+CA,12,Female,17,Right-Handed,1,Car,20,Other,December,Winter,Yes,No,Mathematics and statistics,4,,Internet chat or instant messaging,100,100,6,1,,Some,Undergraduate degree,Rock and roll,Fly,Rich,Actor
+CA,10,Male,17,Right-Handed,1,Walk,3,Cycling,February,Winter,Yes,No,Art,5,Yes - other,Internet chat or instant messaging,50,50,6,4,3,Some,Some college,Jazz,Freeze time,Happy,Friend
+CA,7,Male,13,Right-Handed,1,Car,30,Basketball,August,Fall,No,No,Physical education,4,Yes - broadband connection,In person,10,10,.5,.5,.2,Some,Graduate degree,Rap/Hip hop,Fly,Happy,Sports person
+NC,12,Female,16,Left-Handed,1,Car,15,,,,,,,,,,,,,,,,,,,,
+CA,12,Female,17,Right-Handed,2,Car,,Martial Arts,February,Winter,Yes,No,Science,6,Yes - other,Text messaging,,50,8,8,2,A lot,Graduate degree,Gospel,Freeze time,Healthy,Relative
+MN,10,Female,16,Right-Handed,2,Car,15,Soccer,December,Spring,Yes,No,English,5,Yes - broadband connection,Cell phone,30,50,,,,Some,Graduate degree,Rap/Hip hop,Telepathy,Rich,Other
+SC,12,Female,17,Right-Handed,1,Car,30,Skateboarding/Rollerblading,July,Fall,Yes,No,History,8,Yes - other,"Myspace, Facebook, other social networking sites, or blog",30,40,0,120,5,Very little,Graduate degree,Other,Freeze time,Happy,Friend
+MN,12,Female,17,Left-Handed,1,Car,25,Other,January,Fall,Yes,No,Science,7,Yes - other,Text messaging,75,84,7,13,15,Some,Graduate degree,Jazz,Telepathy,Healthy,Friend
+IA,9,Male,14,Right-Handed,1,Car,15,Baseball/Softball,October,Spring,No,No,Mathematics and statistics,5,Yes - other,Text messaging,15,20,10,10,5,Some,Graduate degree,Other,Invisibility,Rich,Relative
+MI,7,Female,13,Ambidextrous,2,Car,5,Dancing,December,Summer,No,No,History,4,Yes - other,Text messaging,20,70,9,150,0,Very little,Graduate degree,Pop,Telepathy,Happy,Friend
+OK,11,Female,17,Right-Handed,1,Car,10,Walking/Hiking,March,Fall,Yes,No,English,2,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",50,70,2,15,1,A lot,Graduate degree,Other,Telepathy,Rich,Relative
+NC,12,Male,15,Right-Handed,2,Car,4,Tennis,July,Summer,No,No,Computers and technology,4,Yes - broadband connection,Text messaging,15,60,7,3,2,A lot,Graduate degree,Classical,Freeze time,Happy,Sports person
+IN,11,Female,17,Right-Handed,1,Car,7,Dancing,March,Fall,No,No,English,5,Yes - broadband connection,Internet chat or instant messaging,12,10,3,10,1,Some,Undergraduate degree,Pop,Telepathy,Happy,Relative
+CA,12,Male,17,Right-Handed,1,Car,15,Soccer,January,Winter,Yes,No,Art,3,Yes - other,Text messaging,15,10,2,0,1,None,Some college,Rap/Hip hop,Freeze time,Healthy,Other
+CA,12,Male,17,Right-Handed,2,Car,20,Other,May,Winter,No,No,English,7,Yes - broadband connection,Internet chat or instant messaging,60,30,6,15,10,Very little,Graduate degree,Rap/Hip hop,Freeze time,Rich,Friend
+CA,12,Male,17,Right-Handed,2,Car,5,Swimming,April,Winter,No,No,Mathematics and statistics,5,Yes - other,In person,5,6,10,10,1,Very little,Graduate degree,Pop,Fly,Rich,Actor
+PA,12,Female,18,Right-Handed,1,Car,5,Other,July,Fall,No,No,Mathematics and statistics,5,Yes - broadband connection,Text messaging,50,50,2,1,3,Some,Graduate degree,Pop,Fly,Rich,Relative
+CA,10,Female,15,Right-Handed,1,Car,8,Tennis,January,Summer,Yes,No,Other,3,Yes - broadband connection,In person,100,110,2,5,2,Some,Undergraduate degree,Pop,Fly,Rich,Relative
+NC,12,Female,17,Right-Handed,1,Car,6,None,April,Fall,Yes,No,Art,4,Yes - other,Text messaging,30,88,15,5,2,A lot,High school,Other,Freeze time,Rich,Community leader or elder
+SC,12,Female,18,Right-Handed,2,Car,5,Soccer,February,Summer,Yes,No,Science,4,Yes - other,"Myspace, Facebook, other social networking sites, or blog",8,23,4,6,5,Some,Undergraduate degree,Country,Telepathy,Happy,Friend
+NC,12,Female,17,Right-Handed,1,Bus,10,Athletics,June,Summer,Yes,No,Physical education,5,Yes - broadband connection,Text messaging,5,6,0,1,12,Some,Graduate degree,Rap/Hip hop,Telepathy,Healthy,Other
+AR,12,Male,18,Right-Handed,1,Car,7,Football (American),February,Winter,No,No,Mathematics and statistics,4,Yes - other,Cell phone,100,150,2,2,3,Some,Some college,Rap/Hip hop,Freeze time,Rich,Other
+OK,12,Female,17,Right-Handed,1,Car,10,Athletics,July,Summer,No,No,Mathematics and statistics,3,Yes - other,In person,100,100,1,2,3,Some,Graduate degree,Country,Telepathy,Rich,Relative
+CA,12,Female,17,Right-Handed,2,Car,18,Walking/Hiking,July,Fall,No,No,Science,4,Yes - other,Text messaging,,,9,10,5,Some,Undergraduate degree,Pop,Fly,Healthy,Relative
+CA,12,Male,17,Right-Handed,2,Walk,15,Gymnastics,July,Summer,No,No,Music,4,Yes - broadband connection,Cell phone,8,50,0,10,2,Some,High school,Classical,Super strength,Happy,Business person
+OH,7,Male,12,Right-Handed,1,Bus,20,Basketball,August,Summer,No,No,Physical education,4,Yes - other,Text messaging,0,300,.1,4,0,Very little,Less than high school,Other,Freeze time,Rich,Business person
+CA,12,Male,17,Left-Handed,2,Car,6,Basketball,April,Spring,No,No,Mathematics and statistics,6,Yes - dial-up connection,Cell phone,70,70,2,3,2,Some,Graduate degree,Other,Telepathy,Rich,Sports person
+SC,12,Male,18,Right-Handed,1,Car,7,Golf,January,Spring,No,No,Computers and technology,3,Yes - other,Text messaging,25,27,0,7,8,Some,Graduate degree,Country,Freeze time,Happy,Relative
+CA,12,Male,18,Right-Handed,2,Walk,15,Basketball,December,Winter,No,No,History,3,Yes - broadband connection,E-mail,10,5,.2,5,1,Some,Graduate degree,Rap/Hip hop,Freeze time,Happy,Business person
+NC,12,Female,18,Right-Handed,1,Car,8,Soccer,March,Summer,Yes,No,Mathematics and statistics,5,Yes - other,In person,15,10,5,2,5,Some,Graduate degree,Country,Freeze time,Happy,Relative
+NC,12,Male,17,Right-Handed,2,Car,25,Baseball/Softball,July,Summer,No,No,Physical education,4,Yes - broadband connection,Internet chat or instant messaging,100,350,2,5,1,Very little,Graduate degree,Rap/Hip hop,Telepathy,Happy,Relative
+NJ,12,Male,17,Right-Handed,1,Car,17,Swimming,November,Summer,Yes,No,Science,4,Yes - other,Cell phone,30,30,3,10,3,Some,Graduate degree,Pop,Telepathy,Rich,Doctor or nurse
+OH,8,Male,12,Right-Handed,1,Bus,13,Soccer,May,Fall,Yes,No,Physical education,7,Yes - broadband connection,In person,0,0,300,100,0,Some,Graduate degree,Pop,Freeze time,Rich,Relative
+NC,12,Male,17,Right-Handed,1,Car,15,Baseball/Softball,July,Spring,No,No,Physical education,4,Yes - dial-up connection,Text messaging,5,6,0,2,1,Very little,Graduate degree,Rap/Hip hop,Telepathy,Rich,Relative
+OH,7,Female,12,Right-Handed,1,Car,5,Other,August,Winter,Yes,No,Music,4,Yes - broadband connection,Text messaging,1,1,21,14,5,A lot,Graduate degree,Classical,Freeze time,Healthy,Relative
+CA,12,Male,17,Right-Handed,2,Car,10,Baseball/Softball,June,Winter,Yes,No,Computers and technology,3,Yes - broadband connection,Internet chat or instant messaging,5,5,50,20,30,A lot,Some college,Rap/Hip hop,Invisibility,Rich,Sports person
+WA,10,Female,14,Right-Handed,1,Bus,20,Walking/Hiking,April,Summer,Yes,No,Other,3,Yes - other,In person,200,200,3,2,10,A lot,Graduate degree,Rap/Hip hop,,Happy,Doctor or nurse
+AZ,12,Male,17,Right-Handed,1,Car,3,Basketball,December,Fall,No,No,Other,3,Yes - broadband connection,Internet chat or instant messaging,16,14,5,3,1,Some,Undergraduate degree,Jazz,Freeze time,Happy,Relative
+CA,10,Female,15,Right-Handed,1,Car,12,Hockey (Field),April,Spring,Yes,No,Art,4,Yes - broadband connection,Text messaging,200,175,6,10,4,Some,Graduate degree,Country,Fly,Happy,Coach or club leader
+CO,12,Male,17,Right-Handed,1,Car,25,None,April,Fall,Yes,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,80,100,0,6,8,Very little,Graduate degree,Rock and roll,Fly,Rich,Other
+GA,12,Male,17,Right-Handed,1,Car,15,Baseball/Softball,June,Summer,No,No,History,3,Yes - broadband connection,Text messaging,20,20,10,6,1,Some,High school,Rhythm and blues (R&B),Telepathy,Happy,Sports person
+VT,12,Female,17,Right-Handed,1,Bus,10,Other,November,Summer,No,No,Art,7,Yes - other,Internet chat or instant messaging,,,4,4,,Very little,High school,Rap/Hip hop,Telepathy,Happy,Relative
+IN,12,Female,16,Right-Handed,1,Car,5,Walking/Hiking,November,Summer,Yes,No,Science,4,Yes - other,Text messaging,30,68,8,6,6,A lot,Graduate degree,Pop,Telepathy,Healthy,Friend
+VA,8,Male,14,Right-Handed,1,Car,5,Athletics,October,Fall,Yes,No,Music,4,Yes - broadband connection,Text messaging,225,270,1,4,25,None,Graduate degree,Gospel,Freeze time,Happy,Sports person
+ID,12,Male,17,Right-Handed,1,Car,10,Hockey (Ice),June,Winter,No,No,Mathematics and statistics,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",100,56,0,7,1,Some,Graduate degree,Rock and roll,Fly,Happy,Other
+NC,12,Male,17,Right-Handed,1,Car,30,Lacrosse,June,Fall,Yes,No,English,5,Yes - broadband connection,In person,25,30,4,15,1,Very little,Undergraduate degree,Rap/Hip hop,Freeze time,Rich,Sports person
+CA,12,Female,17,Left-Handed,1,Car,20,Soccer,July,Fall,No,No,English,3,Yes - broadband connection,In person,35,20,7,20,2,Some,Graduate degree,Rock and roll,Telepathy,Rich,Sports person
+CO,12,Male,17,Right-Handed,2,Walk,7,Other,September,Spring,No,No,English,5,Yes - broadband connection,In person,10,2,1,0,.5,Some,Undergraduate degree,Classical,Fly,Healthy,Other
+SC,12,Male,17,Ambidextrous,2,Car,12,Martial Arts,March,Fall,No,No,English,4,Yes - broadband connection,In person,30,150,0,30,5,Some,Graduate degree,Rhythm and blues (R&B),Telepathy,Rich,Relative
+OK,11,Male,17,Right-Handed,1,Car,12,None,December,Winter,No,No,History,5,Yes - broadband connection,Internet chat or instant messaging,4,2,65,3,1,Some,Other,Techno/Electronic,Freeze time,Rich,Relative
+AZ,12,Male,17,Right-Handed,1,Car,20,Basketball,March,Summer,Yes,No,Other,5,Yes - other,Text messaging,100,269,2,0,40,Very little,Other,Rhythm and blues (R&B),Fly,Rich,Business person
+OH,12,Female,17,Ambidextrous,1,Car,15,Basketball,March,Summer,No,No,Science,4,Yes - other,Text messaging,30,25,8,18,12,Some,Graduate degree,Pop,Fly,Happy,Friend
+CA,12,Female,18,Ambidextrous,1,Car,8,Athletics,January,Summer,No,No,Computers and technology,4,Yes - broadband connection,Text messaging,100,100,3,3,0,A lot,Graduate degree,Country,Telepathy,Happy,Relative
+NC,10,Female,16,Right-Handed,2,Car,20,Soccer,February,Winter,Yes,No,Science,4,Yes - broadband connection,In person,300,300,8,2,10,A lot,Graduate degree,Heavy metal,Telepathy,Happy,Actor
+OK,11,Male,17,Left-Handed,1,Car,18,Swimming,January,Spring,Yes,Yes,Languages,4,Yes - broadband connection,Cell phone,20,20,5,5,5,None,Graduate degree,Other,Super strength,Rich,Relative
+MI,12,Female,17,Right-Handed,1,Bus,40,Other,April,Spring,No,No,Other,5,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",8,0,1,15,.5,Some,High school,Other,Telepathy,Happy,Relative
+MI,7,Male,13,Right-Handed,2,Car,5,Soccer,January,Summer,No,No,Physical education,3,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",60,60,4,3,4,Some,Undergraduate degree,Rap/Hip hop,Fly,Happy,Sports person
+CA,10,Male,16,Right-Handed,2,Car,10,Cycling,October,Summer,Yes,No,Science,4,Yes - other,Text messaging,38,70,2,3,4,Some,Graduate degree,Heavy metal,Freeze time,Healthy,Doctor or nurse
+NY,12,Male,18,Right-Handed,1,Rail (Train/Tram/Subway),25,Golf,July,Fall,No,No,Mathematics and statistics,3,Yes - broadband connection,Text messaging,20,20,10,5,2,Some,Graduate degree,Rock and roll,Super strength,Rich,Business person
+CO,12,Male,16,Right-Handed,1,Car,30,Swimming,September,Winter,No,No,Music,8,Yes - broadband connection,In person,5,10,6,6,1,A lot,Graduate degree,Classical,Super strength,Happy,Religious figure
+MS,12,Male,18,Right-Handed,2,Bus,23,Martial Arts,September,Fall,Yes,No,English,4,Yes - other,Internet chat or instant messaging,22,23,0,5,3,Some,Some college,Classical,Super strength,Rich,Actor
+PA,12,Female,17,Right-Handed,1,Car,5,Soccer,August,Summer,No,No,Physical education,5,Yes - other,In person,100,120,3,25,4,Some,Graduate degree,Rap/Hip hop,Telepathy,Happy,Sports person
+MN,10,Female,16,Right-Handed,1,Car,4,Soccer,October,Summer,Yes,No,History,4,Yes - broadband connection,"Myspace, Facebook, other social networking sites, or blog",40,80,12,4,1,A lot,Graduate degree,Pop,Freeze time,Healthy,Relative
+CA,12,Male,17,Right-Handed,1,Car,10,Football (American),June,Spring,Yes,No,Social studies,4,Yes - other,Text messaging,78,95,1,5,9,Some,Some college,Rhythm and blues (R&B),Telepathy,Rich,Friend
+CA,10,Male,17,Right-Handed,3,Walk,15,Soccer,January,Winter,No,No,Science,5,Yes - broadband connection,In person,30,33,36,6,3,A lot,Other,Other,Telepathy,Rich,Relative
+OK,11,Female,17,Right-Handed,1,Car,9,Other,February,Fall,No,No,Other,3,Yes - dial-up connection,"Myspace, Facebook, other social networking sites, or blog",70,60,8,4,13,A lot,Graduate degree,Pop,Fly,Rich,Relative
+IN,12,Male,18,Ambidextrous,1,Car,10,Football (American),August,Summer,No,No,Mathematics and statistics,3,Yes - other,Internet chat or instant messaging,0,5,3,2,0,Some,Undergraduate degree,Rap/Hip hop,Fly,Happy,Religious figure
+NC,10,Female,16,Left-Handed,2,Car,25,Other,March,Spring,Yes,No,Art,4,Yes - other,In person,2,3,10,12,1,A lot,Graduate degree,Other,Super strength,Happy,Relative
+GA,12,Male,17,Right-Handed,1,Car,4,Football (American),July,Winter,No,No,Mathematics and statistics,5,Yes - broadband connection,Cell phone,4,4,8,10,1,Some,Graduate degree,Other,Freeze time,Happy,Relative
+IL,12,,16,Right-Handed,1,Walk,1,Martial Arts,December,Spring,No,No,Languages,3,Yes - broadband connection,In person,10,100,10,5,1,Some,Graduate degree,Rock and roll,Freeze time,Happy,Musician or singer
+IN,12,Female,17,Right-Handed,1,Car,15,Dancing,May,Summer,No,No,Social studies,4,Yes - other,Text messaging,15,20,6,1,2,A lot,Other,Other,Freeze time,Healthy,Relative
+OR,12,Male,18,Left-Handed,3,Car,15,Basketball,January,Spring,No,Yes,Other,3,Yes - broadband connection,,,,,,,,,,,,
+MI,7,Male,12,Right-Handed,4,Car,9,Soccer,September,Summer,No,Yes,Computers and technology,4,Yes - other,Cell phone,,,1,1,1,Very little,Graduate degree,Other,Fly,Happy,Politician
+CA,12,Female,16,Right-Handed,1,Car,5,Soccer,August,Winter,No,No,Mathematics and statistics,4,Yes - broadband connection,Text messaging,126,80,3,1,5,A lot,Graduate degree,Heavy metal,Invisibility,Rich,Doctor or nurse
+NY,12,Female,16,Right-Handed,1,Bus,30,Tennis,May,Spring,No,No,English,4,Yes - broadband connection,Text messaging,50,70,22,10,2,A lot,Graduate degree,Pop,Invisibility,Happy,Musician or singer
+OR,11,Male,17,Right-Handed,1,Bus,20,Soccer,October,Winter,No,No,Computers and technology,5,Yes - broadband connection,In person,2,3,10,5,1,Some,Some college,Pop,Freeze time,Happy,Teacher

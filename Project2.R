@@ -1,12 +1,13 @@
 
 library(janitor)
 library(tidyverse)
+library(see)
 
 #library(rsconnect)
 #rsconnect::deployApp('path/to/your/app')
 
 my_data <- read.csv("data/CensusAtSchool2026.csv", na.strings = c("", "NA"))
-
+save(my_data, file = "data/censusAtSchool2026.RData")
 
 #Set up some quick tabulations
 table(my_data$state, useNA = "always")
@@ -93,3 +94,25 @@ ggplot(data = subset(my_data, !is.na(favorite_school_subject)), aes(x = travel_t
     strip.background = element_rect(fill = "grey95", color = NA), # Soft background for panel labels
     strip.text = element_text(face = "bold")                    # Bold headers for each subject
   )
+
+    ##Half and half plot
+ggplot(data = subset(my_data, !is.na(handed)), aes(x = handed, y = ageyears, fill = handed)) +
+  geom_violindot(fill_dots = "black") +
+  theme_modern() +
+  scale_fill_material_d()
+
+ggplot(data = subset(my_data, !is.na(travel_to_school)), aes(x = travel_to_school, y = home_occupants, fill = travel_to_school)) +
+  geom_violindot(fill_dots = "black") +
+  theme_modern() +
+  scale_fill_material_d()
+
+ggplot(data = subset(my_data, !is.na(preferred_status)), aes(x = preferred_status, y = ageyears, fill = preferred_status)) +
+  geom_violindot(fill_dots = "black") +
+  theme_modern() +
+  scale_fill_material_d()
+
+ggplot(data = subset(my_data, !is.na(preferred_status)), aes(x = preferred_status, y = text_messages_sent_yesterday , fill = preferred_status)) +
+  geom_violindot(fill_dots = "black") +
+  theme_modern() +
+  scale_fill_material_d()
+

@@ -2,35 +2,35 @@
 
 library(shiny)
 library(bslib)
-library(ggplot2)
-library(dplyr)												 
+library(tidyverse)
+library(DT)
 options("shiny.sanitize.errors" = FALSE) # Turn off error sanitization
 
-# Load data --------------------------------------------------------------------
-
+# Load data, small susbetting and building objects -----------------------------
 
 my_data <- read.csv("data/CensusAtSchool2026.csv", na.strings = c("", "NA"))
-clean_age <- na.omit(survey_data$ageyears)
-clean_travel <- na.omit(survey_data$travel_time_to_school)
-available_months  <- sort(unique(my_data$birth_month))
-available_genders <- sort(unique(my_data$gender))
+  clean_age <- na.omit(my_data$ageyears)
+  clean_travel <- na.omit(my_data$travel_time_to_school)
+  available_months  <- sort(unique(my_data$birth_month))
+  available_genders <- sort(unique(my_data$gender))
 
-numvar_choices <- c(
-  "School Grade" = "classgrade", 
-  "Age (years)" = "ageyears", 
-  "Langauges Spoken" = "languages_spoken",
-  "Time to School (mins)" = "travel_time_to_school", 
-  "Home Occupants" = "home_occupants", 
-  "Texts Sent Yesterday" = "text_messages_sent_yesterday",
-  "Texts Received Yesterday" = "text_messages_received_yesterday",
-  "Homework Last Week (Hours)" = "doing_homework_hours",
-  "Activities w/ Family Last Week (Hours)" = "doing_things_with_family_hours"
-)									 
+  numvar_choices <- c(
+    "School Grade" = "classgrade", 
+    "Age (years)" = "ageyears", 
+    "Langauges Spoken" = "languages_spoken",
+    "Time to School (mins)" = "travel_time_to_school", 
+    "Home Occupants" = "home_occupants", 
+    "Texts Sent Yesterday" = "text_messages_sent_yesterday",
+    "Texts Received Yesterday" = "text_messages_received_yesterday",
+    "Homework Last Week (Hours)" = "doing_homework_hours",
+    "Activities w/ Family Last Week (Hours)" = "doing_things_with_family_hours"
+  )									 
 
 # Define UI --------------------------------------------------------------------
 
 ui <- fluidPage(
   sidebarPanel(
+    # Categorical Mods
     selectInput(inputId = "selected_months",
                 label = "Select Birth Month(s):",
                 choices = available_months,
@@ -40,24 +40,25 @@ ui <- fluidPage(
                        label = "Gender of respondents:", 
                        choices = available_genders,
                        selected = available_genders),
-    selectInput(inputId = "y", 
-                label = "Y-axis:",
-                choices = numvar_choices,
-                selected = NULL),
-    selectInput(inputId = "x", 
-                label = "X-axis:",
-                choices = numvar_choices,
-                selected = NULL),
     
-    uiOutput(outputId = "x_slider"),
-    numericInput("usedRange",
-                 label = "Set range for variable", 
-                 value = 1, min = 0, max = 1)
+    # Sliders for numberic subsetting
+    selectInput(inputId = "num_var1", 
+                label = "First Numeric Variable Filter:",
+                choices = numvar_choices,
+                selected = "ageyears"),
+    uiOutput("slider1"),
+    selectInput(inputId = "num_var2", 
+                label = "Second Numeric Variable Filter:",
+                choices = numvar_choices,
+                selected = "travel_time_to_school"),
+    uiOutput("slider2"),
+    
+    # Action Button Execution Lock
+    actionButton("filter_btn", "Apply Sidebar Filters", 
+                 class = "btn-primary btn-block w-100", icon = icon("filter"))
     ),
   
-  card(
-    plotOutput(outputId = "scatterplot")
-  )
+  
 )
 
 # Define server ----------------------------------------------------------------

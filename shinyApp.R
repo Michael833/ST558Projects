@@ -24,7 +24,19 @@ my_data <- read.csv("data/CensusAtSchool2026.csv", na.strings = c("", "NA"))
     "Texts Received Yesterday" = "text_messages_received_yesterday",
     "Homework Last Week (Hours)" = "doing_homework_hours",
     "Activities w/ Family Last Week (Hours)" = "doing_things_with_family_hours"
-  )									 
+  )
+  catvars_choices <- c(
+    "Gender" = "gender", 
+    "Handedness" = "handed", 
+    "Commute Method" = "travel_to_school", 
+    "Birth Month" = "birth_month", 
+    "Favorite Season" = "favorite_season",
+    "Has Allergies" = "allergies",
+    "Vegetarian Status" = "vegetarian",
+    "Favorite Subject" = "favorite_school_subject",
+    "Internet Access" = "home_internet_access",
+    "Preferred Communication Method" = "communication_with_friends"
+  )
 
 # Define UI --------------------------------------------------------------------
 
@@ -57,6 +69,82 @@ ui <- fluidPage(
     actionButton("filter_btn", "Apply Sidebar Filters", 
                  class = "btn-primary btn-block w-100", icon = icon("filter"))
     ),
+  
+  mainPanel(
+    tabsetPanel(
+      id = "main_tabs",
+      
+      # 1. ABOUT Tab
+      tabPanel("About"),
+              fluidRow(
+                column(12,
+                br(),
+                tags$h3("Project Overview"),
+                  p("This R Shiny application was created to explore data from the ASA's Census@School project.",
+                    "While the full dataset has more variables, I've selected about a half dozen that can be used to filter the data and then conduct some light EDA.", 
+                    "More inforamtion can be found on the ASA's website (link below) and you can take your students to the site to add their own responses to the survey."),
+                  tags$h4("Dataset Context"),
+                    p("The data originates from an expansive student census profile documenting baseline metrics such as school transit times,",
+                      "preferred extra-curricular structures, digital usage baselines, and environmental profiles. Learn more at the ",
+                      tags$a(href = "https://ww2.amstat.org/censusatschool/", "Census at School - United States", target = "_blank")),
+                  tags$h4("Layout Inforamtion"),
+                    tags$ul(
+                      tags$li(strong("Sidebar Panel:"), "Use the checkboxes and sliders to select the subset of the data you want, then use the action button to update the request from the full dataset."),
+                      tags$li(strong("Data Download Tab:"), "Download a filtered spreadsheet of the data you selected from the sidebar."),
+                      tags$li(strong("Data Exploration Tab:"), "View some graphs, tables, and metrics on various combinations of variables you chose.")
+                    ),
+                    br(),
+                  # Image from C@S webiste
+                  tags$img(
+                    src = "https://amstat.org", 
+                    alt = "Census at School Logo",
+                    style = "max-width: 100%; height: auto; display: block; margin-bottom: 20px;"
+                  )
+                )
+              )
+      ),
+      
+      # 2. DOWNLOAD Tab
+      tabPanel("Data Download",
+               br(),
+               downloadButton("download_csv", "Download Filtered Dataset (.csv)"),
+               br(), br(),
+               withSpinner(DT::dataTableOutput("reactive_table"))
+      ),
+      
+      # 3. EDA Tab
+      tabPanel("Data Exploration", icon = icon("chart-bar"),
+               br(),
+               fluidRow(
+                 
+                 # Give them a place to select their vars
+                 column(4,
+                        tags$h4("Configuration Station"),
+                        radioButtons("expl_mode", "Analysis Focus Category:",
+                                     choices = c("Categorical Summaries" = "cat", "Numeric Variable Summaries" = "num")),
+                        
+                        # Dynamic variable selections for mapping graphs
+                        selectInput("plot_x", "Primary X-Axis Variable:",
+                                    choices = catvars_choices),
+                        selectInput("plot_y", "Quantitative Y-Axis (For Box/Scatter plots Only):",
+                                    choices = numvars_choices),
+                        selectInput("plot_fill", "Grouping Modifier / Color Split:",
+                                    choices = c("None" = "none", "Gender" = "gender", "Handedness" = "handed", "Vegetarian Status" = "vegetarian")),
+                        selectInput("plot_facet", "Faceting Variable Modifier:",
+                                    choices = c("None" = "none", "Gender" = "gender", "Handedness" = "handed", "Internet Access" = "home_internet_access", "Favorite Season" = "favorite_season", "Type of Role Model" = "role_model_type"))
+                 ),
+                 # Now display the output graps
+                 column(8,
+                        tags$h4("Outputs"),
+                        tabsetPanel(
+                          tabPanel("Graphical View", br(), withSpinner(plotOutput("exploration_plot"))),
+                          tabPanel("Numerical View", br(), withSpinner(uiOutput("exploration_tables")))
+                        )
+                 )
+               )
+      )
+    )
+  )
   
   
 )

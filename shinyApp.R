@@ -1,7 +1,7 @@
 # Load packages ----------------------------------------------------------------
 
 library(shiny)
-library(bslib)
+#library(bslib)
 library(tidyverse)
 library(DT)
 options("shiny.sanitize.errors" = FALSE) # Turn off error sanitization
@@ -25,7 +25,7 @@ my_data <- read.csv("data/CensusAtSchool2026.csv", na.strings = c("", "NA"))
     "Homework Last Week (Hours)" = "doing_homework_hours",
     "Activities w/ Family Last Week (Hours)" = "doing_things_with_family_hours"
   )
-  catvars_choices <- c(
+  catvar_choices <- c(
     "Gender" = "gender", 
     "Handedness" = "handed", 
     "Commute Method" = "travel_to_school", 
@@ -96,7 +96,7 @@ ui <- fluidPage(
                     br(),
                   # Image from C@S webiste
                   tags$img(
-                    src = "https://amstat.org", 
+                    src = "assets/Census@SchoolLogo.png", 
                     alt = "Census at School Logo",
                     style = "max-width: 100%; height: auto; display: block; margin-bottom: 20px;"
                   )
@@ -125,9 +125,9 @@ ui <- fluidPage(
                         
                         # Dynamic variable selections for mapping graphs
                         selectInput("plot_x", "Primary X-Axis Variable:",
-                                    choices = catvars_choices),
+                                    choices = catvar_choices),
                         selectInput("plot_y", "Quantitative Y-Axis (For Box/Scatter plots Only):",
-                                    choices = numvars_choices),
+                                    choices = numvar_choices),
                         selectInput("plot_fill", "Grouping Modifier / Color Split:",
                                     choices = c("None" = "none", "Gender" = "gender", "Handedness" = "handed", "Vegetarian Status" = "vegetarian")),
                         selectInput("plot_facet", "Faceting Variable Modifier:",
@@ -144,9 +144,6 @@ ui <- fluidPage(
                )
       )
     )
-  )
-  
-  
 )
 
 # Define server ----------------------------------------------------------------
@@ -155,24 +152,39 @@ server <- function(input, output, session) {
   
   # Double slideer for my x and y variables, usin renderUI to make dynamic as 
   #  different x-vars are selected.
-  output$x_slider <- renderUI({
-    req(input$x)
-    x_vector <- my_data[[input$x]]
-    x_min_val <- min(x_vector)
-    x_max_val <- max(x_vector)
-    x_label <- names(numvar_choices)[numvar_choices == input$x]
+  output$slider1 <- renderUI({
+    req(input$num_var1)
+    num_vector_1 <- my_data[[input$num_var1]]
+    num_min_1 <- min(num_vector_1)
+    num_max_1 <- max(num_vector_1)
+    num_lab_1 <- names(numvar_choices)[numvar_choices == input$num_var1]
     
     sliderInput(
-      inputId = "x_range",
-      label = paste("Filter Range for", x_label),
-      min = x_min_val,
-      max = x_max_val,
-      value = c(x_min_val, x_max_val) # Default to showig full range
+      inputId = "slider1",
+      label = paste("Filter Range for", num_lab_1),
+      min = num_min_1,
+      max = num_max_1,
+      value = c(num_min_1, num_max_1) # Default to showig full range
+    )
+  })
+  output$slider2 <- renderUI({
+    req(input$num_var2)
+    num_vector_2 <- my_data[[input$num_var2]]
+    num_min_2 <- min(num_vector_2)
+    num_max_2 <- max(num_vector_2)
+    num_lab_2 <- names(numvar_choices)[numvar_choices == input$num_var2]
+    
+    sliderInput(
+      inputId = "slider2",
+      label = paste("Filter Range for", num_lab_2),
+      min = num_min_2,
+      max = num_max_2,
+      value = c(num_min_2, num_max_2)
     )
   })
   
   # Reactive expression to filter the data based on selected checkboxes
-  filtered_data <- reactive({
+  final_data <- reactive({
     req(input$selected_months) 
     req(input$selected_genders)
     req(input$x)
@@ -182,37 +194,44 @@ server <- function(input, output, session) {
       filter(birth_month %in% input$selected_months) |>
       filter(gender %in% input$selected_genders)
     
-    # FIXED: Check if the dynamic slider has finished initializing on screen before filtering
-    if (!is.null(input$x_range)) {
+    # Separate the base data from the dynamic slider condition checks
       base_data <- base_data |>
-        filter(.data[[input$x]] >= input$x_range[1] & .data[[input$x]] <= input$x_range[2])
-    }
-    
+        filter(.data[[input$num_var1]] >= input$slider1[1] & .data[[input$num_var1]] <= input$slider1[2]) |>
+        filter(.data[[input$num_var2]] >= input$slider2[1] & .data[[input$num_var2]] <= input$slider2[2])
+      
     base_data
   })
   
-  output$scatterplot <- renderPlot({
-    #Prepare background stuff
-    
-    x_label <- names(numvar_choices)[numvar_choices == input$x]
-    y_label <- names(numvar_choices)[numvar_choices == input$y]
-    
-    req(nrow(filtered_data()) > 0)
-    ggplot(filtered_data(), aes(x = .data[[input$x]], y = .data[[input$y]])) +
-      geom_point() +
-      labs(
-        title = paste(y_label, "vs.", x_label),
-        x = x_label,
-        y = y_label
-      ) +
-      theme_minimal()
+  #Let's see the data table. If this works, then we should be good for graphing.
+  output$reactive_table <- DT::renderDataTable({
+    DT::datatable(final_data, options = list(pageLength = 10))
   })
-  #output$distPlot <- renderPlot({
-  #  students_from_selected_months <- censusAtSchool2026 %>%
-  #    filter(birth_month == input$birth_month) %>%
-  #    select(title:birth_month)
-  #})
   
+  
+  
+  
+  # output$scatterplot <- renderPlot({
+  #   #Prepare background stuff
+  #   
+  #   x_label <- names(numvar_choices)[numvar_choices == input$x]
+  #   y_label <- names(numvar_choices)[numvar_choices == input$y]
+  #   
+  #   req(nrow(filtered_data()) > 0)
+  #   ggplot(filtered_data(), aes(x = .data[[input$x]], y = .data[[input$y]])) +
+  #     geom_point() +
+  #     labs(
+  #       title = paste(y_label, "vs.", x_label),
+  #       x = x_label,
+  #       y = y_label
+  #     ) +
+  #     theme_minimal()
+  # })
+  # #output$distPlot <- renderPlot({
+  # #  students_from_selected_months <- censusAtSchool2026 %>%
+  # #    filter(birth_month == input$birth_month) %>%
+  # #    select(title:birth_month)
+  # #})
+  # 
   
 }
 

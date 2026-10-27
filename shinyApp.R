@@ -117,16 +117,17 @@ ui <- fluidPage(
         ),
         
         # 3. EDA Tab
-        tabPanel("Data Exploration", icon = icon("chart-bar"),
+        tabPanel("Data Exploration",
                  br(),
                  fluidRow(
                    # Give them a place to select their vars
                    column(4,
-                          tags$h4("Configuration Station"),
-                          radioButtons("expl_mode", "Analysis Focus Category:",
+                          tags$h4("Options for Graphs and Summary Data"),
+                          radioButtons("expl_mode", "EDA Focus:",
                                        choices = c("Categorical Summaries" = "cat", "Numeric Variable Summaries" = "num")),
                           
                           # Dynamic variable selections for mapping graphs
+                            # This is to create 4 selectors: X & Y vars, plus a third that will add fill color. The last will turn on facets.
                           selectInput("plot_x", "Primary X-Axis Variable:",
                                       choices = catvar_choices),
                           selectInput("plot_y", "Quantitative Y-Axis (For Box/Scatter plots Only):",
@@ -216,10 +217,37 @@ server <- function(input, output, session) {
     content = function(file) {
       write_csv(final_data(), file)
     }
-  )
+  ) # and that's a win folks. Downloading is working.
   
-  
-  
+  # Now we have to make the plots. First let's envision what each combination of input vars looks like.
+  output$exploration_plot <- renderPlot({
+    req(input$plot_x)
+    req(input$plot_y)
+    
+    # 1. Single categorical distribution count layout
+    if(input$expl_mode == "cat") {
+      my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]]))
+      
+      if(input$plot_fill != "none") {
+        my_plot <- my_plot + aes(fill = .data[[input$plot_fill]]) + geom_bar(position = "dodge")
+      } else {
+        my_plot <- my_plot + geom_bar(fill = "steelblue")
+      }
+      my_plot <- my_plot + labs(title = paste("Distribution of", input$plot_x), y = "Total Count Responses") +
+        theme_minimal()
+    } else {  # For numeric summary mode
+      # 2. One categoricla (y) and one numeric (x) boxplots (x categorical))
+      my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]]))
+      if(input$plot_fill != "none") {
+        my_plot <- my_plot + aes(fill = .data[[input$plot_fill]]) + geom_boxplot()
+      } else {
+        my_plot <- my_plot + geom_boxplot(fill = "steelblue")
+      }
+      my_plot <- my_plot + labs(title = paste(input$plot_y, "Distribution Across Classifications"), y = input$plot_y) +
+        theme_minimal()
+    }
+    
+  })
   
   # output$scatterplot <- renderPlot({
   #   #Prepare background stuff

@@ -41,109 +41,111 @@ my_data <- read.csv("data/CensusAtSchool2026.csv", na.strings = c("", "NA"))
 # Define UI --------------------------------------------------------------------
 
 ui <- fluidPage(
-  sidebarPanel(
-    # Categorical Mods
-    selectInput(inputId = "selected_months",
-                label = "Select Birth Month(s):",
-                choices = available_months,
-                selected = "January",
-                multiple = TRUE),
-    checkboxGroupInput(inputId = "selected_genders", 
-                       label = "Gender of respondents:", 
-                       choices = available_genders,
-                       selected = available_genders),
-    
-    # Sliders for numberic subsetting
-    selectInput(inputId = "num_var1", 
-                label = "First Numeric Variable Filter:",
-                choices = numvar_choices,
-                selected = "ageyears"),
-    uiOutput("slider1"),
-    selectInput(inputId = "num_var2", 
-                label = "Second Numeric Variable Filter:",
-                choices = numvar_choices,
-                selected = "travel_time_to_school"),
-    uiOutput("slider2"),
-    
-    # Action Button Execution Lock
-    actionButton("filter_btn", "Apply Sidebar Filters", 
-                 class = "btn-primary btn-block w-100", icon = icon("filter"))
-    ),
-  
-  mainPanel(
-    tabsetPanel(
-      id = "main_tabs",
+  sidebarLayout(
+    sidebarPanel(
+      # Categorical Mods
+      selectInput(inputId = "selected_months",
+                  label = "Select Birth Month(s):",
+                  choices = available_months,
+                  selected = "January",
+                  multiple = TRUE),
+      checkboxGroupInput(inputId = "selected_genders", 
+                         label = "Gender of respondents:", 
+                         choices = available_genders,
+                         selected = available_genders),
       
-      # 1. ABOUT Tab
-      tabPanel("About"),
-              fluidRow(
-                column(12,
-                br(),
-                tags$h3("Project Overview"),
-                  p("This R Shiny application was created to explore data from the ASA's Census@School project.",
-                    "While the full dataset has more variables, I've selected about a half dozen that can be used to filter the data and then conduct some light EDA.", 
-                    "More inforamtion can be found on the ASA's website (link below) and you can take your students to the site to add their own responses to the survey."),
-                  tags$h4("Dataset Context"),
-                    p("The data originates from an expansive student census profile documenting baseline metrics such as school transit times,",
-                      "preferred extra-curricular structures, digital usage baselines, and environmental profiles. Learn more at the ",
-                      tags$a(href = "https://ww2.amstat.org/censusatschool/", "Census at School - United States", target = "_blank")),
-                  tags$h4("Layout Inforamtion"),
-                    tags$ul(
-                      tags$li(strong("Sidebar Panel:"), "Use the checkboxes and sliders to select the subset of the data you want, then use the action button to update the request from the full dataset."),
-                      tags$li(strong("Data Download Tab:"), "Download a filtered spreadsheet of the data you selected from the sidebar."),
-                      tags$li(strong("Data Exploration Tab:"), "View some graphs, tables, and metrics on various combinations of variables you chose.")
-                    ),
-                    br(),
-                  # Image from C@S webiste
-                  tags$img(
-                    src = "assets/Census@SchoolLogo.png", 
-                    alt = "Census at School Logo",
-                    style = "max-width: 100%; height: auto; display: block; margin-bottom: 20px;"
+      # Sliders for numberic subsetting
+      selectInput(inputId = "num_var1", 
+                  label = "First Numeric Variable Filter:",
+                  choices = numvar_choices,
+                  selected = "ageyears"),
+      uiOutput("slider1"),
+      selectInput(inputId = "num_var2", 
+                  label = "Second Numeric Variable Filter:",
+                  choices = numvar_choices,
+                  selected = "travel_time_to_school"),
+      uiOutput("slider2"),
+      
+      # Action Button Execution Lock
+      actionButton("filter_btn", "Apply Sidebar Filters", 
+                   class = "btn-primary btn-block w-100", icon = icon("filter"))
+    ),
+    
+    mainPanel(
+      tabsetPanel(
+        id = "main_tabs",
+        
+        # 1. ABOUT Tab
+        tabPanel("About",
+                fluidRow(
+                  column(12,
+                  br(),
+                  tags$h3("Project Overview"),
+                    p("This R Shiny application was created to explore data from the ASA's Census@School project.",
+                      "While the full dataset has more variables, I've selected about a half dozen that can be used to filter the data and then conduct some light EDA.", 
+                      "More inforamtion can be found on the ASA's website (link below) and you can take your students to the site to add their own responses to the survey."),
+                    tags$h4("Dataset Context"),
+                      p("The data originates from an expansive student census profile documenting baseline metrics such as school transit times,",
+                        "preferred extra-curricular structures, digital usage baselines, and environmental profiles. Learn more at the ",
+                        tags$a(href = "https://ww2.amstat.org/censusatschool/", "Census at School - United States", target = "_blank")),
+                    tags$h4("Layout Inforamtion"),
+                      tags$ul(
+                        tags$li(strong("Sidebar Panel:"), "Use the checkboxes and sliders to select the subset of the data you want, then use the action button to update the request from the full dataset."),
+                        tags$li(strong("Data Download Tab:"), "Download a filtered spreadsheet of the data you selected from the sidebar."),
+                        tags$li(strong("Data Exploration Tab:"), "View some graphs, tables, and metrics on various combinations of variables you chose.")
+                      ),
+                      br(),
+                    # Image from C@S webiste
+                    tags$img(
+                      src = "assets/Census@SchoolLogo.png", 
+                      alt = "Census at School Logo",
+                      style = "max-width: 100%; height: auto; display: block; margin-bottom: 20px;"
+                    )
                   )
                 )
-              )
-      ),
-      
-      # 2. DOWNLOAD Tab
-      tabPanel("Data Download",
-               br(),
-               downloadButton("download_csv", "Download Filtered Dataset (.csv)"),
-               br(), br(),
-               withSpinner(DT::dataTableOutput("reactive_table"))
-      ),
-      
-      # 3. EDA Tab
-      tabPanel("Data Exploration", icon = icon("chart-bar"),
-               br(),
-               fluidRow(
-                 
-                 # Give them a place to select their vars
-                 column(4,
-                        tags$h4("Configuration Station"),
-                        radioButtons("expl_mode", "Analysis Focus Category:",
-                                     choices = c("Categorical Summaries" = "cat", "Numeric Variable Summaries" = "num")),
-                        
-                        # Dynamic variable selections for mapping graphs
-                        selectInput("plot_x", "Primary X-Axis Variable:",
-                                    choices = catvar_choices),
-                        selectInput("plot_y", "Quantitative Y-Axis (For Box/Scatter plots Only):",
-                                    choices = numvar_choices),
-                        selectInput("plot_fill", "Grouping Modifier / Color Split:",
-                                    choices = c("None" = "none", "Gender" = "gender", "Handedness" = "handed", "Vegetarian Status" = "vegetarian")),
-                        selectInput("plot_facet", "Faceting Variable Modifier:",
-                                    choices = c("None" = "none", "Gender" = "gender", "Handedness" = "handed", "Internet Access" = "home_internet_access", "Favorite Season" = "favorite_season", "Type of Role Model" = "role_model_type"))
-                 ),
-                 # Now display the output graps
-                 column(8,
-                        tags$h4("Outputs"),
-                        tabsetPanel(
-                          tabPanel("Graphical View", br(), withSpinner(plotOutput("exploration_plot"))),
-                          tabPanel("Numerical View", br(), withSpinner(uiOutput("exploration_tables")))
-                        )
+        ),
+        
+        # 2. DOWNLOAD Tab
+        tabPanel("Data Download",
+                 br(),
+                 downloadButton("download_csv", "Download Filtered Dataset (.csv)"),
+                 br(), br(),
+                 withSpinner(DT::dataTableOutput("reactive_table"))
+        ),
+        
+        # 3. EDA Tab
+        tabPanel("Data Exploration", icon = icon("chart-bar"),
+                 br(),
+                 fluidRow(
+                   # Give them a place to select their vars
+                   column(4,
+                          tags$h4("Configuration Station"),
+                          radioButtons("expl_mode", "Analysis Focus Category:",
+                                       choices = c("Categorical Summaries" = "cat", "Numeric Variable Summaries" = "num")),
+                          
+                          # Dynamic variable selections for mapping graphs
+                          selectInput("plot_x", "Primary X-Axis Variable:",
+                                      choices = catvar_choices),
+                          selectInput("plot_y", "Quantitative Y-Axis (For Box/Scatter plots Only):",
+                                      choices = numvar_choices),
+                          selectInput("plot_fill", "Grouping Modifier / Color Split:",
+                                      choices = c("None" = "none", "Gender" = "gender", "Handedness" = "handed", "Vegetarian Status" = "vegetarian")),
+                          selectInput("plot_facet", "Faceting Variable Modifier:",
+                                      choices = c("None" = "none", "Gender" = "gender", "Handedness" = "handed", "Internet Access" = "home_internet_access", "Favorite Season" = "favorite_season", "Type of Role Model" = "role_model_type"))
+                   ),
+                   # Now display the output graps
+                   column(8,
+                          tags$h4("Outputs"),
+                          tabsetPanel(
+                            tabPanel("Graphical View", br(), withSpinner(plotOutput("exploration_plot"))),
+                            tabPanel("Numerical View", br(), withSpinner(uiOutput("exploration_tables")))
+                          )
+                   )
                  )
-               )
+        )
       )
     )
+  )
 )
 
 # Define server ----------------------------------------------------------------

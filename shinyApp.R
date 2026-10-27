@@ -1,4 +1,7 @@
 # Load packages ----------------------------------------------------------------
+#Problems:
+  #Logo won't appear
+
 
 library(shiny)
 #library(bslib)
@@ -63,7 +66,7 @@ ui <- fluidPage(
       selectInput(inputId = "num_var2", 
                   label = "Second Numeric Variable Filter:",
                   choices = numvar_choices,
-                  selected = "travel_time_to_school"),
+                  selected = "classgrade"),
       uiOutput("slider2"),
       
       # Action Button Execution Lock
@@ -97,7 +100,7 @@ ui <- fluidPage(
                       br(),
                     # Image from C@S webiste
                     tags$img(
-                      src = "assets/Census@SchoolLogo.png", 
+                      src = "Census@SchoolLogo.png" , 
                       alt = "Census at School Logo",
                       style = "max-width: 100%; height: auto; display: block; margin-bottom: 20px;"
                     )
@@ -187,10 +190,7 @@ server <- function(input, output, session) {
   
   # Reactive expression to filter the data based on selected checkboxes
   final_data <- reactive({
-    req(input$selected_months) 
-    req(input$selected_genders)
-    req(input$x)
-    
+
     # Separate the base data from the dynamic slider condition checks
     base_data <- my_data |> 
       filter(birth_month %in% input$selected_months) |>
@@ -206,8 +206,17 @@ server <- function(input, output, session) {
   
   #Let's see the data table. If this works, then we should be good for graphing.
   output$reactive_table <- DT::renderDataTable({
-    DT::datatable(final_data, options = list(pageLength = 10))
+    DT::datatable(final_data(), options = list(pageLength = 10))
   })
+  #Download button
+  output$download_csv <- downloadHandler(
+    filename = function() {
+      paste0("filtered_data_", Sys.Date(), ".csv")
+    },
+    content = function(file) {
+      write_csv(final_data(), file)
+    }
+  )
   
   
   

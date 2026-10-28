@@ -224,44 +224,73 @@ server <- function(input, output, session) {
     req(input$plot_x)
     req(input$plot_y)
     
-    # Beginning to make plots: One-way plots
+    
+    ## No y-var
     if(input$plot_y == "none") {
-      my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]]))  #setup plot
-      
-      # 1. Single categorical variable section
+      # X is cat/num, Fill is turned on.
       if(input$plot_fill != "none") {
-        #Single cat var + color "third" var as fill (input$plot_fill)
-        my_plot <- my_plot + aes(fill = .data[[input$plot_fill]]) + geom_bar(position = "dodge")
+        my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], fill = .data[[input$plot_fill]])) + 
+          geom_bar(position = "dodge")
       } else {
-        #Straight single cat var ()
-        my_plot <- my_plot + geom_bar(fill = "steelblue")
+        # X cat/num, fill off.
+        my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]])) + 
+          geom_bar(fill = "steelblue")
       }
-      my_plot <- my_plot + labs(title = paste("Distribution of", input$plot_x), y = "Total Count Responses")
-    } else {  # 2. For 2-way plots
-      # setup plot again
-      my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]]))
-      
-      #If X is numeric, and y is categorical
-      if(input$plot_x %in% numvar_choices && input$plot_y %in% catvar_choices) { 
-        my_plot <- my_plot + geom_histogram(aes(x = .data[[input$plot_x]], fill = .data[[input$plot_y]]), position = "stack", bins = 20, color = "white", alpha = 0.8) +
-          labs(title = paste("Stacked Histogram of", input$plot_x, "by", input$plot_y), x = input$plot_x, y = "Count")
-      } else if(input$plot_x %in% numvar_choices && input$plot_y %in% numvar_choices) { 
-        my_plot <- my_plot + geom_point(color = "steelblue", size = 2.5, alpha = 0.7) +
-          labs(title = paste("Scatterplot of", input$plot_x, "vs.", input$plot_y), x = input$plot_x, y = input$plot_y)
-      } else if(input$plot_x %in% catvar_choices && input$plot_y %in% numvar_choices) {
-        # This probably shouldn't happen. It's not great to put the numeric on the y, so if they do, I swap them here to make it look like if they had swapped the variables, otherwise R is going to lose its mind.
-        my_plot <- my_plot + geom_histogram(aes(x = .data[[input$plot_y]], y = .data[[input$plot_x]]), position = "stack", binwidth = 1, color = "white", alpha = 0.8) +
-          labs(title = paste("Stacked Histogram of", input$plot_y, "by", input$plot_x), x = input$plot_y, y = "Count")
-      } else {
-        # double categorical, re-explain the inputs to the function with a new aes()
-        my_plot <- my_plot + geom_bar(aes(x = .data[[input$plot_x]], fill = .data[[input$plot_y]]), position = "dodge") + labs(y = "Count")
+    } else {
+      ## Yes y-var
+      # Cat - Num
+      if(input$plot_x %in% catvar_choices && input$plot_y %in% numvar_choices) {
+        # X is cat, Y is num, Fill is turned on. (This probably shouldn't happen. It's not great to put the numeric on the y)
+        if(input$plot_fill != "none") {
+          "Cannot display a graph for a Categorical X variable, Numeric Y variable AND a color fill. Please change your selections."
+        } else {
+          # X is cat, Y is num, Fill is turned off.
+          my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_y]], fill = .data[[input$plot_x]])) +
+            geom_histogram(position = "stack", bins = 20, color = "white", alpha = 0.8) +
+            labs(title = paste("Stacked Histogram of", input$plot_y, "by", input$plot_x), x = input$plot_y, y = "Count", fill = input$plot_x)
+        }
+        # num - num
+      } else if(input$plot_x %in% numvar_choices && input$plot_y %in% numvar_choices) {
+        if(input$plot_fill != "none") {
+          # X is num, Y is num, Fill is turned on. (scatterplot)
+          my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]], color = .data[[input$plot_fill]])) +  
+            geom_point(size = 2.5, alpha = 0.7) +
+            labs(title = paste("Scatterplot of", input$plot_x, "vs.", input$plot_y), x = input$plot_x, y = input$plot_y, color = input$plot_fill)
+        } else {
+          # X is num, Y is num, Fill is turned off. (scatterplot)
+          my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]])) +
+            geom_point(color = "steelblue", size = 2.5, alpha = 0.7) +
+            labs(title = paste("Scatterplot of", input$plot_x, "vs.", input$plot_y), x = input$plot_x, y = input$plot_y)
+        }
+        # X is cat, Y is cat
+      }	else if(input$plot_x %in% catvar_choices && input$plot_y %in% catvar_choices) {
+        # Fill is turned on.
+        if(input$plot_fill != "none") {
+          "That's a lot of Categorical variables. Basically a 3-way table."
+          ftable(.data[[input$plot_x]], .data[[input$plot_y]], .data[[input$plot_fill]], useNA = "always")
+          # Fill is turned off.
+        } else {
+          "Categorical X variable and Categorical Y variable is really a two-way table."
+          table(.data[[input$plot_x]], .data[[input$plot_y]], useNA = "always")
+        } 
+      } else if(input$plot_x %in% numvar_choices && input$plot_y %in% catvar_choices) {
+        # X is num, Y is cat, Fill is turned on.
+        if(input$plot_fill != "none") {
+          my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]], fill = .data[[input$plot_fill]])) +
+            geom_histogram(position = "dodge", bins = 20, color = "white", alpha = 0.8) +
+            labs(title = paste("Stacked Histogram of", input$plot_x, "by", input$plot_y), x = input$plot_x, y = "Count")
+          # X is num, Y is cat, Fill is turned off.
+        } else {
+          my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]])) +
+            geom_histogram(position = "stack", bins = 20, color = "white", alpha = 0.8) +
+            labs(title = paste("Stacked Histogram of", input$plot_x, "by", input$plot_y), x = input$plot_x, y = "Count")
+        }
       }
     }
     # Global plot theme rules an faceting integration
     my_plot <- my_plot + theme_minimal(base_size = 14) +
       # theme(axis.text.x = element_text(angle = 45, hjust = 1),
-      theme(plot.title = element_text(face = "bold", size = 16, margin = margin(b=10))) +
-      labs(x = input$plot_x)
+      theme(plot.title = element_text(face = "bold", size = 16, margin = margin(b=10)))
     if(input$plot_facet != "none") {
       my_plot <- my_plot + facet_wrap(vars(.data[[input$plot_facet]]))
     }  # If facetwrap isn't turned on, just ignore, no else statement.

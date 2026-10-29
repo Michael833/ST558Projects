@@ -129,7 +129,7 @@ ui <- fluidPage(
                           selectInput("plot_x", "Primary X-Axis Variable:",
                                       choices = c(catvar_choices, numvar_choices)),
                           selectInput("plot_y", "Quantitative Y-Axis (For Box/Scatter plots Only):",
-                                      choices = c("None" = "none", numvar_choices)),
+                                      choices = c("None" = "none", catvar_choices, numvar_choices)),
                           selectInput("plot_fill", "Grouping Modifier / Color Split:",
                                       choices = c("None" = "none", "Gender" = "gender", "Handedness" = "handed", "Vegetarian Status" = "vegetarian")),
                           selectInput("plot_facet", "Faceting Variable Modifier:",
@@ -159,8 +159,8 @@ server <- function(input, output, session) {
   output$slider1 <- renderUI({
     req(input$num_var1)
     num_vector_1 <- my_data[[input$num_var1]]
-    num_min_1 <- min(num_vector_1)
-    num_max_1 <- max(num_vector_1)
+    num_min_1 <- min(num_vector_1, na.rm = TRUE)
+    num_max_1 <- max(num_vector_1, na.rm = TRUE)
     num_lab_1 <- names(numvar_choices)[numvar_choices == input$num_var1]
     
     sliderInput(
@@ -174,8 +174,8 @@ server <- function(input, output, session) {
   output$slider2 <- renderUI({
     req(input$num_var2)
     num_vector_2 <- my_data[[input$num_var2]]
-    num_min_2 <- min(num_vector_2)
-    num_max_2 <- max(num_vector_2)
+    num_min_2 <- min(num_vector_2, na.rm = TRUE)
+    num_max_2 <- max(num_vector_2, na.rm = TRUE)
     num_lab_2 <- names(numvar_choices)[numvar_choices == input$num_var2]
     
     sliderInput(
@@ -188,7 +188,7 @@ server <- function(input, output, session) {
   })
   
   # Reactive expression to filter the data based on selected checkboxes
-  final_data <- reactive({
+  final_data <- eventReactive(input$filter_btn, {
     req(input$slider1)
     req(input$slider2)
     
@@ -242,7 +242,9 @@ server <- function(input, output, session) {
       if(input$plot_x %in% catvar_choices && input$plot_y %in% numvar_choices) {
         # X is cat, Y is num, Fill is turned on. (This probably shouldn't happen. It's not great to put the numeric on the y)
         if(input$plot_fill != "none") {
-          "Cannot display a graph for a Categorical X variable, Numeric Y variable AND a color fill. Please change your selections."
+          my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]], fill = .data[[input$plot_fill]])) +
+            geom_boxplot(position = "dodge", ) +
+            labs(title = paste("Stacked Histogram of", input$plot_y, "by", input$plot_x), x = input$plot_y, y = "Count", fill = input$plot_x)
         } else {
           # X is cat, Y is num, Fill is turned off.
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_y]], fill = .data[[input$plot_x]])) +
@@ -262,28 +264,31 @@ server <- function(input, output, session) {
             geom_point(color = "steelblue", size = 2.5, alpha = 0.7) +
             labs(title = paste("Scatterplot of", input$plot_x, "vs.", input$plot_y), x = input$plot_x, y = input$plot_y)
         }
-        # X is cat, Y is cat
+        # cat - cat
       }	else if(input$plot_x %in% catvar_choices && input$plot_y %in% catvar_choices) {
         # Fill is turned on.
         if(input$plot_fill != "none") {
-          "That's a lot of Categorical variables. Basically a 3-way table."
-          ftable(.data[[input$plot_x]], .data[[input$plot_y]], .data[[input$plot_fill]], useNA = "always")
+          #"That's a lot of Categorical variables. Basically a 3-way table."
+          mosaicplot(~ .data[[input$plot_x]] + .data[[input$plot_y]] + .data[[input$plot_fill]], data = final_data(), 
+                     main = paste("Mosaic Plot of", input$plot_x, "vs.", input$plot_y, "vs.", input$plot_fill), color = TRUE)
+          #ftable(.data[[input$plot_x]], .data[[input$plot_y]], .data[[input$plot_fill]], useNA = "always")
           # Fill is turned off.
         } else {
-          "Categorical X variable and Categorical Y variable is really a two-way table."
-          table(.data[[input$plot_x]], .data[[input$plot_y]], useNA = "always")
-        } 
+          ggplot(final_data(), aes(x = .data[[input$plot_x]], fill = .data[[input$plot_y]])) +
+            geom_bar(position = "dodge")
+        }
+        # num - cat
       } else if(input$plot_x %in% numvar_choices && input$plot_y %in% catvar_choices) {
         # X is num, Y is cat, Fill is turned on.
         if(input$plot_fill != "none") {
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]], fill = .data[[input$plot_fill]])) +
-            geom_histogram(position = "dodge", bins = 20, color = "white", alpha = 0.8) +
-            labs(title = paste("Stacked Histogram of", input$plot_x, "by", input$plot_y), x = input$plot_x, y = "Count")
+            geom_boxplot(position = "dodge") +
+            labs(title = paste("Boxplots of", input$plot_y, "by", input$plot_x), x = input$plot_y, y = input$plot_y, fill = input$plot_x)
           # X is num, Y is cat, Fill is turned off.
         } else {
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]])) +
-            geom_histogram(position = "stack", bins = 20, color = "white", alpha = 0.8) +
-            labs(title = paste("Stacked Histogram of", input$plot_x, "by", input$plot_y), x = input$plot_x, y = "Count")
+            geom_boxplot(position = "dodge", fill = "steelblue") +
+            labs(title = paste("Boxplots of", input$plot_x, "by", input$plot_y), x = input$plot_x, y = input$plot_y)
         }
       }
     }
@@ -302,42 +307,89 @@ server <- function(input, output, session) {
   output$exploration_tables <- renderUI({
     plot_df <- final_data()
     if(input$plot_x %in% catvar_choices) {
-      
-      # 1 & 2-way Contingency Table Calculations Block
-      tbl1 <- table(plot_df[[input$plot_x]])
-      df1 <- as.data.frame(tbl1) %>% rename(!!input$plot_x := Var1, Count = Freq)
-      out_list <- list(
-        tags$h5(paste("One-Way Frequency Count Table:", input$plot_x)),
-        renderTable(df1, striped = TRUE, bordered = TRUE)
-      )
-      if(input$plot_fill != "none") {
-        tbl2 <- table(plot_df[[input$plot_x]], plot_df[[input$plot_fill]])
-        df2 <- as.data.frame(tbl2) %>% rename(!!input$plot_x := Var1, !!input$plot_fill := Var2, Count = Freq)
-        out_list <- c(out_list, list(
-          hr(),
-          tags$h5(paste("Two-Way Cross Contingency Table:", input$plot_x, "by", input$plot_fill)),
-          renderTable(df2, striped = TRUE, bordered = TRUE)
-        ))
-      }
-      return(out_list)
-    } else {
-      # Numerical Variable Distribution Summaries across group levels
-      sum_df <- plot_df |>
-        group_by(.data[[input$plot_x]]) |>
-        summarize(
-          Observations = n(),
-          Mean         = mean(.data[[input$plot_y]], na.rm = TRUE),
-          Median       = median(.data[[input$plot_y]], na.rm = TRUE),
-          Min          = min(.data[[input$plot_y]], na.rm = TRUE),
-          Max          = max(.data[[input$plot_y]], na.rm = TRUE),
-          MAD          = mad(.data[[input$plot_y]], na.rm = TRUE),
-          Std_Dev      = sd(.data[[input$plot_y]], na.rm = TRUE)
+
+      # 1-way Contingency Table Calculations Block
+      if (input$plot_y == "none") {
+        tbl1 <- table(plot_df[[input$plot_x]])
+        df1 <- as.data.frame(tbl1) %>% rename(!!input$plot_x := Var1, Count = Freq)
+        out_list <- list(
+          tags$h5(paste("One-Way Frequency Count Table:", input$plot_x)),
+          renderTable(df1, striped = TRUE, bordered = TRUE)
         )
-      return(list(
-        tags$h5(paste("Descriptive Summary Metrics:", input$plot_y, "by", input$plot_x)),
-        renderTable(sum_df, striped = TRUE, bordered = TRUE)
-      ))
+      } else if (input$plot_y %in% catvar_choices) {
+        # 2-way Contingency Table Calculations Block
+        tbl1 <- table(plot_df[[input$plot_x]], plot_df[[input$plot_y]])
+        df1 <- as.data.frame(tbl1) %>% rename(!!input$plot_x := Var1, !!input$plot_y := Var2, Count = Freq)
+        out_list <- list(
+          tags$h5(paste("Two-Way Frequency Count Table:", input$plot_x, "vs.", input$plot_y)),
+          renderTable(df1, striped = TRUE, bordered = TRUE)
+        )
+      } else {
+        # Numerical Variable Distribution Summaries across group levels
+        sum_df <- plot_df |>
+          group_by(.data[[input$plot_x]]) |>
+          summarize(
+            Observations = n(),
+            Mean         = mean(.data[[input$plot_y]], na.rm = TRUE),
+            Median       = median(.data[[input$plot_y]], na.rm = TRUE),
+            Min          = min(.data[[input$plot_y]], na.rm = TRUE),
+            Max          = max(.data[[input$plot_y]], na.rm = TRUE),
+            MAD          = mad(.data[[input$plot_y]], na.rm = TRUE),
+            Std_Dev      = sd(.data[[input$plot_y]], na.rm = TRUE)
+          )
+        out_list <- list(
+          tags$h5(paste("Descriptive Summary Metrics:", input$plot_y, "by", input$plot_x)),
+          renderTable(sum_df, striped = TRUE, bordered = TRUE)
+        )
+      } 
+    } else {
+      # 1-way Contingency Table Calculations Block
+      if (input$plot_y == "none") {
+        # Numerical Variable Distribution Summaries without group levels
+        sum_df <- plot_df |>
+          summarize(
+            Observations = n(),
+            Mean         = mean(.data[[input$plot_x]], na.rm = TRUE),
+            Median       = median(.data[[input$plot_x]], na.rm = TRUE),
+            Min          = min(.data[[input$plot_x]], na.rm = TRUE),
+            Max          = max(.data[[input$plot_x]], na.rm = TRUE),
+            MAD          = mad(.data[[input$plot_x]], na.rm = TRUE),
+            Std_Dev      = sd(.data[[input$plot_x]], na.rm = TRUE)
+          )
+        out_list <- list(
+          tags$h5(paste("Descriptive Summary Metrics:", input$plot_x)),
+          renderTable(sum_df, striped = TRUE, bordered = TRUE)
+        )
+      } else if (input$plot_y %in% catvar_choices) {
+        # Numerical Variable Distribution Summaries across group levels
+        sum_df <- plot_df |>
+          group_by(.data[[input$plot_y]]) |>
+          summarize(
+            Observations = n(),
+            Mean         = mean(.data[[input$plot_x]], na.rm = TRUE),
+            Median       = median(.data[[input$plot_x]], na.rm = TRUE),
+            Min          = min(.data[[input$plot_x]], na.rm = TRUE),
+            Max          = max(.data[[input$plot_x]], na.rm = TRUE),
+            MAD          = mad(.data[[input$plot_x]], na.rm = TRUE),
+            Std_Dev      = sd(.data[[input$plot_x]], na.rm = TRUE)
+          )
+        out_list <- list(
+          tags$h5(paste("Descriptive Summary Metrics:", input$plot_x, "by", input$plot_y)),
+          renderTable(sum_df, striped = TRUE, bordered = TRUE)
+        )
+      } else {
+        # Numerical Variable Distribution Summaries
+        sum_df <- plot_df |>
+          summarize(
+            Correlation  = cor(.data[[input$plot_x]], .data[[input$plot_y]], use = "complete.obs"),
+          )
+        out_list <- list(
+          tags$h5(paste("Correlation Statistic of:", input$plot_y, "and", input$plot_x)),
+          renderTable(sum_df, striped = TRUE, bordered = TRUE)
+        )
+      }
     }
+    return(out_list)
   })
 }
 

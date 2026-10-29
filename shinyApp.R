@@ -269,13 +269,15 @@ server <- function(input, output, session) {
         # Fill is turned on.
         if(input$plot_fill != "none") {
           #"That's a lot of Categorical variables. Basically a 3-way table."
-          mosaicplot(~ .data[[input$plot_x]] + .data[[input$plot_y]] + .data[[input$plot_fill]], data = final_data(), 
-                     main = paste("Mosaic Plot of", input$plot_x, "vs.", input$plot_y, "vs.", input$plot_fill), color = TRUE)
-          #ftable(.data[[input$plot_x]], .data[[input$plot_y]], .data[[input$plot_fill]], useNA = "always")
+          my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], fill = .data[[input$plot_fill]])) +
+            geom_bar(position = "dodge") +
+            facet_grid(rows = vars(.data[[input$plot_y]])) +
+            labs(title = paste("Faceted Count of", input$plot_fill, "by", input$plot_x, "across", input$plot_y), x = input$plot_x, y = "Count", fill = input$plot_fill)
           # Fill is turned off.
         } else {
-          ggplot(final_data(), aes(x = .data[[input$plot_x]], fill = .data[[input$plot_y]])) +
-            geom_bar(position = "dodge")
+          my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], fill = .data[[input$plot_y]])) +
+            geom_bar(position = "dodge") +
+            labs(title = paste("Distribution of", input$plot_y, "by", input$plot_x), x = input$plot_x, y = "Count", fill = input$plot_y)
         }
         # num - cat
       } else if(input$plot_x %in% numvar_choices && input$plot_y %in% catvar_choices) {
@@ -283,7 +285,7 @@ server <- function(input, output, session) {
         if(input$plot_fill != "none") {
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]], fill = .data[[input$plot_fill]])) +
             geom_boxplot(position = "dodge") +
-            labs(title = paste("Boxplots of", input$plot_y, "by", input$plot_x), x = input$plot_y, y = input$plot_y, fill = input$plot_x)
+            labs(title = paste("Boxplots of", input$plot_y, "by", input$plot_x), x = input$plot_x, y = input$plot_y, fill = input$plot_x)
           # X is num, Y is cat, Fill is turned off.
         } else {
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]])) +

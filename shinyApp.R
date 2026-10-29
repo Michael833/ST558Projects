@@ -315,23 +315,30 @@ server <- function(input, output, session) {
   
   # Numerical Data Summary Table Computations Engine
   output$exploration_tables <- renderUI({
+
     plot_df <- final_data()
+    all_choices <- c(numvar_choices, catvar_choices)
+    lookup_labels <- names(all_choices)
+    names(lookup_labels) <- all_choices
+    label_x <- lookup_labels[input$plot_x]
+    label_y <- if(input$plot_y != "none") lookup_labels[input$plot_y] else "None"
+    
     if(input$plot_x %in% catvar_choices) {
 
       # 1-way Contingency Table Calculations Block
       if (input$plot_y == "none") {
         tbl1 <- table(plot_df[[input$plot_x]])
-        df1 <- as.data.frame(tbl1) %>% rename(!!input$plot_x := Var1, Count = Freq)
+        df1 <- as.data.frame(tbl1) %>% rename(!!label_x := Var1, Count = Freq)
         out_list <- list(
-          tags$h5(paste("One-Way Frequency Count Table:", input$plot_x)),
+          tags$h5(paste("One-Way Frequency Count Table:", label_x)),
           renderTable(df1, striped = TRUE, bordered = TRUE)
         )
       } else if (input$plot_y %in% catvar_choices) {
         # 2-way Contingency Table Calculations Block
         tbl1 <- table(plot_df[[input$plot_x]], plot_df[[input$plot_y]])
-        df1 <- as.data.frame(tbl1) %>% rename(!!input$plot_x := Var1, !!input$plot_y := Var2, Count = Freq)
+        df1 <- as.data.frame(tbl1) %>% rename(!!label_x := Var1, !!label_y := Var2, Count = Freq)
         out_list <- list(
-          tags$h5(paste("Two-Way Frequency Count Table:", input$plot_x, "vs.", input$plot_y)),
+          tags$h5(paste("Two-Way Frequency Count Table:", label_x, "vs.", label_y)),
           renderTable(df1, striped = TRUE, bordered = TRUE)
         )
       } else {
@@ -348,7 +355,7 @@ server <- function(input, output, session) {
             Std_Dev      = sd(.data[[input$plot_y]], na.rm = TRUE)
           )
         out_list <- list(
-          tags$h5(paste("Descriptive Summary Metrics:", input$plot_y, "by", input$plot_x)),
+          tags$h5(paste("Descriptive Summary Metrics:", label_y, "by", label_x)),
           renderTable(sum_df, striped = TRUE, bordered = TRUE)
         )
       } 
@@ -367,7 +374,7 @@ server <- function(input, output, session) {
             Std_Dev      = sd(.data[[input$plot_x]], na.rm = TRUE)
           )
         out_list <- list(
-          tags$h5(paste("Descriptive Summary Metrics:", input$plot_x)),
+          tags$h5(paste("Descriptive Summary Metrics:", label_x)),
           renderTable(sum_df, striped = TRUE, bordered = TRUE)
         )
       } else if (input$plot_y %in% catvar_choices) {
@@ -384,7 +391,7 @@ server <- function(input, output, session) {
             Std_Dev      = sd(.data[[input$plot_x]], na.rm = TRUE)
           )
         out_list <- list(
-          tags$h5(paste("Descriptive Summary Metrics:", input$plot_x, "by", input$plot_y)),
+          tags$h5(paste("Descriptive Summary Metrics:", label_x, "by", label_y)),
           renderTable(sum_df, striped = TRUE, bordered = TRUE)
         )
       } else {
@@ -394,7 +401,7 @@ server <- function(input, output, session) {
             Correlation  = cor(.data[[input$plot_x]], .data[[input$plot_y]], use = "complete.obs"),
           )
         out_list <- list(
-          tags$h5(paste("Correlation Statistic of:", input$plot_y, "and", input$plot_x)),
+          tags$h5(paste("Correlation Statistic of:", label_y, "and", label_x)),
           renderTable(sum_df, striped = TRUE, bordered = TRUE)
         )
       }

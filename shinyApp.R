@@ -223,18 +223,26 @@ server <- function(input, output, session) {
   output$exploration_plot <- renderPlot({
     req(input$plot_x)
     req(input$plot_y)
-    
+    # Fix variable labels in graphs
+    all_choices <- c(numvar_choices, catvar_choices)
+    lookup_labels <- names(all_choices)
+    names(lookup_labels) <- all_choices
+    label_x <- lookup_labels[input$plot_x]
+    label_y <- if(input$plot_y != "none") lookup_labels[input$plot_y] else "None"
+    label_fill <- if(input$plot_fill != "none") lookup_labels[input$plot_fill] else "None"
     
     ## No y-var
     if(input$plot_y == "none") {
       # X is cat/num, Fill is turned on.
       if(input$plot_fill != "none") {
         my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], fill = .data[[input$plot_fill]])) + 
-          geom_bar(position = "dodge")
+          geom_bar(position = "dodge") +
+          labs(title = paste("Distribution of", label_x, "by", label_fill), x = label_x, fill = label_fill)
       } else {
         # X cat/num, fill off.
         my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]])) + 
-          geom_bar(fill = "steelblue")
+          geom_bar(fill = "steelblue") +
+          labs(title = paste("Distribution of", label_x), x = label_x)
       }
     } else {
       ## Yes y-var
@@ -243,13 +251,13 @@ server <- function(input, output, session) {
         # X is cat, Y is num, Fill is turned on. (This probably shouldn't happen. It's not great to put the numeric on the y)
         if(input$plot_fill != "none") {
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]], fill = .data[[input$plot_fill]])) +
-            geom_boxplot(position = "dodge", ) +
-            labs(title = paste("Stacked Histogram of", input$plot_y, "by", input$plot_x), x = input$plot_y, y = "Count", fill = input$plot_x)
+            geom_boxplot(position = "dodge") +
+            labs(title = paste("Stacked Histogram of", label_y, "by", label_x, "with", label_fill), x = label_y, y = "Count", fill = label_x)
         } else {
           # X is cat, Y is num, Fill is turned off.
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_y]], fill = .data[[input$plot_x]])) +
             geom_histogram(position = "stack", bins = 20, color = "white", alpha = 0.8) +
-            labs(title = paste("Stacked Histogram of", input$plot_y, "by", input$plot_x), x = input$plot_y, y = "Count", fill = input$plot_x)
+            labs(title = paste("Stacked Histogram of", label_y, "by", label_x), x = label_y, y = "Count", fill = label_x)
         }
         # num - num
       } else if(input$plot_x %in% numvar_choices && input$plot_y %in% numvar_choices) {
@@ -257,12 +265,12 @@ server <- function(input, output, session) {
           # X is num, Y is num, Fill is turned on. (scatterplot)
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]], color = .data[[input$plot_fill]])) +  
             geom_point(size = 2.5, alpha = 0.7) +
-            labs(title = paste("Scatterplot of", input$plot_x, "vs.", input$plot_y), x = input$plot_x, y = input$plot_y, color = input$plot_fill)
+            labs(title = paste("Scatterplot of", label_x, "vs.", label_y), x = label_x, y = label_y, color = label_fill)
         } else {
           # X is num, Y is num, Fill is turned off. (scatterplot)
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]])) +
             geom_point(color = "steelblue", size = 2.5, alpha = 0.7) +
-            labs(title = paste("Scatterplot of", input$plot_x, "vs.", input$plot_y), x = input$plot_x, y = input$plot_y)
+            labs(title = paste("Scatterplot of", label_x, "vs.", label_y), x = label_x, y = label_y)
         }
         # cat - cat
       }	else if(input$plot_x %in% catvar_choices && input$plot_y %in% catvar_choices) {
@@ -272,12 +280,12 @@ server <- function(input, output, session) {
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], fill = .data[[input$plot_fill]])) +
             geom_bar(position = "dodge") +
             facet_grid(rows = vars(.data[[input$plot_y]])) +
-            labs(title = paste("Faceted Count of", input$plot_fill, "by", input$plot_x, "across", input$plot_y), x = input$plot_x, y = "Count", fill = input$plot_fill)
+            labs(title = paste("Faceted Count of", label_fill, "by", label_x, "across", label_y), x = label_x, y = "Count", fill = label_fill)
           # Fill is turned off.
         } else {
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], fill = .data[[input$plot_y]])) +
             geom_bar(position = "dodge") +
-            labs(title = paste("Distribution of", input$plot_y, "by", input$plot_x), x = input$plot_x, y = "Count", fill = input$plot_y)
+            labs(title = paste("Distribution of", label_y, "by", label_x), x = label_x, y = "Count", fill = label_y)
         }
         # num - cat
       } else if(input$plot_x %in% numvar_choices && input$plot_y %in% catvar_choices) {
@@ -285,12 +293,12 @@ server <- function(input, output, session) {
         if(input$plot_fill != "none") {
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]], fill = .data[[input$plot_fill]])) +
             geom_boxplot(position = "dodge") +
-            labs(title = paste("Boxplots of", input$plot_y, "by", input$plot_x), x = input$plot_x, y = input$plot_y, fill = input$plot_x)
+            labs(title = paste("Boxplots of", label_y, "by", label_x), x = label_x, y = label_y, fill = label_fill)
           # X is num, Y is cat, Fill is turned off.
         } else {
           my_plot <- ggplot(final_data(), aes(x = .data[[input$plot_x]], y = .data[[input$plot_y]])) +
             geom_boxplot(position = "dodge", fill = "steelblue") +
-            labs(title = paste("Boxplots of", input$plot_x, "by", input$plot_y), x = input$plot_x, y = input$plot_y)
+            labs(title = paste("Boxplots of", label_x, "by", label_y), x = label_x, y = label_y)
         }
       }
     }

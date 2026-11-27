@@ -11,6 +11,7 @@ RUN R -e "install.packages(c('plumber', 'tidyverse', 'tidymodels', 'ranger'))"
 # copy myAPI.R from the current directory into the container
 COPY API.R /app/API.R
 COPY /data/NHANES_EnergyDrinks_BP_ages18-29.csv /app/NHANES.csv
+COPY tree_plot.png /app/tree_plot.png
 
 WORKDIR /app
 

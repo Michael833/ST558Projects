@@ -31,7 +31,7 @@ First I want to pull in this NHANES data of 18 to 29 year-olds:
 NHANES <- read.csv("data/NHANES_EnergyDrinks_BP_ages18-29.csv", na.strings = c("", "NA"))
 ```
 
-Because this data is not administrative, like the datasets we used in class, where every cell had a value, we need to address the missing value issue. Regression models would handle this well by just pairwise removing observations with a missing value, but our random forests cannot handle these kinds of missing values, so I'm just going to preemtively remove them.
+Because this data is not administrative data, nearly all of the cells have values. I'm going to drop the several without pulse rates, and then the admin variables that I don't understand, Cycle and RecallDays.
 
 ```{r}
 NHANES <- NHANES |>
@@ -57,7 +57,7 @@ NHANES_CV_folds <- vfold_cv(NHANES_train, 5)
 
 ## Creating Models
 
-Honestly, the numeric variables in this dataset are not great as response variables to the other predictors, but I believe the goal here is proof of concept, and not statistical rigor. I have chosen two possible outcome variables: text_messages_sent_yesterday and doing_homework_hours. After tinkering with both of them, I decided to use text_messages_sent_yesterday as my response variable, and the reminaing variables as my predictors.
+At first I was using a different dataset, but the numeric variables in that dataset were not great as response variables to the other predictors. That is why I changed to this NHANES data instead. I have chosen a possible outcome variable: Systolic_BP, and made the reminaing variables my predictors.
 
 ### Regression Tree Model
 
@@ -88,7 +88,7 @@ tree_wkf <- workflow() |>
   add_model(tree_mod)
 ```
 
-Here I have decided to use RMSE (Root Mean Squared Error) as my primary metric of performance. Text Messages Sent is a continuous numeric variable, which means RMSE is well suited to interpret results, and to penalize large prediction errors more heavilyt than Mean Absolute Error. Hopefully that will encourage the tuning to select a model that avoids large mispredicitions.
+Here I have decided to use RMSE (Root Mean Squared Error) as my primary metric of performance. Systolic Blood Pressure is a continuous numeric variable, which means RMSE is well suited to interpret results, and to penalize large prediction errors more heavily than Mean Absolute Error. Hopefully that will encourage the tuning to select a model that avoids large mispredicitions.
 
 ```{r}
 tree_grid <- grid_regular(cost_complexity(),
@@ -134,14 +134,21 @@ tree_final_fit |>
 tree_final_model <- extract_workflow(tree_final_fit) 
 tree_final_model
 
+# I think I want to save this file for my api to acces.
+png("tree_plot.png", width = 800, height = 600, res = 120)
+
 tree_final_model |>
   extract_fit_engine() |>
   rpart.plot::rpart.plot(roundint = FALSE)
-```
 
-Okay, so this is obviously not ideal, in that the cost complexity selected by the cross-valudation was so large it pruned the tree down to a single node. This may well be because of the nature of this data, so I'm going to continue forward.
+#got an error after saving the image, but google says I need to fix it with this:
+dev.off()
+```
+Okay, this tree is way better than the one that I had for my original data. In that one, the cost complexity selected by the cross-valudation was so large it pruned the tree down to a single node. This one was way better, with notes for different Sex, Diastolic BPs and one node about Pulse rate. Sadly, it doesn't seem to care at all about Age, Caffeine or EnergyDrinks.
 
 ### Random Forest Models
+
+We use the random forest because
 
 ```{r}
 rf_spec <- rand_forest(mtry = tune(), min_n = tune(), trees = 500) |>

@@ -108,6 +108,17 @@ function(){
 #http://localhost:8000/info
 #http://127.0.0.1:14306/info
 
-# 7. Start the Plumber API server
+
+# 7. Set up the who-and-where API
+#* Return the regression tree plot
+#* @serializer png
+#* #* @get /tree
+function(){
+  readBin("tree_plot.png", "raw", n = file.info("tree_plot.png")$size)
+}
+#http://localhost:8000/info
+#http://127.0.0.1:14306/info
+
+# 8. Start the Plumber API server
 pr("API.R") |>
   pr_run(host = "0.0.0.0", port = 8000)

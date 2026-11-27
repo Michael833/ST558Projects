@@ -4,8 +4,11 @@ author: "Michael Costello"
 format: html
 editor: source
 ---
+
 # Creating the models and chosing the best
+
 ## Setting up the environment
+
 ```{r}
 #| message: false
 #| warning: false
@@ -18,15 +21,18 @@ library(baguette)
 
 ## Importing the data, creating splits and folds.
 
-This modeling code was created to explore data from the ASA's Census@School project. While the full dataset has more variables, I've selected about a half dozen that were used in the Shiny application I created for the second project. More information on the dataset and how it was built can be found on the ASA's website (link below) and you can take your students to the site to add their own responses to the survey.
+This modeling code was created to explore data from the ASA's Census\@School project. While the full dataset has more variables, I've selected about a half dozen that were used in the Shiny application I created for the second project. More information on the dataset and how it was built can be found on the ASA's website (link below) and you can take your students to the site to add their own responses to the survey.
 
 The data originates from an expansive student census profile documenting baseline metrics such as school transit times preferred extra-curricular structures, digital usage baselines, and environmental profiles. Learn more at the https://ww2.amstat.org/censusatschool/.
 
 First I want to pull in my Census at School data from 2026:
+
 ```{r}
 CensusSchool <- read.csv("data/CensusAtSchool2026.csv", na.strings = c("", "NA"))
 ```
+
 Because this data is not administrative, like the datasets we used in class, where every cell had a value, we need to address the missing value issue. Regression models would handle this well by just pairwise removing observations with a missing value, but our random forests cannot handle these kinds of missing values, so I'm just going to preemtively remove them.
+
 ```{r}
 CensusSchool <- CensusSchool |>
   tidyr::drop_na(
@@ -35,14 +41,18 @@ CensusSchool <- CensusSchool |>
   )
 save(CensusSchool, file = "data/censusAtSchool2026.RData")
 ```
+
 Now we will split the data into training and testing subsets
+
 ```{r}
 set.seed(852006)
 CensusSchool_split <- rsample::initial_split(CensusSchool, prop = .7)
 	CensusSchool_train <- training(CensusSchool_split)
 	CensusSchool_test <- testing(CensusSchool_split)
 ```
+
 I used a 5 fold cross-validation to select the best model each family of models, setting up my own grid of tuning parameters for each model.
+
 ```{r}
 CensusSchool_CV_folds <- vfold_cv(CensusSchool_train, 5)
 ```
@@ -54,11 +64,12 @@ Honestly, the numeric variables in this dataset are not great as response variab
 ### Regression Tree Model
 
 Since I am not using a categorical outcome variable, I'm not going to use a classification tree, but a regression tree instead. Regression tress create decision points, often called splits, which determine how to split the data into groups which will minimize the residual's sum of squares within each of the nodes which follow.
+
 ```{r}
 # Outcome Vars: text_messages_sent_yesterday, doing_homework_hours
 # Predictor Vars: classgrade, gender, ageyears, travel_time_to_school, favorite_school_subject, home_occupants, role_model_type
 
-tree_rec <- recipe(doing_homework_hours ~ classgrade + gender + travel_time_to_school + favorite_school_subject + home_occupants + role_model_type, data = CensusSchool_train) |>
+tree_rec <- recipe(text_messages_sent_yesterday ~ classgrade + gender + travel_time_to_school + favorite_school_subject + home_occupants + role_model_type, data = CensusSchool_train) |>
   step_naomit(all_predictors()) |>
   # don't normalize the outcome, but do the rest:
   step_normalize(all_numeric(), -all_outcomes()) |>
@@ -76,7 +87,9 @@ tree_wkf <- workflow() |>
   add_recipe(tree_rec) |>
   add_model(tree_mod)
 ```
+
 Here I have decided to use RMSE (Root Mean Squared Error) as my primary metric of performance. Text Messages Sent is a continuous numeric variable, which means RMSE is well suited to interpret results, and to penalize large prediction errors more heavilyt than Mean Absolute Error. Hopefully that will encourage the tuning to select a model that avoids large mispredicitions.
+
 ```{r}
 tree_grid <- grid_regular(cost_complexity(),
                           tree_depth(),
@@ -96,6 +109,7 @@ tree_fits |>
   scale_x_log10(labels = scales::label_number()) +
   scale_color_viridis_d(option = "plasma", begin = .9, end = 0)
 ```
+
 #### Select the best regression tree and finalize the workflow
 
 ```{r}
@@ -138,7 +152,9 @@ rf_wkf <- workflow() |>
   add_recipe(tree_rec) |>
   add_model(rf_spec)
 ```
-#### - Tune using the training-set cross-validation folds
+
+#### Tune using the training-set cross-validation folds
+
 ```{r}
 rf_grid <- grid_regular(
   mtry(range = c(2, 6)),
@@ -157,7 +173,9 @@ rf_fit |>
   filter(.metric == "rmse") |> 
   arrange(mean)
 ```
+
 #### Select the best random forest and finalize the workflow
+
 ```{r}
 rf_best_params <- select_best(rf_fit, metric = "rmse")
 rf_best_params
@@ -169,19 +187,24 @@ rf_final_fit <- rf_final_wkf |>
   last_fit(CensusSchool_split, metrics = metric_set(rmse, mae))
 rf_final_model <- extract_workflow(rf_final_fit)
 ```
+
 ## Select the best model from each type
+
 Again, I've chosen RMSE as the metric for these models. Now I will compare each on the test set to figure out which is working the best.
+
 ```{r}
 bind_rows(
   tree_final_fit |> collect_metrics() |> mutate(Model = "Regression Tree"),
   rf_final_fit |> collect_metrics() |> mutate(Model = "Random Forest")
 )
 ```
+
 Okay, so the best is the regression tree model, and so I will fit that on the entire dataset.
+
 ```{r}
 overall_best_model <- tree_final_wkf |>
   fit(data = CensusSchool)
 overall_best_model
 ```
-** This best model is going to be used in your API. To get that model available there, we can
-reread in the data and fit the best model all within that file.
+
+\*\* This best model is going to be used in your API. To get that model available there, we can reread in the data and fit the best model all within that file.

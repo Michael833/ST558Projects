@@ -5,7 +5,7 @@ format: html
 editor: source
 ---
 
-# Creating the models and chosing the best
+# Creating the models and choosing the best
 
 ## Setting up the environment
 
@@ -16,12 +16,11 @@ editor: source
 library(tidyverse)
 library(tidymodels)
 library(tree)
-library(baguette)
 ```
 
 ## Importing the data, creating splits and folds.
 
-This modeling code was created to explore data from the CDC's NHANES survey. While the full dataset has more variables, a EPOST colleague, Dr. Laura Callis, sent this dataset around about a week ago. She had selected 7 which are related to heart rates, blood pressures, and caffine intake.
+This modeling code was created to explore data from the CDC's NHANES survey. While the full dataset has more variables, an EAPOST colleague, Dr. Laura Callis, sent this dataset around about a week ago. She had selected 7 which are related to heart rates, blood pressures, and caffine intake.
 
 From the CDC's Website (while it lasts): The National Health and Nutrition Examination Survey (NHANES) collects data about the health of adults and children in the United States. We also collect data about what participants eat, drink, and take as supplements to determine how many nutrients are in their diet. These dietary interviews and blood tests help us measure the nutritional status of U.S. adults and children. Learn more at the https://wwwn.cdc.gov/nchs/nhanes/.
 
@@ -70,9 +69,6 @@ Since I am not using a categorical outcome variable, I'm not going to use a clas
 
 tree_rec <- recipe(Systolic_BP ~ Diastolic_BP + Pulse + Age + Sex + EnergyDrink + Caffeine_mg, 
                    data = NHANES_train) |>
-  step_naomit(all_predictors()) |>
-  # don't normalize the outcome, but do the rest:
-  step_normalize(all_numeric(), -all_outcomes()) |>
   # create dummys:
   step_dummy(all_nominal_predictors())
 tree_rec
@@ -125,7 +121,7 @@ tree_final_wkf <- tree_wkf |>
   finalize_workflow(tree_best_params)
 
 tree_final_fit <- tree_final_wkf |>
-  last_fit(NHANES_split)
+  last_fit(NHANES_split, metrics = metric_set(rmse, rsq, mae))
 tree_final_fit
 
 tree_final_fit |>
@@ -134,21 +130,16 @@ tree_final_fit |>
 tree_final_model <- extract_workflow(tree_final_fit) 
 tree_final_model
 
-# I think I want to save this file for my api to acces.
-png("tree_plot.png", width = 800, height = 600, res = 120)
-
 tree_final_model |>
   extract_fit_engine() |>
   rpart.plot::rpart.plot(roundint = FALSE)
 
-#got an error after saving the image, but google says I need to fix it with this:
-dev.off()
 ```
 Okay, this tree is way better than the one that I had for my original data. In that one, the cost complexity selected by the cross-valudation was so large it pruned the tree down to a single node. This one was way better, with notes for different Sex, Diastolic BPs and one node about Pulse rate. Sadly, it doesn't seem to care at all about Age, Caffeine or EnergyDrinks.
 
 ### Random Forest Models
 
-We use the random forest because
+We use the random forest because they randomly select a subset of the varaiables that are allowed to be chosen at each node. This decreases the correlation, espeically at the first node, and thus is a more robust model overall. 
 
 ```{r}
 rf_spec <- rand_forest(mtry = tune(), min_n = tune(), trees = 500) |>
@@ -173,7 +164,7 @@ set.seed(9261979)
 rf_fit <- rf_wkf |>
   tune_grid(resamples = NHANES_CV_folds, 
             grid = rf_grid,
-            metrics = metric_set(rmse))
+            metrics = metric_set(rmse, rsq, mae))
 
 rf_fit |>
   collect_metrics() |>
@@ -191,7 +182,7 @@ rf_final_wkf <- rf_wkf |>
   finalize_workflow(rf_best_params)
 
 rf_final_fit <- rf_final_wkf |>
-  last_fit(NHANES_split, metrics = metric_set(rmse, mae))
+  last_fit(NHANES_split, metrics = metric_set(rmse, rsq, mae))
 rf_final_model <- extract_workflow(rf_final_fit)
 ```
 
@@ -206,9 +197,10 @@ bind_rows(
 )
 ```
 
-Okay, so the best is the regression tree model, and so I will fit that on the entire dataset.
+Okay, so the best is the random forest model, and so I will fit that on the entire dataset.
 
 ```{r}
+set.seed(10122015)
 overall_best_model <- rf_final_wkf |>
   fit(data = NHANES)
 overall_best_model

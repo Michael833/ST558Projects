@@ -16,6 +16,7 @@ library(ranger)
 # 1. Starting by pulling in my dataset, NHANES. 
 NHANES <- read.csv("data/NHANES_EnergyDrinks_BP_ages18-29.csv", na.strings = c("", "NA")) |>
   select(-Cycle, -RecallDays) |>
+  mutate(across(c(Sex, EnergyDrink), as.factor)) |>
   tidyr::drop_na(Pulse)
 
 #NHANES |> summarise(across(everything(), \(x) sum(is.na(x))))
@@ -93,8 +94,10 @@ function(
     inputs_used = prediction_NHANES
   )
 }
-#http://localhost:8000/pred?--parameter=num1&parameter=num2--
+#http://localhost:8000/pred?parameter=num1&parameter=num2&...
 #http://127.0.0.1:15331/pred?age=23&sex=Female&energydrink=No&caffeine=75&diastolic=69&pulse=73
+#http://127.0.0.1:15331/pred?age=25&sex=Female&energydrink=Yes&caffeine=95&diastolic=60&pulse=82
+#http://127.0.0.1:15331/pred?age=29&sex=Male&energydrink=Yes&caffeine=0&diastolic=69&pulse=60
 
 
 # 6. Set up the who-and-where API
@@ -116,8 +119,8 @@ function(){
 function(){
   readBin("tree_plot.png", "raw", n = file.info("tree_plot.png")$size)
 }
-#http://localhost:8000/info
-#http://127.0.0.1:14306/info
+#http://localhost:8000/tree
+#http://127.0.0.1:14306/tree
 
 # 8. Start the Plumber API server
 #pr("API.R") |>

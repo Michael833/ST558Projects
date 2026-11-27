@@ -207,4 +207,4 @@ overall_best_model <- tree_final_wkf |>
 overall_best_model
 ```
 
-\*\* This best model is going to be used in your API. To get that model available there, we can reread in the data and fit the best model all within that file.
+This is the model that I'm going to use in my API.

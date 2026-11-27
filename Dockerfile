@@ -6,11 +6,11 @@ RUN apt-get update -qq && apt-get install -y  libssl-dev  libcurl4-gnutls-dev  l
     
     
 # install plumber, GGally
-RUN R -e "install.packages(c('plumber', 'tidyverse', 'tidymodels'))"
+RUN R -e "install.packages(c('plumber', 'tidyverse', 'tidymodels', 'ranger'))"
 
 # copy myAPI.R from the current directory into the container
 COPY API.R /app/API.R
-COPY /data/CensusSchool.csv /app/CensusSchool.csv
+COPY /data/NHANES_EnergyDrinks_BP_ages18-29.csv /app/NHANES.csv
 
 WORKDIR /app
 

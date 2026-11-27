@@ -21,40 +21,38 @@ library(baguette)
 
 ## Importing the data, creating splits and folds.
 
-This modeling code was created to explore data from the ASA's Census\@School project. While the full dataset has more variables, I've selected about a half dozen that were used in the Shiny application I created for the second project. More information on the dataset and how it was built can be found on the ASA's website (link below) and you can take your students to the site to add their own responses to the survey.
+This modeling code was created to explore data from the CDC's NHANES survey. While the full dataset has more variables, a EPOST colleague, Dr. Laura Callis, sent this dataset around about a week ago. She had selected 7 which are related to heart rates, blood pressures, and caffine intake.
 
-The data originates from an expansive student census profile documenting baseline metrics such as school transit times preferred extra-curricular structures, digital usage baselines, and environmental profiles. Learn more at the https://ww2.amstat.org/censusatschool/.
+From the CDC's Website (while it lasts): The National Health and Nutrition Examination Survey (NHANES) collects data about the health of adults and children in the United States. We also collect data about what participants eat, drink, and take as supplements to determine how many nutrients are in their diet. These dietary interviews and blood tests help us measure the nutritional status of U.S. adults and children. Learn more at the https://wwwn.cdc.gov/nchs/nhanes/.
 
-First I want to pull in my Census at School data from 2026:
+First I want to pull in this NHANES data of 18 to 29 year-olds:
 
 ```{r}
-CensusSchool <- read.csv("data/CensusAtSchool2026.csv", na.strings = c("", "NA"))
+NHANES <- read.csv("data/NHANES_EnergyDrinks_BP_ages18-29.csv", na.strings = c("", "NA"))
 ```
 
 Because this data is not administrative, like the datasets we used in class, where every cell had a value, we need to address the missing value issue. Regression models would handle this well by just pairwise removing observations with a missing value, but our random forests cannot handle these kinds of missing values, so I'm just going to preemtively remove them.
 
 ```{r}
-CensusSchool <- CensusSchool |>
-  tidyr::drop_na(
-    text_messages_sent_yesterday, doing_homework_hours, classgrade, gender, ageyears,
-    travel_time_to_school, favorite_school_subject, home_occupants
-  )
-save(CensusSchool, file = "data/censusAtSchool2026.RData")
+NHANES <- NHANES |>
+  select(-Cycle, -RecallDays) |>
+  tidyr::drop_na(Pulse)
+save(NHANES, file = "data/NHANES.RData")
 ```
 
 Now we will split the data into training and testing subsets
 
 ```{r}
 set.seed(852006)
-CensusSchool_split <- rsample::initial_split(CensusSchool, prop = .7)
-	CensusSchool_train <- training(CensusSchool_split)
-	CensusSchool_test <- testing(CensusSchool_split)
+NHANES_split <- rsample::initial_split(NHANES, prop = .7)
+	NHANES_train <- training(NHANES_split)
+	NHANES_test <- testing(NHANES_split)
 ```
 
 I used a 5 fold cross-validation to select the best model each family of models, setting up my own grid of tuning parameters for each model.
 
 ```{r}
-CensusSchool_CV_folds <- vfold_cv(CensusSchool_train, 5)
+NHANES_CV_folds <- vfold_cv(NHANES_train, 5)
 ```
 
 ## Creating Models
@@ -66,10 +64,12 @@ Honestly, the numeric variables in this dataset are not great as response variab
 Since I am not using a categorical outcome variable, I'm not going to use a classification tree, but a regression tree instead. Regression tress create decision points, often called splits, which determine how to split the data into groups which will minimize the residual's sum of squares within each of the nodes which follow.
 
 ```{r}
-# Outcome Vars: text_messages_sent_yesterday, doing_homework_hours
-# Predictor Vars: classgrade, gender, ageyears, travel_time_to_school, favorite_school_subject, home_occupants, role_model_type
+# Outcome Vars: Systolic_BP
+# Predictor Vars: Diastolic_BP, Pulse, Age, Sex, EnergyDrink, Caffeine_mg
 
-tree_rec <- recipe(text_messages_sent_yesterday ~ classgrade + gender + travel_time_to_school + favorite_school_subject + home_occupants + role_model_type, data = CensusSchool_train) |>
+
+tree_rec <- recipe(Systolic_BP ~ Diastolic_BP + Pulse + Age + Sex + EnergyDrink + Caffeine_mg, 
+                   data = NHANES_train) |>
   step_naomit(all_predictors()) |>
   # don't normalize the outcome, but do the rest:
   step_normalize(all_numeric(), -all_outcomes()) |>
@@ -96,14 +96,14 @@ tree_grid <- grid_regular(cost_complexity(),
                           min_n(),
                           levels = c(10, 5, 5))
 tree_fits <- tree_wkf |> 
-  tune_grid(resamples = CensusSchool_CV_folds,
+  tune_grid(resamples = NHANES_CV_folds,
             grid = tree_grid)
 
 tree_fits |>
   collect_metrics() |>
   mutate(tree_depth = factor(tree_depth)) |>
   ggplot(aes(cost_complexity, mean, color = tree_depth)) +
-  geom_line(size = 1.5, alpha = 0.6) +
+  geom_line(linewidth = 1.5, alpha = 0.6) +
   geom_point(size = 2) +
   facet_wrap(~ .metric, scales = "free", nrow = 2) +
   scale_x_log10(labels = scales::label_number()) +
@@ -125,7 +125,7 @@ tree_final_wkf <- tree_wkf |>
   finalize_workflow(tree_best_params)
 
 tree_final_fit <- tree_final_wkf |>
-  last_fit(CensusSchool_split)
+  last_fit(NHANES_split)
 tree_final_fit
 
 tree_final_fit |>
@@ -164,7 +164,7 @@ rf_grid <- grid_regular(
 
 set.seed(9261979)
 rf_fit <- rf_wkf |>
-  tune_grid(resamples = CensusSchool_CV_folds, 
+  tune_grid(resamples = NHANES_CV_folds, 
             grid = rf_grid,
             metrics = metric_set(rmse))
 
@@ -184,7 +184,7 @@ rf_final_wkf <- rf_wkf |>
   finalize_workflow(rf_best_params)
 
 rf_final_fit <- rf_final_wkf |>
-  last_fit(CensusSchool_split, metrics = metric_set(rmse, mae))
+  last_fit(NHANES_split, metrics = metric_set(rmse, mae))
 rf_final_model <- extract_workflow(rf_final_fit)
 ```
 
@@ -202,8 +202,8 @@ bind_rows(
 Okay, so the best is the regression tree model, and so I will fit that on the entire dataset.
 
 ```{r}
-overall_best_model <- tree_final_wkf |>
-  fit(data = CensusSchool)
+overall_best_model <- rf_final_wkf |>
+  fit(data = NHANES)
 overall_best_model
 ```
 

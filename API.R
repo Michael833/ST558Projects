@@ -32,8 +32,8 @@ default_caffeine    <- mean(NHANES$Caffeine_mg)
 default_diastolic   <- mean(NHANES$Diastolic_BP)
 default_pulse       <- mean(NHANES$Pulse)
 
-default_sex         <- get_mode(NHANES$Sex)
-default_energydrink <- get_mode(NHANES$EnergyDrink)
+default_sex         <- as.character(get_mode(NHANES$Sex))
+default_energydrink <- as.character(get_mode(NHANES$EnergyDrink))
 
 
 # 3. Set up the model I'm passing through from my Project3.qmd file investigation
@@ -101,6 +101,7 @@ function(
 
 
 # 6. Set up the who-and-where API
+#* Tells about the API
 #* @get /info
 function(){
   list(

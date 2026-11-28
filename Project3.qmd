@@ -15,7 +15,7 @@ editor: source
 
 library(tidyverse)
 library(tidymodels)
-library(tree)
+library(rpart.plot)
 ```
 
 ## Importing the data, creating splits and folds.
@@ -181,6 +181,7 @@ rf_best_params
 rf_final_wkf <- rf_wkf |>
   finalize_workflow(rf_best_params)
 
+set.seed(10122015)
 rf_final_fit <- rf_final_wkf |>
   last_fit(NHANES_split, metrics = metric_set(rmse, rsq, mae))
 rf_final_model <- extract_workflow(rf_final_fit)
